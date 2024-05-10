@@ -1,0 +1,47 @@
+\documentclass{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{authblk} % For affiliations
+\usepackage{enumerate} % For ordered lists
+\usepackage{parskip} % Adds white space between paragraphs
+\usepackage{orcidlink} % Insert ORCID links
+\usepackage{abstract} % Customise abstract
+\usepackage[super]{natbib} % Citations using superscript
+
+% Create shaded abstract
+% ---------------------------------------------------
+% Credit to JamesT (https://tex.stackexchange.com/questions/675419/text-is-not-centered-with-colorbox)
+\usepackage{xcolor}
+\definecolor{acsyellow}{RGB}{255,241,204}
+\usepackage{framed} 
+\colorlet{shadecolor}{acsyellow}
+\renewenvironment{abstract} 
+     {
+    \vfill%
+      \list{}{
+        \setlength{\leftmargin}{.3cm}%
+        \setlength{\rightmargin}{\leftmargin}%
+      \vfill%
+      }%
+      \item\relax}
+ {\endlist}
+\setlength{\parindent}{0mm} 
+% ---------------------------------------------------
+
+% Change font
+\usepackage{cmbright}
+
+\begin{document}
+
+% Generate title page using provided info
+\include{sections/title}
+\maketitle
+
+% Input without creating new page
+\input{sections/protocol}
+% \input{sections/glossary}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
