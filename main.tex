@@ -6,7 +6,14 @@
 \usepackage{parskip} % Adds white space between paragraphs
 \usepackage{orcidlink} % Insert ORCID links
 \usepackage{abstract} % Customise abstract
-\usepackage[super]{natbib} % Citations using superscript
+\usepackage{hyperref} % To add URLs
+
+% References using biblatex
+\usepackage[
+    sorting=none,
+    autocite=superscript
+]{biblatex}
+\bibliography{references}
 
 % Create shaded abstract
 % ---------------------------------------------------
@@ -41,7 +48,8 @@
 \input{sections/protocol}
 % \input{sections/glossary}
 
-\bibliographystyle{plainnat}
-\bibliography{references}
+%\bibliographystyle{plainnat}
+%\bibliography{references}
+\printbibliography
 
 \end{document}

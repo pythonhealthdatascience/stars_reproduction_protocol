@@ -1,25 +1,155 @@
-\textbf{TO DO:} Confirm appropriate author order/inclusion/etc.
-
-% Rename the abstract
-% \renewcommand{\abstractname}{}
+% Create abstract in a shaded box
 \begin{shaded}
     \begin{abstract}
         This protocol outlines how we plan to reuse available artifacts to reproduce results from published simulation studies. This forms part of the project STARS: "Sharing Tools and Artefacts for Reusable Simulations in healthcare". It will be utilised to conduct reproducibility tests on published and newly developed simulation models in Python and R.
     \end{abstract}
 \end{shaded}
 
+% Add space after abstract
+\vspace{0.5cm}
+
+\section{Introduction to the STARS project}
+
+This protocol is part of the project STARS: ”Sharing Tools and Artefacts for Reusable Simulations in healthcare”. The aim of STARS is to...
+
+\textbf{TO DO:} Write this section. Mention the aim, and refer to the key papers/pilot work, and then how that relates to this protocol (to set the scene). Keep it brief.
+
+\autocite{monks_towards_2024}
+
 \section{Selection of simulation models}
 
-\textbf{TO DO:} Describe selection of models for WP1, because we want to be transparent about how choosing the models to reproduce. For WP3, just mention current plans roughly.
+This protocol will be used within two work packages on STARS:
+\begin{itemize}
+    \item Work package 1 - to reproduce six published discrete event simulation models by external authors
+    \item Work package 3 - to reproduce two simulation models produced by/in collaboration with members of the STARS team
+\end{itemize}
 
-\textbf{Rough notes:} Six published discrete-event simulation studies. These will be selected from the N studies with available code identified in the systematic scoping review conducted by Monks and Harper (REF). The studies will require an open license (will inequire to authors) and want balance of python and R. Two new models developed within/with support from the team, and with a team member acting as a holdout to conduct the reproducibility test.
+\textbf{TO DO:} Remove mention of work packages, and just focus on the work being done (as work packages just relevant to us, not external) as that would make this clearer
+
+For work package 1, the six models will be chosen from those identified by Monks and Harper 2023\autocite{monks_computer_2023} in their paper "Computer model and code sharing practices in healthcare discrete-event simulation: a systematic scoping review". Their review of discrete-event simulation models in healthcare identified 47 studies citing an openly available model that was used to generate their results. When selecting six of these models, we have two criteria: (i) The study has an open license (either already published, or added upon request from the STARS team), and (ii) That a balance of Python and R models are chosen.
+
+For work package 3, the models will be developed within or with support from the STARS team, with a team member acting as a holdout to conduct the reproducibility test.
 
 \section{Reproduction of simulation models}
 
 The protocol for the reproduction of simulation models is primarily adapted from:
 \begin{itemize}
-    \item Krafczyk et al. 2021 - Learning from reproducing computational results: introducing three principles and the Reproduction Package\cite{krafczyk_learning_2021}
-    \item Wood et al. 2017 - Replication protocol for push button replication\cite{wood_replication_2018}
+    \item Krafczyk et al. 2021 - "Learning from reproducing computational results: introducing three principles and the Reproduction Package"\autocite{krafczyk_learning_2021}
+    \item Wood et al. 2017 - "Replication protocol for push button replication"\autocite{wood_replication_2018} - as from their paper: "Push button replication: Is impact evaluation evidence for international development verifiable?"\autocite{wood_push_2018}
 \end{itemize}
 
 \textbf{TO DO:} Write this section
+
+Rough notes from Tom (Krafczyk):
+
+Maximum 40 hours
+
+1. Break tables and figures in a DES paper into a set of experiments. --> \textbf{DEFINE what is included using Wood}
+2. Survey the model code and data provided with the publication. 
+3. Modify and write code to run computational experiments. --> \textbf{refine this using Wood}
+4. Automate computational experiments and visualizations. --> \textbf{further details from Krafczyk and Wood}
+5. Restructure each step into a reproducible software package.
+6. Track issues, barriers, and enablers to reuse and reproduction. --> \textbf{under record keeping}
+7. Produce a plot reporting the percentage of experiments reproduced versus time. --> \textbf{under reporting, as this is just one figure that covers all of the paper}
+
+To further support reproducibility, we will adopt a clear definition of replication success for a stochastic model using McManus et al (2021). We will investigate if conclusions remain the same allowing for multiple percent deviations from those reported (e.g 5, 10, 20 percent). --> \textbf{appraise this suggestion - this is more for papers where they are trying to get key figures - can have different rules for different types of output, as in examples in my notes}
+
+We will adopt the same approach to measuring time (i.e. what activities are included and excluded) as used in Krafczyk et al (2021). --> \textbf{refine this using Wood}
+
+\section{Reproduction packages}
+
+\textbf{TO DO:} Write this section
+
+Look at:
+
+Krafczyk reproduction package
+
+ACM RCR replication package
+
+
+\section{Record keeping}
+
+\textbf{TO DO:} Write this section
+
+Rough notes: TRACE modelling notebook (cav: designed for making models and then translating to TRACE reporting), STRESS reporting guidelines
+
+TRACE:
+
+TOC - chronological notebook entires with tags linked to TRACE elements/modelling tasks - can do this using Quarto blog
+
+TRACE suggested tags:
+* Model purpose; Research questions --> Problem formulation
+* Model development; Design decisions --> Model description
+* Parameterization; Patterns --> Data evaluation
+* Conceptual design decisions --> Conceptual model evaluation
+* Debugging; Software verification/Testing; Usability tools design --> Implementation verification
+* Output verification/Goodness-of-fit; Calibration; Tests on environmental drivers --> Model output verification
+* Sensitivity analysis; Uncertainty analysis; Robustness analysis; Simulation experiment --> Model analysis and application
+* Output corroboration/Validation --> Model output corroboration
+
+STRESS:
+
+\section{Badges}
+
+\textbf{TO DO:} Write this section.
+
+\textbf{TO DO:} Explain context of both badging systems, differences between them. Use Winter et al. 2022 to support.
+
+Rough notes from Tom
+
+We will map the results to one or more artifact badges. We will employ two badge systems:
+ACM badges for artifacts available, evaluated-functional, evaluated-reusable, and results-reproduced; and
+The harmonized artifact badges proposed by the National Information Standards Organization (NISO).
+
+ACM RCR Version 1.1
+
+\includegraphics[width=3cm]{images/artifacts_evaluated_functional_v1_1.png}
+\includegraphics[width=3cm]{images/artifacts_evaluated_reusable_v1_1.png}
+\includegraphics[width=3cm]{images/artifacts_available_v1_1.png}
+\includegraphics[width=3cm]{images/results_reproduced_v1_1.png}
+
+Not results replicated (as that is independently getting same results without using author-supplied artifacts)
+
+https://www.acm.org/publications/policies/artifact-review-and-badging-current
+
+NISO
+
+https://www.niso.org/publications/rp-31-2021-badging
+
+https://doi.org/10.3789/niso-rp-31-2021
+
+\url{https://groups.niso.org/higherlogic/ws/public/download/24810/RP-31-2021_Reproducibility_Badging_and_Definitions.pdf}
+
+
+\section{Reporting guidelines}
+
+Rough notes from Tom
+
+Following the reproducibility test, we will assess the extent to which each paper follows the items recommended in:
+The STRESS-DES reporting guidelines
+The recent DES reporting guidelines published in Value in Health and based on ISPOR-SDM task force reports (Zhang et al, 2020)
+We will score items as fully, partially, or not meeting the requirements.
+
+\section{Reproduction test reports}
+
+\textbf{TO DO:} Write this section. Need to reflect on whether it can consistute an RCR review or not. And what we want to do with it, or if just archived, or if plan to write up in some way or another.
+
+Tom: Finally, we will map data from our best practice review, reporting guidelines adherence, and our tracked test data to success in badge allocation and the proportion of experiments reproduced.
+
+\section{Versioning and Archiving}
+
+This reproduction work will be made openly available throughout the project using GitHub. It will also be archived in Zenodo upon completion.
+
+\textbf{TO DO:} Is there any exception here with the NHS Somerset work, in terms of how will work?
+
+This protocol itself will also be archived as a pre-registration. Haroz 2022 identifies the Open Science Framework (OSF, \url{https://osf.io/}) and Zenodo (\url{https://zenodo.org/}) as suitable platforms for pre-registration.\autocite{haroz_comparison_2022} In this case, Zenodo will be used as this is where other materials already exist for the STARS project, and so it can be stored alongside them in a Zenodo "community".
+
+\textbf{TO DO:} Maybe remove this section, and just mention abut GitHub and Zenodo above in record keeping and reports, and don't need to mention Haroz?
+
+Rough notes from Tom:
+
+Will use GitHub + Zenodo (automated via GitHub actions)
+Will containerise with Docker or similar (again, automated via GitHub actions)
+Will share via GitHub pages
+MIT and CC-BY-4.0 licenses
+Online book will describe how to reuse, adapt and reshare our outputs
