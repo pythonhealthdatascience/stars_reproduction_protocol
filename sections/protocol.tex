@@ -1,13 +1,3 @@
-% Create abstract in a shaded box
-\begin{shaded}
-    \begin{abstract}
-        This protocol outlines how we plan to reuse available artifacts to reproduce results from published simulation studies. This forms part of the project STARS: "Sharing Tools and Artefacts for Reusable Simulations in healthcare". It will be utilised to conduct reproducibility tests on published and newly developed simulation models in Python and R.
-    \end{abstract}
-\end{shaded}
-
-% Add space after abstract
-\vspace{0.5cm}
-
 \section{Introduction to the STARS project}
 
 This protocol is part of the project STARS: ”Sharing Tools and Artefacts for Reusable Simulations in healthcare”. The aim of STARS is to...
@@ -32,13 +22,83 @@ For work package 3, the models will be developed within or with support from the
 
 \section{Reproduction of simulation models}
 
+\textbf{Read article...}
+
+Download article and all supplementary and put in folder on GitHub that don't touch
+
+FOCUS ON METHODS and just about recording key details TBH: write summary of what the model is: (a) model creation (packages, software, versions) (b) model flow/diagram (if provided or create) (c) mentioned data used (d) citation to authors
+
+FOCUS ON RESULTS: Define scope of reproduction. This should be:
+* All tables and figures within the manuscript that contain results
+* Any other key results in the paper (e.g. mentioned abstract, prominent in results)
+This must be done before commence any reproduction. Should archive this publicly so can't backtrack on it. Can think about whether this is a one or two person decision (could be a review point)
+
+\textbf{Look at code and data...} 
+
+(does any of this need to be done beforehand to ascertain whether we have anything here? or is that in the selection step?)
+
+Download all there stuff and put in a folder on GitHub that don't touch.
+Also make a second copy - that's where I will work on it and edit it.
+
+Create a tree for their repository
+
+Then a structured way of looking through it...
+* Make a table recording all data files (name, location, one-sentence summary of what it is)
+* Make a table recording all code files (name, location, one-sentence summary of what it does)
+
+Then try and identify which sections of the code will produce your things from your scope
+
+\textbf{Environment...}
+
+Set up environment
+* Using provided files
+* If nothing provided, look at what they import and make environment using latest version (unless can spot any obvious reason why wouldn't be latest) - i.e. specify no version and let it all download
+
+\textbf{License...}
+
+Add a license to the repository. Needs to be compatabile with:
+* The license the author used
+* The license of the packages
+
+If not able to use completely permissive license, add note explaining why (e.g. if built in RSimmer, will need to be GPL)
+
+\textbf{Run code}
+Try to run the code to produce the items from your scope.
+Make it obvious where each item in the scope comes from (perhaps using Rmd/ipynb, perhaps with comments in the files that create it then Rmd to present, or something like that). If possible to do it all in a notebook that's nice as then you have code and stuff all in one place... but guessing might not always be practical...
+\textbf{Consider:} Some people convert this into reproducibility package when they try and run it, and end up with the result being a Makefile that runs and produces everything. Do we do that now? Or do we save that for the reproduction package stage, and here, just focus on trying to get it to run and not reworking stuff too much? I think so.
+
+\textbf{Encountering errors...}
+Try to resolve errors, able to edit code or make changes freely to try and solve.
+It get really stuck, contact authors. Follow the ACRE language guidance (download that with protocol, put in supplemnentary or something, will full citation and their license)
+
+\textbf{Time...}
+\textbf{Consider:} Whether have fixed time, or whether it's more subjective of keep going until just get stuck.
+More common not to have fixed time, but to have a stopping point that you decide upon. But also could. Not sure.
+
+\textbf{Defining replication success...}
+Success should be defined for each item in the scope
+
+For figures: eyeball it, is it similar, if not what are differences, categories like in that example of categories
+For numbers (standalone or in tables): perhaps some sort of threshold
+
+Then, look at recommendations on how to decide on overall class of a figure or table (as it could be all good except one thing)
+
+Then, how to define it overall for the paper
+
+\textbf{Keeping a log...}
+Keep a daily log of work. Very detailed. Open access.
+
+\textbf{Number of researchers...}
+One person does it. Not sure if we want any further people involvement - either full repro, or dedicated check in stages, or more informal. Think the main one is getting agreement on scope.
+
+
+\subsection{old notes}
+
 The protocol for the reproduction of simulation models is primarily adapted from:
 \begin{itemize}
     \item Krafczyk et al. 2021 - "Learning from reproducing computational results: introducing three principles and the Reproduction Package"\autocite{krafczyk_learning_2021}
     \item Wood et al. 2017 - "Replication protocol for push button replication"\autocite{wood_replication_2018} - as from their paper: "Push button replication: Is impact evaluation evidence for international development verifiable?"\autocite{wood_push_2018}
 \end{itemize}
-
-\textbf{TO DO:} Write this section
 
 Rough notes from Tom (Krafczyk):
 
@@ -91,36 +151,22 @@ STRESS:
 
 \section{Badges}
 
-\textbf{TO DO:} Write this section.
+\textbf{TO DO:} Write this section, reference to appendices
 
-\textbf{TO DO:} Explain context of both badging systems, differences between them. Use Winter et al. 2022 to support.
+\textbf{TO DO:} Compare criteria of badges? Might all be like kind of the same (e.g. open objects). If so, don't really need to choose between them, could just say meet all.
 
-Rough notes from Tom
+Table divides into five categories
 
-We will map the results to one or more artifact badges. We will employ two badge systems:
-ACM badges for artifacts available, evaluated-functional, evaluated-reusable, and results-reproduced; and
-The harmonized artifact badges proposed by the National Information Standards Organization (NISO).
+Not relevant: pre-registration, replicated
 
-ACM RCR Version 1.1
+Relevant: open objects, object review, reproduced - and hence, relevant badges to evaluate against could be:
 
-\includegraphics[width=3cm]{images/artifacts_evaluated_functional_v1_1.png}
-\includegraphics[width=3cm]{images/artifacts_evaluated_reusable_v1_1.png}
-\includegraphics[width=3cm]{images/artifacts_available_v1_1.png}
-\includegraphics[width=3cm]{images/results_reproduced_v1_1.png}
+\textbullet\ NISO "Open Research Objects (ORO)"\newline \textbullet\ ACM "Artifacts Available"\newline \textbullet\ COS "Open Data" and "Open Materials"\newline \textbullet\ IEEE "Code Available" and "Datasets Available"\newline \textbullet\ Springer Nature "Badge for Open Data"
 
-Not results replicated (as that is independently getting same results without using author-supplied artifacts)
+\textbullet\ NISO "Research Objects Reviewed (ROR)"\newline \textbullet\ ACM "Artifacts Evaluated"\newline \textbullet\ IEEE "Code Reviewed" and "Datasets Reviewed"
 
-https://www.acm.org/publications/policies/artifact-review-and-badging-current
-
-NISO
-
-https://www.niso.org/publications/rp-31-2021-badging
-
-https://doi.org/10.3789/niso-rp-31-2021
-
-\url{https://groups.niso.org/higherlogic/ws/public/download/24810/RP-31-2021_Reproducibility_Badging_and_Definitions.pdf}
-
-
+\textbullet\ NISO "Results Reproduced (ROR-R)" \newline \textbullet\ IEEE "Code Reproducible" and "Dataset Reproducible" \newline \textbullet\ Psychological Science "Computational Reproducibility"
+            
 \section{Reporting guidelines}
 
 Rough notes from Tom

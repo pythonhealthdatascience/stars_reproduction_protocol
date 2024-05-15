@@ -1,0 +1,122 @@
+\section{Appendix: Badges}
+
+\subsection{Current reproducibility badges}
+
+A badge is an that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artifacts are. These are summarised in Table \ref{table:badges}, with definitions based on those from the "Reproducibility Badging and Definitions" report by the National Information Standards Organisation (NISO).\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+
+% "H" prevents repositioning, using float
+\begin{table}[H]
+\centering
+\caption{Summary of reproducibility badging systems, as described in the NISO report.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:badges}
+% Minimum column width
+\tymin=2cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    % Create table with 3 left-aligned multi-line columns, dynamically sized
+    \begin{tabulary}{\linewidth}{@{}LLL@{}}
+          \toprule
+          Category & Definition & Badges \\
+          \midrule
+          \textbf{Pre-registration} &
+            - &
+            \textbullet\ COS "Pregistered"
+            \\\addlinespace
+          \textbf{Open objects} &
+            Digital objects (data, code) permanently archived in public repository with persistent identifier and open license  &
+            \textbullet\ NISO "Open Research Objects (ORO)"\newline \textbullet\ ACM "Artifacts Available"\newline \textbullet\ COS "Open Data" and "Open Materials"\newline \textbullet\ IEEE "Code Available" and "Datasets Available"\newline \textbullet\ Springer Nature "Badge for Open Data"
+            \\\addlinespace
+          \textbf{Object review} &
+            Digital objects (data, code) reviewed according to criteria of badge issuer &
+            \textbullet\ NISO "Research Objects Reviewed (ROR)"\newline \textbullet\ ACM "Artifacts Evaluated"\newline \textbullet\ IEEE "Code Reviewed" and "Datasets Reviewed"
+            \\\addlinespace
+          \textbf{Reproduced} &
+            Independent party regenerated results using author objects &
+            \textbullet\ NISO "Results Reproduced (ROR-R)" \newline \textbullet\ IEEE "Code Reproducible" and "Dataset Reproducible" \newline \textbullet\ Psychological Science "Computational Reproducibility"
+            \\\addlinespace
+          \textbf{Replicated} & 
+            Independent study on same question finds consistent results (potentially with new artifacts and methods) &
+            \textbullet\ NISO "Results Replicated (RER)" \newline \textbullet\ IEEE "Code Replicated" and "Dataset Replicated"
+          \\\bottomrule
+    \end{tabulary}
+}
+\end{table}
+
+\subsubsection{National Information Standards Organisation (NISO)}
+
+NISO is a US organisation that publishes technical standards for information management. One of their less formal standards if a "recommended practice"  report which suggests best practice - in this case, for "Reproducibility Badging and Definitions". The working group for the report included members from several different institutions including institutions, journals, and archives - includes those who have produced the other badges mentioned in Table \ref{table:badges}. They propose that these standards are universally deployed across scholarly publishing output.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+
+Rough notes:
+\begin{itemize}
+    \item These badges are not specific to a particular publisher.
+    \item Not sure how they are awarded - this example is a conference that established badges using the NISO definitions that they themselves awarded - \url{https://sc21.supercomputing.org/submit/reproducibility-initiative/ad-ae-appendix-process-badges/index.html}
+    \item They do not yet have images.
+    \item Last project update appears to be June 2022 - \url{https://www.niso.org/standards-committees/reproducibility-badging} - although it is described as an active committee
+\end{itemize}
+
+\textbf{TO DO:} Finish write up, and understand whether and how we use these badges, and if it would require us "making" a definition or if NISO is specific enough.
+
+\subsubsection{Association for Computing Machinery (ACM)}
+
+\textbf{TO DO:} Write this section.
+
+https://www.acm.org/publications/policies/artifact-review-and-badging-current
+
+ACM RCR Version 1.1
+
+Replicated Computational Results (RCR)
+
+Not results replicated (as that is independently getting same results without using author-supplied artifacts)
+
+What journals?
+
+\includegraphics[width=3cm]{images/artifacts_evaluated_functional_v1_1.png}
+\includegraphics[width=3cm]{images/artifacts_evaluated_reusable_v1_1.png}
+\includegraphics[width=3cm]{images/artifacts_available_v1_1.png}
+\includegraphics[width=3cm]{images/results_reproduced_v1_1.png}
+
+\subsubsection{Institute of Electrical and Electronics Engineers (IEEE)}
+
+\textbf{TO DO:} Write this section.
+
+IEEE Explore contains content published by IEEE and its partners. Code and datasets can be awarded four types of badge:
+
+Code/Dataset Available
+
+Code/Dataset Reviewed
+
+Code/Dataset Reproducible
+
+Code/Dataset Replicated
+
+https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content
+
+What journals?
+
+\subsubsection{Center for Open Science (COS)}
+
+\textbf{TO DO:} Write this section.
+
+\subsubsection{Springer Nature}
+
+\textbf{TO DO:} Write this section.
+
+\subsubsection{Psychological Science}
+
+In 2013, the Psychological Science journal began using the COS badges for pre-registration, open data and open materials. However, studies that have demonstrated the gaps in these badges - that open data doesn't guarantee reproducibility (with three studies struggling to reproduce articles from the journal), and also that pre-registrations can lack detail and that deviations from the plan may not be disclosed. Following these findings, they have introduced several changes:
+
+\begin{itemize}
+    \item \textbf{Changing COS badges into requirements:} Data and materials must be publicly available in a trusted repository
+    \item \textbf{Clear documentation:} Required (e.g. README, data dictionary) along with ideally open licenses
+    \item \textbf{STAR checks:} Team of Statistics, Transparency, and Rigor (STAR) editors to:
+    \begin{enumerate}
+        \item Assist editors ad-hoc
+        \item Perform transparency checks on all manuscript (lightly before peer-review, in-depth after)
+        \item Adjudicate on provision of \textbf{Computational Reproducibility badge}
+        \item Conduct random computational reproducibility checks
+    \end{enumerate}
+    \item \textbf{Collaboration with Institute for Replication (I4R):} I4R \url{https://i4replication.org/} are allowing submission of articles from this journal to them. Verifiers from I4R will write a verification report which is publicly shared, and included in co-authorship on meta-paper that includes the verifications.
+\end{itemize}

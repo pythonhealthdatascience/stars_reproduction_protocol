@@ -7,6 +7,14 @@
 \usepackage{orcidlink} % Insert ORCID links
 \usepackage{abstract} % Customise abstract
 \usepackage{hyperref} % To add URLs
+\usepackage{geometry} % Tables
+\usepackage{booktabs} % Tables (styling)
+\usepackage{tabulary,lipsum} % Tables (e.g. J/C/L/R column types)
+\usepackage{float} % Tables (prevent repositioning)
+\usepackage{glossaries} % Glossary
+
+% Activate
+\makeglossaries
 
 % References using biblatex
 \usepackage[
@@ -40,16 +48,20 @@
 
 \begin{document}
 
-% Generate title page using provided info
+% Title page and TOC
 \include{sections/title}
-\maketitle
 
-% Input without creating new page
-\input{sections/protocol}
-% \input{sections/glossary}
+% Glossary
+% \include{sections/glossary}
 
-%\bibliographystyle{plainnat}
-%\bibliography{references}
-\printbibliography
+% Main body of protocol
+\include{sections/protocol}
+
+% Sections after this point are Appendices
+\appendix
+\include{sections/badges}
+
+% Print bibliography and include in table of contents
+\printbibliography[heading=bibintoc]
 
 \end{document}
