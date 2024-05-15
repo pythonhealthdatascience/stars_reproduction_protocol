@@ -12,6 +12,8 @@
 \usepackage{tabulary,lipsum} % Tables (e.g. J/C/L/R column types)
 \usepackage{float} % Tables (prevent repositioning)
 \usepackage{glossaries} % Glossary
+\usepackage{enumitem} % Use alternatives to 123 in ordered list
+\usepackage{forest} % To create directory tree
 
 % Activate
 \makeglossaries
@@ -57,11 +59,12 @@
 % Main body of protocol
 \include{sections/protocol}
 
+% Print bibliography and include in table of contents
+\printbibliography[heading=bibintoc]
+
 % Sections after this point are Appendices
 \appendix
 \include{sections/badges}
-
-% Print bibliography and include in table of contents
-\printbibliography[heading=bibintoc]
+\include{sections/acre_constructive_communication}
 
 \end{document}
