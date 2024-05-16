@@ -14,6 +14,12 @@
 \usepackage{glossaries} % Glossary
 \usepackage{enumitem} % Use alternatives to 123 in ordered list
 \usepackage{forest} % To create directory tree
+\usepackage{xcolor} % For highlights and shading
+\usepackage{soul} % For highlights
+\usepackage{framed} % To make shaded abstract
+
+% Change font
+\usepackage{cmbright}
 
 % Activate
 \makeglossaries
@@ -25,12 +31,17 @@
 ]{biblatex}
 \bibliography{references}
 
+% Set depth of table of contents
+\setcounter{tocdepth}{2}
+
+% Blue highlight
+\definecolor{highlightblue}{RGB}{173,216,230}
+\DeclareRobustCommand{\hlblue}[1]{{\sethlcolor{highlightblue}\hl{#1}}}
+
 % Create shaded abstract
 % ---------------------------------------------------
 % Credit to JamesT (https://tex.stackexchange.com/questions/675419/text-is-not-centered-with-colorbox)
-\usepackage{xcolor}
 \definecolor{acsyellow}{RGB}{255,241,204}
-\usepackage{framed} 
 \colorlet{shadecolor}{acsyellow}
 \renewenvironment{abstract} 
      {
@@ -44,9 +55,6 @@
  {\endlist}
 \setlength{\parindent}{0mm} 
 % ---------------------------------------------------
-
-% Change font
-\usepackage{cmbright}
 
 \begin{document}
 
@@ -65,6 +73,8 @@
 % Sections after this point are Appendices
 \appendix
 \include{sections/badges}
-\include{sections/acre_constructive_communication}
+
+% Not currently included - would necessitate CC-BY NC license likewise - but mainly just as it's more of a reference to elsewhere so not sure if relevant to include in full
+% \include{sections/acre_constructive_communication}
 
 \end{document}

@@ -4,7 +4,9 @@ This protocol is part of the project STARS: ”Sharing Tools and Artefacts for R
 
 \textbf{TO DO:} Write this section. Mention the aim, and refer to the key papers/pilot work, and then how that relates to this protocol (to set the scene). Keep it brief.
 
-\autocite{monks_towards_2024}
+\textbf{Status as of submission:} X (name) selected Shoaib and Ramamohan 2021\autocite{shoaib_simulation_2022} as one of the six studies, and emailed to ask for open license, which they have added to repository.
+
+towards stars paper\autocite{monks_towards_2024}
 
 \section{Selection of simulation models}
 
@@ -38,11 +40,15 @@ The protocol for the reproduction of simulation models is adapted from several s
 
 \subsection{Who does what}
 
-\textbf{Rough notes:} One person responsible. They do everything below. Exception: Also involve other people for defining scope. Perhaps just needs one other person. They just have to do tasks of read article, and define scope. The two people do this independently, then come together to discuss, and choose consensus on scope. \textbf{TO DO:} Discuss this with project team, and whether they feel it is necessary
+\hlblue{\textbf{Grant:} One. \textbf{Suggestion:} One, but with two for scoping.}
+
+\textbf{Rough notes:} One person responsible. They do everything below. Exception: Also involve other people for defining scope. Perhaps just needs one other person. They just have to do tasks of read article, and define scope. The two people do this independently, then come together to discuss, and choose consensus on scope. \hl{\textbf{TO DO:} Discuss this with project team, and whether they feel it is necessary}
 
 Need to record who does what in the records for it.
 
 \subsection{Reading the article}
+
+\hlblue{\textbf{Grant:} All tables and figures \textbf{Suggestion:} Mention saving doc/record key details. All with results in manuscript plus any key results (i.e. mentioned in abstract, potentially prominent in results)}
 
 Download article and all supplementary and put in folder on GitHub that don't touch. Include appropriate citation and license in repository, based on article (e.g. if they MIT, then can do MIT. If they GPL, then GPL, etc.)
 
@@ -58,6 +64,7 @@ Write this properly, base on and cite:
 \begin{itemize}
     \item "PBR researchers select the key result and write a brief justification for why these are the main results highlighted in the paper. The result selected should have been presented as key by the authors, by, for example, being highlighted in the abstract, introduction, or conclusion.", "PBR studies should include all tables and any programme-generated figures included in the published paper. Researchers do not need to reproduce tables in the appendix." - from protocol\autocite{wood_replication_2018} of paper\autocite{wood_push_2018}
     \item ACRE - "define the scope of the reproduction by identifying the scientific claims and related display items that you will analyze in the remainder of the reproduction. For this exercise, we follow the a comparable definition of a claim as used in the SCORE project, a related initiative aimed at predicting replicability and reproducibility of research: “A research claim is a single major finding from a published study, as well as details of the methods and results that support this finding. A research claim [may not be] equivalent to an entire article. Sometimes the claim as described in the abstract does not exactly match the claim that is tested. In this case, you should consider the research claim to be that which is described in the [results of the paper]”" \cite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
+    \item Obels et al. 2020 - don't need figures to reproduce. Identified main results (i.e. any reported descriptive statistics and statistical tests) based on research question highlighted in title and abstract. Some arbritrary judgements required when decided which analyses were part of main results.\autocite{obels_analysis_2020}
 \end{itemize}
 
 Do you produce the entire table and figure, or particular results from it? ACRE suggest it's individual within them. E.g. Figure - "record a number approximated from visual inspection of particular point in figure". I'm not sure about that approach, and presume we are thinking a bit more holistically about it.
@@ -78,9 +85,15 @@ Write this properly, base on and cite:
     \item Data used
 \end{itemize}
 
+\textit{Perhaps make this a bit less prescriptive.}
+
 \subsection{Look at code and data} 
 
+\hlblue{\textbf{Grant:} NA \textbf{Suggestion:} Structured record of code and data (so instead of just looking over code, go through and record there are these scripts and these files doing these things)}
+
 \textbf{To consider:} Do we fork their code repository or do we fork our template for working on reproducibility? Presuming latter as may not necessarily be on to fork?
+
+\textbf{To consider:} Just one description of everything (e.g. less prescribed, and just make a tree, and describe each component in one sentence)
 
 Prior to working on this, in selection stage, will have checked at a glance whether there is code and stuff available for the model, that looks likely to be feasible, but not in any detail. Now start looking in more detail.
 
@@ -105,6 +118,8 @@ Write this properly, base on and cite:
 \end{itemize}
 
 \subsection{Set up environment}
+
+\hlblue{\textbf{Grant:} NA \textbf{Suggestion:} As yet unsure - exploring best options}
 
 \textbf{Identifying requirements:}
 
@@ -132,7 +147,7 @@ One suggestion is to install packages and their dependencies at a point in time 
 
 Another suggestion is to match operating system to developer. Again, not all solutions below guarantee this. This will also be relevant later if want to test reproduction package on different operating systems.
 
-\textbf{TO DO:} Evaluate these options. Consider whether they control OS. Consider whether they control date.
+\hl{\textbf{TO consider:} Evaluate these options. Consider whether they control OS. Consider whether they control date. But also - whether we want that. How casual vs. standardised on this we want to be.}
 
 Python -
 \begin{itemize}
@@ -153,30 +168,46 @@ R -
 
 Update license if need to based on packages used for model. Put the Python and R instructions here on how to check that. License needs to be compatabile with authors paper AND with packages. If not able to use completely permissive license, add note explaining why (e.g. if built in RSimmer, will need to be GPL). Explain decision of license in README, and license file itself is located in the repository.
 
+Finding package license in Python: https://pypi.org/project/pip-licenses/
+
+Finding package license in R: https://stackoverflow.com/questions/17508822/r-function-to-return-the-license-of-a-package 
+
 \subsection{Run code}
 
-Try to run the code to produce the items from your scope.
-Make it obvious where each item in the scope comes from (perhaps using Rmd/ipynb, perhaps with comments in the files that create it then Rmd to present, or something like that). If possible to do it all in a notebook that's nice as then you have code and stuff all in one place... but guessing might not always be practical...
+\hlblue{\textbf{Grant:} Run and write code; automate experiments;  \textbf{Suggestion:} No changes - just considering how formally/structured-ly to automate experiements}
 
-\textbf{Consider:} Some people convert this into reproducibility package when they try and run it, and end up with the result being a Makefile that runs and produces everything. Do we do that now? Or do we save that for the reproduction package stage, and here, just focus on trying to get it to run and not reworking stuff too much? I think so.
+Try to run the code to produce the items from your scope.
+
+Troubleshoot and compare against manuscript and define success as below.
+
+Once successful/finished working on reproduction, ensure have a single script/command that can run to produce all the experiments in scope.
+
+Could use Rmd/ipynb.
+
+Could use Makefile.
 
 Write this properly, base on and cite:
 \begin{itemize}
     \item "Write scripts to run computational experiments and visualisation to produce figures and tables that matched or closely approximated those from original article" (part of 40h)\autocite{krafczyk_learning_2021}
+    \item Look over sources relating to reproduction package, focussing just on the automation of experiments element, and how they set up (e.g. Makefile).
 \end{itemize}
 
-Want to basically:
-1. Run code, troubleshooting issues, and produce stuff from scope, and make sure it is clear where this is being produced (e.g. comments in code, or ipynb/Rmd with clear sections for each thing)
-2. Compare against manuscript (using guidance below)... iterative (if notice differences, troublehsoot, etc).
-3. Once done troubleshooting, select classification for each item in scope, and then overall for the paper, regarding reproduction success.
-
 \subsection{Troubleshooting}
+
+\hlblue{\textbf{Grant:} Modify and write code to run experiments \textbf{Suggestion:} Procedure to follow for troubleshooting (i.e. articulating how much can change code, and whether to contact authors)}
 
 If the code does not run or is not producing the desired outcomes, researchers should attempt to troubleshoot. Examples of tasks:
 \begin{itemize}
     \item Correct paths to files
     \item Correct versions of software, or missing packages/libraries
     \item Fixing errors in the code
+\end{itemize}
+
+As in Baykova et al. 2024's checklist,\autocite{baykova_ensuring_2024} anticipated potential reasons for discrepancies include:
+\begin{itemize}
+    \item Use of random numbers but random seed unknown
+    \item Rounded values
+    \item Altered appearance of figures
 \end{itemize}
 
 If results obtained are incomplete or if it is not possible to run the code, after troubleshooting attempts, the research should contact the original author. This email should:
@@ -190,7 +221,7 @@ If no response in 2 weeks, try again. If no response in 4 weeks, can mark as no 
 
 When emailing authors, follow the guidance on language and adapt from the email templates provided by the "Guide for Accelerating Computational Reproducibility in the Social Sciences",\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} as in Appendix \ref{appendix:acre}.
 
-\textbf{To consider:} Laurinavichyute et al. 2022 did not contact authors, since they consider reproducibility to be only about the available data and procedures and not anything shared privately.\autocite{laurinavichyute_share_2022}
+\hl{\textbf{To consider:} Laurinavichyute et al. 2022 did not contact authors, since they consider reproducibility to be only about the available data and procedures and not anything shared privately.}\autocite{laurinavichyute_share_2022}
 
 If there is missing code with no response from authors, then can attempt to reproduce the figure based on paper by writing own code. \textbf{To Consider:} Do we allow this? Most don't, ACRE and Krafczyk do.
 
@@ -205,7 +236,9 @@ Write this properly, base on and cite:
 
 \subsection{Time allowed}
 
-\textbf{TO DO:} Discuss appropriate time allowance with team.
+\hlblue{\textbf{Grant:} 40h \textbf{Suggestion:} Potentially sticking with 40h, but consider how others did it. What do we want to learn from timing? Are we interested in time taken for every tasks or specific tasks or overall. If we want Krafczyk's figure (which is nice) it requires a more binary definition of reproduction success for each experiment.}
+
+\hl{\textbf{To consider:} Appropriate time allowance with team.}
 
 Whether have fixed time, or whether it's more subjective of keep going until just get stuck.
 * More common not to have fixed time
@@ -231,14 +264,18 @@ Krafczyk present time taken to produce each table/figure. Consider approach to t
 * Not just tables and figures - "key results" - which could be a table/figure from appendices, but could also be specific figures from the text.
 * A study with more figures and tables will take longer (which is not presented in that figure as its percentage of them done)
 
-Need to consider:
+\hl{Need to consider:
 * Why we want to record time taken to produce stuff... what we hope to learn... etc Is it just time for the tables and figures? Or is it more about time taken on particular tasks? Or if table and figures, does it start when you start trying to run? etc.
 * Why we want to limit overall time
-To help guide choice here.
+To help guide choice here.}
 
 \subsection{Defining reproduction success...}
 
 Success should be defined for each item in the scope.
+
+\hlblue{\textbf{Grant:} Do conclusions remain if 5, 10, 20\% threshold for difference in values. \textbf{Suggestion:} Not considering whether conclusions remain (as not focussing on that on principle), potentially guidance on looking at extent of difference like \% levels but maybe subjective (as Wood), having standardised way of describing level of reproduction for table/figure/text results, and then for bringing that together to describe overall for paper. Considering options below.}
+
+\hl{To consider: How define success}
 
 \subsubsection{Detailed comparison of numbers, figures and tables against the manuscript...}
 
@@ -251,17 +288,12 @@ Success should be defined for each item in the scope.
 \textbf{Numbers from text or tables:} The numbers and tables from the manuscript should be stored in the programming environment, either through defining the numbers in the script or by importing CSV files of the tables. These can then be directly compared against the numbers and tables produced by the script.
 
 \begin{itemize}
+    \item If binary, can do figure like Krafcyzk.
+    \item McManus et al. 2019 - identifical results; result varies by x\%; results vary by x\% and are consistent with original conclusion; figures produced to reasonable degree of success;\autocite{mcmanus_can_2019} - \textit{\textbf{not suitable.}not applicable to tables or figures (unless average percentage), require thinking about whether conclusions hold (which we are not assessing)}
     \item Schwander et al. 2021 - use mcmanus, looking for variation of 5\%, 10\% and 20\%\autocite{schwander_replication_2021} \textit{\textbf{potentially suitable}}
     \item Wood et al. 2017 - guidance for stat significance (not relevant for simulation); for parameters and coefficients they considered decision rule but then recognised meaningfulness of size of parameters varies across studies which precludes them from making single rule and so instruct research to use judgement but carefully document decisions. "the definition of what is a major/minor difference will be based on PBR researcher’sjudgment. If available, the researcher should use summary statistics, like mean values, as referenceswhenassessing the level of difference between the original publication and the PBR results". Suggests colour coding tables to indicate differences\autocite{wood_push_2018, wood_replication_2018} \textit{\textbf{good}, probably wouldn't colour code tables though}
-    \item Hardwicke et al. 2021 \autocite{hardwicke_analytic_2021, hardwicke_pre-registered_2017}
-\end{itemize}
-
-\subsubsection{Labelling level of reproduction achieved for a given number/section, figure or table}
-
-If binary, can do figure like Krafcyzk.
-
-\begin{itemize}
-    \item McManus et al. 2019 - identifical results; result varies by x\%; results vary by x\% and are consistent with original conclusion; figures produced to reasonable degree of success;\autocite{mcmanus_can_2019} - \textit{\textbf{not suitable.}not applicable to tables or figures (unless average percentage), require thinking about whether conclusions hold (which we are not assessing)}
+    \item Hardwicke et al. 2021 - percentage error which was minor (0 to less than 10\%) or major (10\% or more) and decision error if changed p value around threshold\autocite{hardwicke_analytic_2021, hardwicke_pre-registered_2017}
+    \item ACRE - focus on specific estimates (e.g. particular number from table or derived from figure). For figures, they suggest you still aim to reproduce the whole figure and report any differences at assessment stage.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
 \end{itemize}
 
 \subsubsection{Labelling the overall level of reproduction achieved for the paper (considering all items in scope)}
@@ -271,24 +303,32 @@ Ways of doing this:
     \item Henderson et al. 2024 - all reproduced; at least one reproduced;\autocite{henderson_reproducibility_2024} \textit{\textbf{not suitable}: requires binary decision on reproduction success for each, and not very informative}
     \item McManus et al. 2019 - various suggested definitions (table 2) - adapted examples that are not about a single result:  replicated for some scenarios and not others; same conclusions reached.\autocite{mcmanus_can_2019} \textit{\textbf{not suitable}: ambiguous}
     \item Laurinavichyute et al. 2022 - Strict criteria is that paper reproducible if all analyses could be reproduced exactly (except rounding errors). Relaxed criteria is if there are less than K cases (1, 5, 10, 20) where reproduced value differs by more than 10\% then paper is considered reproduced. Discprenancies smaller than 10\% ignored. K 1 corresponds to a single major discrepancny blocking reproducibility like Hardwicke. The upper threshold corresponds to small experiment being irreproducible - but paper reproducible in broad sense. \autocite{laurinavichyute_share_2022} \textit{\textbf{Relaxed criterion potentially relevant} - would need to consider how deal with figures - as this is focused on numbers - and could require converting figure to numbers or ignoring figures}
+    \item Hardwicke et al. 2021 - "not fully reproducible"  (any major numerical discrepancies, decision errors, or insufficient information to proceed) or ‘reproducible’ (no numerical discrepancies or minor numerical discrepancies only). Recorded potential cause of non-reproducibility and judged likely impact on conclusions. The rating or reproducibility or not also included a comment on whether this was with or without author involvement\autocite{hardwicke_analytic_2021, hardwicke_pre-registered_2017} - \textit{\textbf{Mostly not suitable} as quite binary, but \textbf{commenting on whether it was with/without author involvement} I think is really important to include when making conclusions about paper reproducibility}
     \item Wood et al. 2017 - strongly advise against binary outcome, and instead label as: \textbf{comparable, minor differences, major differences}. "inability to replicate figures is of secondary concern and should be noted in the final report but should not generally influence replication status" \autocite{wood_push_2018, wood_replication_2018} \textit{\textbf{nice} but not sure about ignoring figures}. More detail on their categories:
     \begin{itemize}
-        \item "Comparablereplication:identical results or very small changes(like rounding).
+        \item "Comparable replication:identical results or very small changes(like rounding).
         \item Minor differences: small differences in coefficients and/or p-values.
         \item  Major differences:meaningful differences in reported outcomes (especially in the key results) or the code does not reproduce published results
         \item No access: the original authors do notreply or decline to provide data or code.
         \item Proprietary data: unable to provide data but provided replication code and DSL documentation.
-        \item Incomplete: If PBR researchers are unable to reproduce part of the publication due to missing code and/or data, they will report to the original authors on the PBR study’s status and ask if the authors can provide more data or code to complete the PBR. If the PBR researchers cannot reproduce anytables after communicating with original authors, the paper will have two classifications. The paper will be classified as “incomplete” and in addition the paper will be classified based on the PBR results that were possible to run"
+        \item Incomplete: If PBR researchers are unable to reproduce part of the publication due to missing code and/or data, they will report to the original authors on the PBR study’s status and ask if the authors can provide more data or code to complete the PBR. If the PBR researchers cannot reproduce anytables after communicating with original authors, the paper will have two classifications. The paper will be classified as “incomplete” and in addition the paper will be classified based on the PBR results that were possible to run"\autocite{wood_push_2018, wood_replication_2018}
     \end{itemize}
+    \item ACRE - Recommend against binary judgements of reproducible or not. Paper may contain several scientific claims (or major hypotheses) that may vary in computational reproducibility. Each claim is tested using different methodologies, presenting results in one or more display items (outputs like tables and figures). State that assessments should be made at the level of individual display items—a paper can be highly reproducible for its main results, but its other display items may not be as reproducible. They have several levels - below I have noted relevant ones for us (many not as about raw data) - (2) code available but no data, (3) data and code partially available, but raw data and cleaning code missing, (4) all data and code available but fails to run or produces results inconsistent with paper, (5) all data and code available and produce same results as paper\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} - \textit{Levels not relevant as just ends up being binary, but \textbf{importance of looking per display item} is very relevant, although this suggests no overall claim about paper, but we probably do want to just draw a general conclusion (albeit with diaply item conclusions there also)}
+    \item Baykova et al. 2024 - List which tables/figures reproduced, and which did not. Describe differences.\autocite{baykova_ensuring_2024}
+    \item Obels et al. 2020 - did not intially define clear coding scheme and so coders used different thresholds when decided if the paper was reproducible or not, and despirte setting binary classification, often reported as partial reproducibility. They then set criteria that an article is reproducible if could get the same main results as in the article with at most minor changes to scripts.\autocite{obels_analysis_2020} - \textit{different as it includes level of change required in reproducibility definition}
 \end{itemize}
-
-\subsubsection{Conclusions}
 
 Important to note as Laurinavichyute et al. 2022 do that "We do not evaluate whether the main claims of the study hold: identifying which results correspond to the main claims is a nuanced decision that is not always within our expertise."
 
+As others write too, be clear, "not tasked with evaluating the quality of the original research or testing the robustness of the original results to any type of sensitivity analysis."\autocite{wood_push_2018}
+
 \subsection{Keeping a log}
 
+\hlblue{\textbf{Grant:} Track issues, barriers, enablers \textbf{Suggestion:} Daily log (adapting from suggestions to TRACE modelling notebook paper) which records tasks and time spent openly throughout using Quarto blog infrastructure.}
+
 Keep a daily log of work. Very detailed. Open access.
+
+Track issues, barriers, and enablers to reuse and reproduction.
 
 All technical issues encountered should be documented. Konkol et al. 2018 - "We documented all technical issues and how we solved them. Each issue we encountered was categorised into one of the four categories: minor, substantial, severe, and system-dependent issues. All scripts that successfully compiled were then executed, and we saved all figures that they generated during execution" . Their issues:
 \begin{itemize}
@@ -298,57 +338,55 @@ All technical issues encountered should be documented. Konkol et al. 2018 - "We 
     \item System-dependent - insufficient RAM; function behaves differently across operating systems; installing libraries on different operating systems\autocite{konkol_computational_2019}
 \end{itemize}
 
-\subsection{old notes}
+Krafczyk et al. 2021 - dedicated notes.txt file which: Tracked steps Any roadblocks or difficulties encountered Solutions to those problems Running count of what had been reproduced and estimated of how much of article had been reproduced (as percentage of experiements from scoping)\autocite{krafczyk_learning_2021} - \textit{largely obvious, but tracking progress with experiements is a good idea.}
 
-Rough notes from Tom (Krafczyk):
-
-Maximum 40 hours
-
-1. Break tables and figures in a DES paper into a set of experiments. --> \textbf{DEFINE what is included using Wood}
-2. Survey the model code and data provided with the publication. 
-3. Modify and write code to run computational experiments. --> \textbf{refine this using Wood}
-4. Automate computational experiments and visualizations. --> \textbf{further details from Krafczyk and Wood}
-5. Restructure each step into a reproducible software package.
-6. Track issues, barriers, and enablers to reuse and reproduction. --> \textbf{under record keeping}
-7. Produce a plot reporting the percentage of experiments reproduced versus time. --> \textbf{under reporting, as this is just one figure that covers all of the paper}
-
-To further support reproducibility, we will adopt a clear definition of replication success for a stochastic model using McManus et al (2021). We will investigate if conclusions remain the same allowing for multiple percent deviations from those reported (e.g 5, 10, 20 percent). --> \textbf{appraise this suggestion - this is more for papers where they are trying to get key figures - can have different rules for different types of output, as in examples in my notes}
-
-We will adopt the same approach to measuring time (i.e. what activities are included and excluded) as used in Krafczyk et al (2021). --> \textbf{refine this using Wood}
-
-Rough notes: TRACE modelling notebook (cav: designed for making models and then translating to TRACE reporting), STRESS reporting guidelines
-
-TRACE:
+Ayllón et al. 2021\autocite{ayllon_keeping_2021} - TRACE modelling notebooks - 
 
 TOC - chronological notebook entires with tags linked to TRACE elements/modelling tasks - can do this using Quarto blog
 
 TRACE suggested tags:
-* Model purpose; Research questions --> Problem formulation
-* Model development; Design decisions --> Model description
-* Parameterization; Patterns --> Data evaluation
-* Conceptual design decisions --> Conceptual model evaluation
-* Debugging; Software verification/Testing; Usability tools design --> Implementation verification
-* Output verification/Goodness-of-fit; Calibration; Tests on environmental drivers --> Model output verification
-* Sensitivity analysis; Uncertainty analysis; Robustness analysis; Simulation experiment --> Model analysis and application
-* Output corroboration/Validation --> Model output corroboration
+\begin{itemize}
+    \item Model purpose; Research questions - Problem formulation
+    \item Model development; Design decisions - Model description
+    \item Parameterization; Patterns - Data evaluation
+    \item Conceptual design decisions - Conceptual model evaluation
+    \item Debugging; Software verification/Testing; Usability tools design - Implementation verification
+    \item Output verification/Goodness-of-fit; Calibration; Tests on environmental drivers - Model output verification
+    \item Sensitivity analysis; Uncertainty analysis; Robustness analysis; Simulation experiment - Model analysis and application
+    \item Output corroboration/Validation - Model output corroboration
+\end{itemize}
 
-STRESS:
+Could look at alignment with STRESS-DES etc. Could also just be more open/brainstorm tags, or see what use when reproduce test run.
+
+TRACE suggest either:
+\begin{itemize}
+    \item Fully chronological format with tags using TRACE terminology (and entries chronological irrespective of their TRACE category) - \textit\textbf{{Fully chronological} easier to write as go along and share progress, compile at end}
+    \item Same structure as TRACE document with entries chronological under the relevant TRACE element
+    \item Important that entries are chronological to make the notebook a “master log” of daily work. Work on multiple tasks on the same day should of course be logged with separate entries.
+\end{itemize}
+
+Other suggestions from TRACE:
+\begin{itemize}
+    \item "log of daily, dated entries reporting what was done on the project and why, and what was accomplished; and the name, location, and a brief description of all files relevant to the project"
+    \item ""to-do” list of both critical issues to be addressed as soon as the task is resumed and non-critical issues to be addressed when one has time"
+    \item TOC with chronological index, entires by date, topical index too, organised by tag/keyword \textit{easy to do with Quarto blog}
+    \item "Master catalogue. A list of the locations of files most relevant to the project, with a description of the file and folder taxonomy" - \textit{part of plan for reading part, is to write up what is in repository}
+    \item Work log of daily dated entires with: "Date of the entry, Author of the entry, TRACE tag indicating the TRACE element the entry is linked to (Table 1), Keyword indicating the specific modelling task within the TRACE element (Table 1), Title, Overview of what has been done and what has been accomplished, and Files linked to the entry (e.g., program code, script used to generate the experiment, spreadsheet containing parameter values, model input files, output files from experiments, summary files). Specific details, which depend on the specific modelling task (Table 2, Table 3)." - \textit{all great to include}
+    \item "document everything in the notebook as you work, and then later prepare final documents like ODD, TRACE, project reports, or a software user guide from the notebook Entries should be written so they contain all the information needed to resume work efficiently."
+    \item "Tagging the entries in the modelling notebook using TRACE terminology provides the link between the notebook and TRACE documents (Fig. 2). Lower-level tags (keywords; Table 1) refine the information about the specific task conducted within TRACE's broad categories (e.g., “sensitivity analysis” within the “model analysis” element); informative, concise titles can further subdivide and organize entries."
+    \item "Each entry should start with a general overview of the work done, before getting into details. It is critical to provide hyperlinks to (or at least names of) all files related to the entry. The file list should include the version of the model and its corresponding code, the code and input files (Box 1), any other relevant files not directly included in the notebook, and comments on those files. All such files should be archived each time a substantial task is completed to ensure that the exact files used for a particular analysis can be extracted from the archive, using the notebook as an index of the archive. A master catalogue at the beginning of the notebook should provide an overview of this archive (Box 1)." - \textit{this could relate to versions on git and git commit history}
+    \item "specific details logged in an entry depend on the modelling task. This information will be rather descriptive for some tasks (e.g., problem formulation, parameterization, or conceptual model design), and rather technical for those that involve running simulation experiments or tests (e.g., calibration, sensitivity analysis, or model output corroboration). While these details can be incorporated in the notebook, it will often make more sense to document them in the files related to the entry. For example: papers from which ideas or data were extracted can be directly annotated in their PDF; code tests are most easily documented with notes in the computer files where they were analysed; the design and analysis of results from simulation experiments can be documented in the scripts used to run them. If documentation is kept outside of the notebook, it is essential to write a concise summary of documentation files: their purposes, how they are used, and where they are archived. If applicable, external files may also be tagged by their date of creation or change, to verify their match with the notebook entry."
+\end{itemize}
 
 \section{Reproduction packages}
 
+\hlblue{\textbf{Grant:} Restructure into reproducible software package \textbf{Progress:} Obtained lots and lots of different examples, need to review and design structure for ours based on them. \textbf{To consider!} Krafczyk et al. 2021 have another group member used the package to re-execute the code on a different platform and compare results against the initially obtained values and to check the package for clarity, and they time this too. Would we want to do something like that?}
+
 \textbf{TO DO:} Write this section
 
-Look at:
-
-Krafczyk reproduction package
-
-ACM RCR replication package
-
-Some notes from chat with rob and tom:
-* runiverse freer than cran
-* docker more for deployment/reproduction package... drop in replacement for docker, podman, as docker not FOSS, as if you work for NHS and use Docker you supposedly have to pay for license... check what is under license or not and if docker is just deksopt
-
 \section{Badges}
+
+\hlblue{\textbf{Grant:} Map results against ACM and NISO badges \textbf{Progress:} Collated more badge and journal examples, see Appendix, won't change approach much as ACM covers most (NISO is more of a suggestion than an official badging system), but can evaluate against all quite easily (lots of overlap) if appropriate}
 
 \textbf{TO DO:} Write this section, reference to appendices
 
@@ -368,6 +406,8 @@ Relevant: open objects, object review, reproduced - and hence, relevant badges t
             
 \section{Reporting guidelines}
 
+\hlblue{\textbf{Grant:} Assess extent meets STRESS-DES and ISPOR-SDM reporting guidelines \textbf{Progress:} Not done yet. \textbf{To discuss though!:} Lots of examples doing similar work look also at code and compare against frameworks for how structure and share code - for example could compare against STARS - would we want to do that or not? Often used like context of "this didn't run" and "it didn't layout like we know is handy" type thing.}
+
 Rough notes from Tom
 
 Following the reproducibility test, we will assess the extent to which each paper follows the items recommended in:
@@ -377,9 +417,19 @@ We will score items as fully, partially, or not meeting the requirements.
 
 \section{Reproduction test reports}
 
+\hlblue{\textbf{Grant:} Write RCR reports. \textbf{To discuss though!:} Got lots and lots of examples of write ups for this sort of thing, and identified opportunities for publishing individually (ReScience)}
+
 \textbf{TO DO:} Write this section. Need to reflect on whether it can consistute an RCR review or not. And what we want to do with it, or if just archived, or if plan to write up in some way or another.
 
 Tom: Finally, we will map data from our best practice review, reporting guidelines adherence, and our tracked test data to success in badge allocation and the proportion of experiments reproduced.
+
+Produce a plot reporting the percentage of experiments reproduced versus time. - but need to consider this based on how define reproduction success
+
+Final report:
+\begin{itemize}
+    \item Figure, and describe reproduction team, similar to Krafcyzk(?):\autocite{krafczyk_learning_2021}
+    \item Look at examples I've gathered
+\end{itemize}
 
 \section{Versioning and Archiving}
 
@@ -398,6 +448,20 @@ Will containerise with Docker or similar (again, automated via GitHub actions)
 Will share via GitHub pages
 MIT and CC-BY-4.0 licenses
 Online book will describe how to reuse, adapt and reshare our outputs
+
+Create standardised structure for report, and include stuff from the original article within it.
+
+Report should have things like Baykova \autocite{baykova_ensuring_2024} like:
+\begin{itemize}
+    \item Title of manuscript
+    \item Corresponding author
+    \item Summary of paper
+    \item Available manuscript materials DOI/URL... pre-registratin... manuscript... data and analysis materials
+    \item Scope of reproducibiltiy report
+    \item Date it was compiled, what it was based on (e.g. draft, pre-print), materials uploaded to (link) as of (date and time of upload)
+    \item "I certify that to the best of my knowledge this report is true and accurate"
+    \item Who did the report, email, address
+\end{itemize}
 
 \section{Testing the protocol}
 
