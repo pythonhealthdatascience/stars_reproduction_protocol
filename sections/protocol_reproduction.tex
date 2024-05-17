@@ -16,7 +16,7 @@ Use the STARS computational reproducibility template to create a new repository.
 \end{itemize}
 
 \subsubsection{Upload journal article and all artefacts to the repository}
-\timeno
+\timeyes
 
 Upload all available materials from the article to the repository. This could include:
 \begin{itemize}
@@ -26,10 +26,8 @@ Upload all available materials from the article to the repository. This could in
     \item Protocol
 \end{itemize}
 
-\hl{Add more information on locations (i.e. this is all in one seperate location that don't touch - but work on it and add eg the tables and figures, into another location)}
-
 \subsubsection{Select license}
-\timeno
+\timeyes
 
 Select a license for the repository. At this stage, this should be as permissive as possible, whilst being compatible with the license used by the study authors. For instructions on how to add a license to a repository, see \url{https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository}.
 
@@ -41,7 +39,7 @@ Select a license for the repository. At this stage, this should be as permissive
 Read through the journal article and supplementary materials (but not yet looking into the code or data). Consolidate this by adding a short description of the article to the Quarto book. This should be relatively concise, and cover the key methods and results. It might, for example, include any model flow diagram provided in the paper, any model parameters mentioned, and the model type and software. This can also be updated later.
 
 \subsubsection{Make consensus decision on scope}
-\timeyes[for scoping (not discussion)]
+\timeyes[for scoping by primary researcher (but not including time of other researchers reading the article, or time spent discussing and coming to a consensus on the scope)]
 
 The next step is to define the scope of the reproducibility study - in other words, what parts of the paper you intend to reproduce. The scope should include:
 \begin{enumerate}[label=(\alph*)]
@@ -55,6 +53,8 @@ Whilst the rest of this protocol is conducted by a single member of the STARS te
 
 \subsubsection{Compile items in scope}
 \timeyes
+
+\hl{should this be part of timing or not? as it's more for the purposes of this reproduction}
 
 Once the scope has been decided, upload each item to the repository.
 
@@ -139,30 +139,27 @@ R -
 \end{itemize}
 
 \subsubsection{Update license if necessary}
+\timeyes
 
-As above, we want to use a license that is as permissive as possible whilst being compatible with the license used by the author, as well as now the license of any packages used within the project. To identify the licenses used:
+As above, we want to use a license that is as permissive as possible whilst being compatible with the license used by the author, as well as now the \textbf{licenses of any packages} used within the project. To identify the licenses used:
 \begin{itemize}
     \item In Python, you could use the package "pip-licenses" (\url{https://pypi.org/project/pip-licenses/})
     \item In R, you can run the command \texttt{installed.packages(fields = "License")}
 \end{itemize}
 
-If it is not possible to use a completely permissive license like MIT, explain why (either due to author license or package licenses). An example for how this can be displayed is as follows \hl{Add appropriate citation https://github.com/TomMonks/stars-treat-simmer/tree/main/img}:
-
-\includegraphics[width=\linewidth]{images/license.png}
+If it is not possible to use a completely permissive license like MIT, explain why (either due to author license or package licenses).
 
 \subsection{Attempt to reproduce items in scope}
 
 \subsubsection{Use provided code to produce notebook creating items in scope}
-\timeyes[(except long computation, at researcher discretion)]
+\timeyes[(excluding computation time at the researcher's discretion - for example, excluding time where a simulation is set to run for 5 minutes whilst the researcher makes a cup of tea)]
 
-Run the code and attempt to produce the items in the scope. Insert the code into a notebook (.ipynb or .Rmd) as this enables you to easily share the code and produced outputs from the scope. Label each output clearly, as it relates to the manuscript.
+Run the code and attempt to produce the items in the scope. Insert the code into a \textbf{notebook} (.ipynb or .Rmd) as this enables you to easily share the code and produced outputs from the scope. Label each output clearly, as it relates to the manuscript. Whilst running this code, the researcher should be troubleshooting issues and evaluating reproduction success, as below.
 
-\hl{consider whether want makefile etc or not, can look at sources for reproduction package section, this might be simplest solution though}
-
-Whilst running this code, the researcher should be troubleshooting issues and evaluating reproduction success, as below.
+When using their code, this should be kept seperate from the unchanged copies of code that were downlaoded at the start of the study. For example, copying over their script into a new notebook in a different folder (with seperate folders for artefacts from the article, and for results produced by the researcher reproducing the article).
 
 \subsubsection{Troubleshoot issues}
-\timeyes (including emailing)
+\timeyes[(including searching online, looking over arefacts, emailing the author, etc.)]
 
 If there are difficulties in running the code or producing the desired outcomes, researchers should attempt to troubleshoot through changes to the environment or scripts. Examples of changes include:
 \begin{itemize}
@@ -172,74 +169,33 @@ If there are difficulties in running the code or producing the desired outcomes,
     \item Adding code to produce an item in the scope, if not otherwise provided
 \end{itemize}
 
-In allowing modification and writing of code, our intention is that researchers try as much as possible to attempt to reproduce from the scope. The allowance of writing new code is similar to the approach of Krafczyk et al. 2021\autocite{krafczyk_learning_2021} and the ACRe project\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}.
+In allowing modification and writing of code, our intention is that researchers try \textbf{as much as possible} to attempt to reproduce from the scope. The allowance of writing new code is similar to the approach of Krafczyk et al. 2021\autocite{krafczyk_learning_2021} and the ACRe project\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}.
 
-If however, they remain unable to run the code, or have large discrepenancies for any items, or any completely unable to reproduce any items, they should then contact the original author. This email should:
+If however, they remain unable to run the code, or have large discrepancies for any items, or any completely unable to reproduce any items, they should then \textbf{contact the original author}. This email should:
 \begin{itemize}
     \item Recap of project (as will have emailed them before when started)
     \item Link to preliminary report with documented attempt and list of issues that require resolution, Make sure description of problem is specific (e.g. identifying line in paper and place in code where think something is missing, or where an issue is occuring)
     \item Ask for suggestions on alternative course of action for issues, or for the complete code/data if missing.
 \end{itemize}
 
-If there is no response in two weeks, the researcher should contact them again. If there is still no response two weeks later, this can be marked as no response. When emailing authors, it is suggested to follow the guidance on language and adapt from the email templates provided by the ACRe in the chapter "Guidance for Constructive Communication Between Reproducers and Original Authors" of their guide.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
+If there is no response in two weeks, the researcher should contact them again. If there is still no response two weeks later, this can be marked as no response. When emailing authors, it is suggested to follow the guidance on language and adapt from the \textbf{email template}s provided by the ACRe in the chapter "Guidance for Constructive Communication Between Reproducers and Original Authors" of their guide.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
 
 The allowance of contacting authors is similar to the approaches of several studies,\autocite{krafczyk_learning_2021,wood_push_2018,berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022,hardwicke_analytic_2021,konkol_computational_2019} with a maximum of four weeks for responses as in Konkol et al. 2018\autocite{konkol_computational_2019}. This approach does however differ from Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} who did not contact authors, since they considered reproducibility to be only about the available data and procedures and not anything shared privately.\autocite{laurinavichyute_share_2022}
 
 \subsubsection{Assess reproduction success}
 \timeyes
 
-Whilst running code, and once you have finished running and troubleshooting, you should assess the reproduction success for each item in the scope.
+For each item in the scope, the researcher should decide whether it has been successfully reproduced. This decision can be supported by calculating the percentage difference in results between the manuscript and the researcher. As reported by Wood et al. 2017,\autocite{wood_push_2018, wood_replication_2018} a meaningful difference in a value will vary between studies, and so it is difficult to set a single rule on what is or is not a minor difference. As such, researchers should follow a similar approach to Schwander et al. 2021,\autocite{schwander_replication_2021} considering whether the figure is reproducible at varying levels of percentage error (5\%, 10\% and 20\%). However, they should then use their judgement to decide whether the item has been reproduced. This is similar to one of the definitions proposed by McManus et al. 2019\autocite{mcmanus_can_2019} - "\textit{Results... vary only by XX\% compared to the original, AND are consistent with the original conclusions}" - incorporating both numerical comparison and allowance for variability in whether this constitutes a meaningful difference from the original results.
 
-Success should be defined for each item in the scope.
+The researcher should not use a definition of "partial success". Instead, they should decide whether or not each item (e.g. table, figure, or section of text) was successfully reproduced or not as a whole (although can include a description to provide more nuance to that decision). As an example, if it is possible to produce a table with some numbers being a match or very similar, but some numbers being substantially different, then this would be classed as having \textbf{not} been successfully reproduced. If however all aspects of the item were reproduced with reasonable similarity, this can be classed as \textbf{successful} reproduction.
 
-\hlblue{\textbf{Grant:} Do conclusions remain if 5, 10, 20\% threshold for difference in values. \textbf{Suggestion:} Not considering whether conclusions remain (as not focussing on that on principle), potentially guidance on looking at extent of difference like \% levels but maybe subjective (as Wood), having standardised way of describing level of reproduction for table/figure/text results, and then for bringing that together to describe overall for paper. Considering options below.}
+As in Henderson et al. 2024,\autocite{henderson_reproducibility_2024} figures are compared based on their numeric content. This can be based on numbers extracted from the figure (as below), or based on visually comparing the figures (in which case, percentage difference cannot be used to support any judgement of reproduction success). Researchers should be unconcerned by minor differences in presentation (such as font), with regards to evaluating reproduction success.
 
-\hl{To consider: How define success}
+\hl{Do we allow partial reproduction - e.g. some bits match up, but some bits differ by a large amount - or does that count as non-reproduction?} Whatever the choice is, add a sentence to make that clear.
 
-\subsubsection{Detailed comparison of numbers, figures and tables against the manuscript...}
+The overall reproduction success of the paper can be described as the proportion of items from the scope that were determined to be reproduced (e.g. 4 out of 5, 80\%). This provides more context than just stating that a paper was or was not reproduced. When describing the reproduction success, it is important to include context on troubleshooting steps required (such as writing new code or contacting the author)
 
-\textbf{Figures:} Visually compare figures with those from the manuscript, and identify any differences. Suggested categories of differences based on Konkol et al. 2019\autocite{konkol_computational_2019} are differences in "content" or in "design" that relate to: legend; labelling; results; aspect ratio; axes; placement; background.\autocite{konkol_computational_2019} \textbf{TO DO:} Consider what is of importance to us here.
-
-\begin{itemize}
-    \item Henderson et al. 2024 - compare graphs based on their numeric content and ignore differences in presentation\autocite{mcmanus_can_2019} - potentially, although presentation important eg stretched graph? although i guess that is more about conclusions than content?
-\end{itemize}
-
-\textbf{Numbers from text or tables:} The numbers and tables from the manuscript should be stored in the programming environment, either through defining the numbers in the script or by importing CSV files of the tables. These can then be directly compared against the numbers and tables produced by the script.
-
-\begin{itemize}
-    \item If binary, can do figure like Krafcyzk.
-    \item McManus et al. 2019 - identifical results; result varies by x\%; results vary by x\% and are consistent with original conclusion; figures produced to reasonable degree of success;\autocite{mcmanus_can_2019} - \textit{\textbf{not suitable.}not applicable to tables or figures (unless average percentage), require thinking about whether conclusions hold (which we are not assessing)}
-    \item Schwander et al. 2021 - use mcmanus, looking for variation of 5\%, 10\% and 20\%\autocite{schwander_replication_2021} \textit{\textbf{potentially suitable}}
-    \item Wood et al. 2017 - guidance for stat significance (not relevant for simulation); for parameters and coefficients they considered decision rule but then recognised meaningfulness of size of parameters varies across studies which precludes them from making single rule and so instruct research to use judgement but carefully document decisions. "the definition of what is a major/minor difference will be based on PBR researcher’sjudgment. If available, the researcher should use summary statistics, like mean values, as referenceswhenassessing the level of difference between the original publication and the PBR results". Suggests colour coding tables to indicate differences\autocite{wood_push_2018, wood_replication_2018} \textit{\textbf{good}, probably wouldn't colour code tables though}
-    \item Hardwicke et al. 2021 - percentage error which was minor (0 to less than 10\%) or major (10\% or more) and decision error if changed p value around threshold\autocite{hardwicke_analytic_2021, hardwicke_pre-registered_2017}
-    \item ACRE - focus on specific estimates (e.g. particular number from table or derived from figure). For figures, they suggest you still aim to reproduce the whole figure and report any differences at assessment stage.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
-\end{itemize}
-
-\subsubsection{Labelling the overall level of reproduction achieved for the paper (considering all items in scope)}
-
-Ways of doing this:
-\begin{itemize}
-    \item Henderson et al. 2024 - all reproduced; at least one reproduced;\autocite{henderson_reproducibility_2024} \textit{\textbf{not suitable}: requires binary decision on reproduction success for each, and not very informative}
-    \item McManus et al. 2019 - various suggested definitions (table 2) - adapted examples that are not about a single result:  replicated for some scenarios and not others; same conclusions reached.\autocite{mcmanus_can_2019} \textit{\textbf{not suitable}: ambiguous}
-    \item Laurinavichyute et al. 2022 - Strict criteria is that paper reproducible if all analyses could be reproduced exactly (except rounding errors). Relaxed criteria is if there are less than K cases (1, 5, 10, 20) where reproduced value differs by more than 10\% then paper is considered reproduced. Discprenancies smaller than 10\% ignored. K 1 corresponds to a single major discrepancny blocking reproducibility like Hardwicke. The upper threshold corresponds to small experiment being irreproducible - but paper reproducible in broad sense. \autocite{laurinavichyute_share_2022} \textit{\textbf{Relaxed criterion potentially relevant} - would need to consider how deal with figures - as this is focused on numbers - and could require converting figure to numbers or ignoring figures}
-    \item Hardwicke et al. 2021 - "not fully reproducible"  (any major numerical discrepancies, decision errors, or insufficient information to proceed) or ‘reproducible’ (no numerical discrepancies or minor numerical discrepancies only). Recorded potential cause of non-reproducibility and judged likely impact on conclusions. The rating or reproducibility or not also included a comment on whether this was with or without author involvement\autocite{hardwicke_analytic_2021, hardwicke_pre-registered_2017} - \textit{\textbf{Mostly not suitable} as quite binary, but \textbf{commenting on whether it was with/without author involvement} I think is really important to include when making conclusions about paper reproducibility}
-    \item Wood et al. 2017 - strongly advise against binary outcome, and instead label as: \textbf{comparable, minor differences, major differences}. "inability to replicate figures is of secondary concern and should be noted in the final report but should not generally influence replication status" \autocite{wood_push_2018, wood_replication_2018} \textit{\textbf{nice} but not sure about ignoring figures}. More detail on their categories:
-    \begin{itemize}
-        \item "Comparable replication:identical results or very small changes(like rounding).
-        \item Minor differences: small differences in coefficients and/or p-values.
-        \item  Major differences:meaningful differences in reported outcomes (especially in the key results) or the code does not reproduce published results
-        \item No access: the original authors do notreply or decline to provide data or code.
-        \item Proprietary data: unable to provide data but provided replication code and DSL documentation.
-        \item Incomplete: If PBR researchers are unable to reproduce part of the publication due to missing code and/or data, they will report to the original authors on the PBR study’s status and ask if the authors can provide more data or code to complete the PBR. If the PBR researchers cannot reproduce anytables after communicating with original authors, the paper will have two classifications. The paper will be classified as “incomplete” and in addition the paper will be classified based on the PBR results that were possible to run"\autocite{wood_push_2018, wood_replication_2018}
-    \end{itemize}
-    \item ACRE - Recommend against binary judgements of reproducible or not. Paper may contain several scientific claims (or major hypotheses) that may vary in computational reproducibility. Each claim is tested using different methodologies, presenting results in one or more display items (outputs like tables and figures). State that assessments should be made at the level of individual display items—a paper can be highly reproducible for its main results, but its other display items may not be as reproducible. They have several levels - below I have noted relevant ones for us (many not as about raw data) - (2) code available but no data, (3) data and code partially available, but raw data and cleaning code missing, (4) all data and code available but fails to run or produces results inconsistent with paper, (5) all data and code available and produce same results as paper\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} - \textit{Levels not relevant as just ends up being binary, but \textbf{importance of looking per display item} is very relevant, although this suggests no overall claim about paper, but we probably do want to just draw a general conclusion (albeit with diaply item conclusions there also)}
-    \item Baykova et al. 2024 - List which tables/figures reproduced, and which did not. Describe differences.\autocite{baykova_ensuring_2024}
-    \item Obels et al. 2020 - did not intially define clear coding scheme and so coders used different thresholds when decided if the paper was reproducible or not, and despirte setting binary classification, often reported as partial reproducibility. They then set criteria that an article is reproducible if could get the same main results as in the article with at most minor changes to scripts.\autocite{obels_analysis_2020} - \textit{different as it includes level of change required in reproducibility definition}
-\end{itemize}
-
-Important to note as Laurinavichyute et al. 2022 do that "We do not evaluate whether the main claims of the study hold: identifying which results correspond to the main claims is a nuanced decision that is not always within our expertise."
-
-As others write too, be clear, "not tasked with evaluating the quality of the original research or testing the robustness of the original results to any type of sensitivity analysis."\autocite{wood_push_2018}
+In assessing reproduction success, it is important to note (as in Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} and Wood et al. 2018\autocite{wood_push_2018}) that the focus is not on the quality or robustness of the original results, or whether the main claims of the study are consistent. Instead, the focus is on whether it was possible to reproduce the article's results within a reasonable margin of error (given that we do expect a little variation, since discrete-event simulations are stochastic models, and may not have been fully controlled using random seeds or with any environment differences).
 
 \section{Reproduction packages}
 

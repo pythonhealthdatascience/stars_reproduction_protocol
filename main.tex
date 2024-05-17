@@ -77,24 +77,29 @@
 % Create shaded headings
 % ---------------------------------------------------
 % Logo is #1982AB. Chose paler colous for the heading shading.
+\definecolor{section}{HTML}{A3CDDD}
+\newcommand{\colorsection}[1]{\colorbox{section}{\parbox{\dimexpr\textwidth-11\fboxsep}{#1}}}
+\titleformat{name=\section}[block]
+    {\normalfont\Large\bfseries}
+    {\thesection}
+    {1em}
+    {\colorsection}
+
 \definecolor{subsection}{HTML}{A3CDDD}
+\newcommand{\colorsubsection}[1]{\colorbox{subsection}{\parbox{\dimexpr\textwidth-13\fboxsep}{#1}}}
 \titleformat{name=\subsection}[block]
     {\normalfont\large\bfseries}
     {\thesubsection}
     {1em}
     {\colorsubsection}
-% 1 and #1 indicates where the content is placed
-\newcommand{\colorsubsection}[1]{%
-  \colorbox{subsection}{\parbox{\dimexpr\textwidth-13\fboxsep}{#1}}}
 
 \definecolor{subsubsection}{HTML}{D1E6EE}
+\newcommand{\colorsubsubsection}[1]{\colorbox{subsubsection}{\parbox{\dimexpr\textwidth-14\fboxsep}{#1}}}
 \titleformat{name=\subsubsection}[block]
     {\normalfont\normalsize\bfseries}
     {\thesubsubsection}
     {1em}
-    {\colorsection}
-\newcommand{\colorsection}[1]{%
-  \colorbox{subsubsection}{\parbox{\dimexpr\textwidth-14\fboxsep}{#1}}}
+    {\colorsubsubsection}
 % ---------------------------------------------------
 
 \begin{document}
