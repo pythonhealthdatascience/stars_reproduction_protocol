@@ -1,0 +1,76 @@
+\section{Introduction to the STARS project}
+
+This protocol is part of the project STARS: ”Sharing Tools and Artefacts for Reusable Simulations in healthcare”. The aim of STARS is to...
+
+\textbf{TO DO:} Write this section. Mention the aim, and refer to the key papers/pilot work, and then how that relates to this protocol (to set the scene). Keep it brief.
+
+\textbf{Status as of submission:} X (name) selected Shoaib and Ramamohan 2021\autocite{shoaib_simulation_2022} as one of the six studies, and emailed to ask for open license, which they have added to repository.
+
+towards stars paper\autocite{monks_towards_2024}
+
+\section{Selection of simulation models}
+
+This protocol will be used within two work packages on STARS:
+\begin{itemize}
+    \item Work package 1 - to reproduce six published discrete event simulation models by external authors
+    \item Work package 3 - to reproduce two simulation models produced by/in collaboration with members of the STARS team
+\end{itemize}
+
+\textbf{TO DO:} Remove mention of work packages, and just focus on the work being done (as work packages just relevant to us, not external) as that would make this clearer
+
+For work package 1, the six models will be chosen from those identified by Monks and Harper 2023\autocite{monks_computer_2023} in their paper "Computer model and code sharing practices in healthcare discrete-event simulation: a systematic scoping review". Their review of discrete-event simulation models in healthcare identified 47 studies citing an openly available model that was used to generate their results. When selecting six of these models, we have two criteria: (i) The study has an open license (either already published, or added upon request from the STARS team), and (ii) That a balance of Python and R models are chosen.
+
+For work package 3, the models will be developed within or with support from the STARS team, with a team member acting as a holdout to conduct the reproducibility test.
+
+For WP1, email the authors. If email not active (e.g. rebounds) then search online to try and find most recent email. Email, if no response after 2 weeks then contact again.
+
+Write this properly, base on and cite:
+\begin{itemize}
+    \item "PBR researchers email the corresponding author and at least one additional author (if applicable) to inform them that they will be conducting a PBR of their paper, include the PBR protocol,"\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
+\end{itemize}
+
+\section{Quarto website, logbook and timing}
+
+A Quarto website will be produced using our template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}) to compile information on the reproduction of the article. This includes the notebooks (.ipynb or .Rmd) producing the items in the scope, as well as a chronological log of work using Quarto blog posts.
+
+\subsection{Logbook}
+
+Within each post in the log book it should include the researcher name and date along with:
+\begin{itemize}
+    \item Comprehensive record of tasks, along with time spent (if applicable)
+    \item Issues, barriers and enablers to reproduction
+    \item Solutions to problems
+    \item Timing and progress in reproducing each item in the scope (so we know what is completed when)
+    \item Relevant links or links to files at that point (e.g. Git commit hash), with relevant files like the script and output files.
+    \item Explanation of why things were done
+    \item Notes on critical and non-critical issues to be addressed (such as in a to do list)
+    \item If it makes more sense to include detailed descriptions elsewhere (such as in a script or notebook itself), then just be sure to link to that version of that file (such as via the Git commit history)
+\end{itemize}
+
+As suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021} in their guidelines for keeping modelling notebooks, these posts will be daily, dated, chronological entires. Tags will be used to help indicate the activity on each day, and enable posts to be filtered by activity (although tags are free to be chosen by the researcher not related to a particular framework). Keeping a detailed log will support later understanding of what was done, and support preparting of final documents like the reproduction report.
+
+\subsection{Recording time taken}
+
+For tasks relating to the reproduction of the article, a record of time taken should also be included within the log alongside each activity (e.g. 12:10 to 12:45). The purpose of recording time is in understanding the time taken to reproduce items, with the cut-off implemented as we anticipate there would be little more to learn from spending longer than that time on reproducing a single study.
+
+For the \textbf{assessment of computational reproducibility}, these times will be combined and monitored, with a maximum of 40 hours allowed for attempting to reproduce the study, as in Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} The items for which a record of time taken should be kept are the stages of:
+\begin{itemize}
+    \item Scope of reproduction
+    \begin{itemize}
+        \item Includes time for the primary researcher (who will be conducting the reproduction) reading the journal article, identifying key results, compiling items in the scope, and archiving it
+        \item \textbf{Excludes} conversations between team members to decide on the scope, and any time taken by other team members to read the article or decide on items in the scope.
+    \end{itemize}
+    \item Familiarise with artefacts
+    \item Set up environment
+    \item Attempt to reproduce items in scope
+    \begin{itemize}
+        \item Includes using the code to produce notebooks creating the items, troubleshooting issues (including searching online, looking over artefacts or emailing with the author)
+        \item \textbf{Excludes} long computation time (if time not otherwise spent on reproduction activities). This is to the researcher's discretion, but for example, time would be excluded if it was setting a simulation to run for five minutes whilst making a cup of tea.
+    \end{itemize}
+\end{itemize}
+
+The stage it fully \textbf{excludes} is the set-up stage.
+
+After this assessment has been completed, the time taken to \textbf{create the reproduction packages} should be recorded but not capped.
+
+\textbf{Excluded} from time keeping are the stages of evaluating the study against reproduction badges, code guidelines and reporting guidelines, and writing up the reproduction test report.
