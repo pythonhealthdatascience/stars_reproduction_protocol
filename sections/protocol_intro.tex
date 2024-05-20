@@ -1,39 +1,24 @@
-\section{Introduction to the STARS project}
+\section{Introduction}
 
-This protocol is part of the project STARS: ”Sharing Tools and Artefacts for Reusable Simulations in healthcare”. The aim of STARS is to...
+In this protocol, we are focused on the \textbf{computational reproducibility} of simulation models. This is defined as the ability to get consistent results with a prior study when using  the same data and methods as that study. We are focusing on models developed using \textbf{Python and R}, as these are popular free and open-source software (FOSS) for the development of models like discrete-event simulation (DES).\autocite{monks_computer_2023}
 
-\textbf{TO DO:} Write this section. Mention the aim, and refer to the key papers/pilot work, and then how that relates to this protocol (to set the scene). Keep it brief.
+This protocol will first be used to reproduce six DES models with code available, selected from those identified by Monks and Harper 2023\autocite{monks_computer_2023} Selection of models has two criteria: (i) model is produced using Python and R, and a balance of Python and R models are chosen, and (ii) the study has an open license (either already published, or added upon request from the STARS team). The protocol will also be used to assess the computational reproducibility of two simulation models produced by/in collaboration with members of the STARS team.\hl{holdout for this? how deal? just say will be involved?}
 
-\textbf{Status as of submission:} X (name) selected Shoaib and Ramamohan 2021\autocite{shoaib_simulation_2022} as one of the six studies, and emailed to ask for open license, which they have added to repository.
+Throughout the study, results will be openly available and shared via a Quarto website. This will compile information on the reproduction of the article. This includes the notebooks (.ipynb or .Rmd) producing the items in the scope, as well as a chronological log of work using Quarto blog posts, and then later, the reproduction report and detailed study results.
 
-towards stars paper\autocite{monks_towards_2024}
+\hl{test protocol with toms paper and maybe ipacs? depends on how much test. think about what want to test and why. is it run through of whole thing or just particular bits. could make a note of what change following test run in appendices if think relevant to do so}
 
-\section{Selection of simulation models}
+\vspace{2cm}
+\section{Using this protocol}
 
-This protocol will be used within two work packages on STARS:
+When using this protocol, the researcher should work through the steps below in the \textbf{following order}:
 \begin{itemize}
-    \item Work package 1 - to reproduce six published discrete event simulation models by external authors
-    \item Work package 3 - to reproduce two simulation models produced by/in collaboration with members of the STARS team
+    \item First, work through \hyperref[sec:reproduce]{assessment of computational reproducibility}
+    \item Then, in any order, evaluate study against badges, code sharing guidelines and reporting guidelines. This is conducted after the reproducibility assessment so as not to interfere with timings for reading and understanding the article and artefacts (as mentioned below).
+    \item Finally, researchers should create the research compendium and reproduction report
 \end{itemize}
 
-\textbf{TO DO:} Remove mention of work packages, and just focus on the work being done (as work packages just relevant to us, not external) as that would make this clearer
-
-For work package 1, the six models will be chosen from those identified by Monks and Harper 2023\autocite{monks_computer_2023} in their paper "Computer model and code sharing practices in healthcare discrete-event simulation: a systematic scoping review". Their review of discrete-event simulation models in healthcare identified 47 studies citing an openly available model that was used to generate their results. When selecting six of these models, we have two criteria: (i) The study has an open license (either already published, or added upon request from the STARS team), and (ii) That a balance of Python and R models are chosen.
-
-For work package 3, the models will be developed within or with support from the STARS team, with a team member acting as a holdout to conduct the reproducibility test.
-
-For WP1, email the authors. If email not active (e.g. rebounds) then search online to try and find most recent email. Email, if no response after 2 weeks then contact again.
-
-Write this properly, base on and cite:
-\begin{itemize}
-    \item "PBR researchers email the corresponding author and at least one additional author (if applicable) to inform them that they will be conducting a PBR of their paper, include the PBR protocol,"\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
-\end{itemize}
-
-\section{Quarto website, logbook and timing}
-
-A Quarto website will be produced using our template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}) to compile information on the reproduction of the article. This includes the notebooks (.ipynb or .Rmd) producing the items in the scope, as well as a chronological log of work using Quarto blog posts.
-
-Within each post in the log book it should include the researcher name and date along with:
+Throughout all except the final two steps (research compendium and reproduction report), the researcher should keep a detailed record of work using a \textbf{logbook}. This will be via through Quarto blog posts using the provided template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}), which we set up for the study in one of the first steps of the computational reproducibility assessment. Each post in the log book should include the researcher name and date along with -
 \begin{itemize}
     \item Comprehensive record of tasks, along with time spent (if applicable)
     \item Issues, barriers and enablers to reproduction
@@ -45,11 +30,6 @@ Within each post in the log book it should include the researcher name and date 
     \item If it makes more sense to include detailed descriptions elsewhere (such as in a script or notebook itself), then just be sure to link to that version of that file (such as via the Git commit history)
 \end{itemize}
 
-As suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021} in their guidelines for keeping modelling notebooks, these posts will be daily, dated, chronological entires. Tags will be used to help indicate the activity on each day, and enable posts to be filtered by activity (although tags are free to be chosen by the researcher not related to a particular framework). Keeping a detailed log will support later understanding of what was done, and support preparting of final documents like the reproduction report.
+As suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021} in their guidelines for keeping modelling notebooks, these posts will be daily, dated, chronological entries. Tags will be used to help indicate the activity on each day, and enable posts to be filtered by activity (although tags are free to be chosen by the researcher not related to a particular framework). Keeping a detailed log will support later understanding of what was done, and support preparing of final documents like the reproduction report.
 
-For tasks relating to the reproduction of the article, a record of time taken should also be included within the log alongside each activity (e.g. 12:10 to 12:45). Throughout the sections below, a note is made as to whether the task should or should not be timed, but to summarise:
-\begin{itemize}
-    \item Assessment of computational reproducibility is mostly timed (with a few exceptions), as noted below alongside each task. These times will be monitored, with a maximum of 40 hours allowed for attempting to reproduce the study, as in Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} This cut-off is implemented as we anticipate there would be little more to learn from spending longer than that time on reproducing a single study.
-    \item Creation of the reproduction package is timed, as time is often cited as a barrier to making research open, and so it is helpful to understand time taken on this task, but it is not capped with a time limit.
-    \item The later stages are not timed. These are evaluation of the study against reproduction badges, code guidelines and reporting guidelines, and writing up the reproduction test report.
-\end{itemize}
+The assessment of computational reproducibility is timed (with a few exceptions, as noted below alongside each task). These times should be recorded within the logbook alongside each activity (e.g. 12:10 to 12:45). The times should be monitored with a \textbf{maximum of 40 hours} allowed for attempting to reproduce the study, as in Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} This cut-off is implemented as we anticipate there would be little more to learn from spending longer than that time on reproducing a single study.

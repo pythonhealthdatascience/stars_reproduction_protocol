@@ -1,6 +1,11 @@
-\section{Assessment of computational reproducibility}
+\section{Assessment of computational reproducibility} \label{sec:reproduce}
 
 \subsection{Set-up}
+
+\subsubsection{Inform the authors}
+\timeno
+
+If the authors have not already been informed (such as via an email to request an open license is added to the repository), then the researcher should let the corresponding author know about this study. This email should inform the author that we will be conducting an assessment of the computational reproducibility of their study, and can include a copy of the protocol. If the email appears inactive due to rebounds, the researcher should search online to try and identify a recent email address for any of the study authors.
 
 \subsubsection{Create repository using template}
 \timeno
@@ -53,8 +58,6 @@ Whilst the rest of this protocol is conducted by a single member of the STARS te
 
 \subsubsection{Compile items in scope}
 \timeyes
-
-\hl{should this be part of timing or not? as it's more for the purposes of this reproduction}
 
 Once the scope has been decided, upload each item to the repository.
 
@@ -156,10 +159,10 @@ If it is not possible to use a completely permissive license like MIT, explain w
 
 Run the code and attempt to produce the items in the scope. Insert the code into a \textbf{notebook} (.ipynb or .Rmd) as this enables you to easily share the code and produced outputs from the scope. Label each output clearly, as it relates to the manuscript. Whilst running this code, the researcher should be troubleshooting issues and evaluating reproduction success, as below.
 
-When using their code, this should be kept seperate from the unchanged copies of code that were downlaoded at the start of the study. For example, copying over their script into a new notebook in a different folder (with seperate folders for artefacts from the article, and for results produced by the researcher reproducing the article).
+When using their code, this should be kept separate from the unchanged copies of code that were downloaded at the start of the study. For example, copying over their script into a new notebook in a different folder (with separate folders for artefacts from the article, and for results produced by the researcher reproducing the article).
 
 \subsubsection{Troubleshoot issues}
-\timeyes[(including searching online, looking over arefacts, emailing the author, etc.)]
+\timeyes[(including searching online, looking over artefacts, emailing the author, etc.)]
 
 If there are difficulties in running the code or producing the desired outcomes, researchers should attempt to troubleshoot through changes to the environment or scripts. Examples of changes include:
 \begin{itemize}
@@ -191,14 +194,6 @@ The researcher should not use a definition of "partial success". Instead, they s
 
 As in Henderson et al. 2024,\autocite{henderson_reproducibility_2024} figures are compared based on their numeric content. This can be based on numbers extracted from the figure (as below), or based on visually comparing the figures (in which case, percentage difference cannot be used to support any judgement of reproduction success). Researchers should be unconcerned by minor differences in presentation (such as font), with regards to evaluating reproduction success.
 
-\hl{Do we allow partial reproduction - e.g. some bits match up, but some bits differ by a large amount - or does that count as non-reproduction?} Whatever the choice is, add a sentence to make that clear.
-
 The overall reproduction success of the paper can be described as the proportion of items from the scope that were determined to be reproduced (e.g. 4 out of 5, 80\%). This provides more context than just stating that a paper was or was not reproduced. When describing the reproduction success, it is important to include context on troubleshooting steps required (such as writing new code or contacting the author)
 
 In assessing reproduction success, it is important to note (as in Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} and Wood et al. 2018\autocite{wood_push_2018}) that the focus is not on the quality or robustness of the original results, or whether the main claims of the study are consistent. Instead, the focus is on whether it was possible to reproduce the article's results within a reasonable margin of error (given that we do expect a little variation, since discrete-event simulations are stochastic models, and may not have been fully controlled using random seeds or with any environment differences).
-
-\section{Reproduction packages}
-
-\hlblue{\textbf{Grant:} Restructure into reproducible software package \textbf{Progress:} Obtained lots and lots of different examples, need to review and design structure for ours based on them. \textbf{To consider!} Krafczyk et al. 2021 have another group member used the package to re-execute the code on a different platform and compare results against the initially obtained values and to check the package for clarity, and they time this too. Would we want to do something like that?}
-
-\textbf{TO DO:} Write this section

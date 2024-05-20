@@ -1,4 +1,105 @@
-\section{Reproduction test reports}
+\section{Research compendium and report}
+
+\subsection{Research compendium}
+
+\subsubsection{What is a research compendium?}
+
+Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Markwick et al. 2018 define a research compendium as having three key components: (a) files organised according to convention, (b) of having seperate data, methods and outputs, and (c) of specifying the environment used for the analysis.\autocite{marwick_packaging_2018} A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
+
+\subsubsection{Proposed structure of research compendia on STARS}
+\logno
+
+\hl{do we record this or report writing in logbook or not? if logbook is just about reproduction steps then this is surely not to the point?}
+
+\hl{do we time it? do we time certain steps or overall? some of these are very minor steps - but some are more e.g. web app if done. problem though obviously that much of this is already done above so is not counting towards the time. so is the time then meaningful? i am wondering perhaps not.}
+
+\hl{what was tom envisioning? part of this is how much time to spend too.}
+
+The repository will be modified as per the proposed structure below. Some of these modifications will already be in place from having gone through the reproduction steps above.
+
+Features to implement (as per the STARS framework):
+\begin{itemize}
+    \item Open license
+    \item Dependency management (libraries, versions and sources)
+    \item Documentation \hl{(minimum or enhanced? hosted?)}
+    \begin{itemize}
+        \item Minimum - what model does, how to install and run to get results, how to vary parameters to run new experiments. Can do simply via README.
+        \item Enhanced - suggests notebooks and Quarto/Jupyter book, and suggests it covers:
+        \begin{itemize}
+            \item "A plain English summary of project context and model;
+            \item Clarifying simulation model open licencing terms;
+            \item Clear citation instructions for the model and documentation;
+            \item Instructions for how others can contribute (e.g. code, bug fixes, modifications, improved documentation), and report issues to the project;
+            \item A structured code walk through of the model;
+            \item Documenting the modelling cycle using TRACE\autocite{ayllon_keeping_2021}
+            \item Annotating simulation reporting guidelines  e.g. the STRESS-DES
+            \item A clear description of model validation including its intended purpose"
+        \end{itemize}
+        \item Hosted (GitHub pages)
+    \end{itemize}
+    \item Research artefact meta data - Open Researcher and Contributor IDs (ORCID) and citation information (CITATION.cff)
+    \item Remote code repository (GitHub)
+    \item Open science archive that is FORCE11 compliant and guarantees persistance by adhering to TRUST principles (Zenodo, mint Digital Object Identifier (DOI))\autocite{monks_towards_2024}
+    \item \hl{Model interface? Hosted web app? Online coding environment?}
+    \begin{itemize}
+        \item Online coding environment - e.g. BinderHub, Google Colab, Deepnote - or Sammi's example...
+        \item Model interface - web application to seetup and execute model (e.g. parameter fields, logic diagrams, basic animation, buttons) (e.g. streamlit, shiny, plotly dash) and hosted (e.g. Shiny free tier, streamlit community cloud)
+    \end{itemize}
+\end{itemize}
+
+Further features (as based on suggestions from the cited sources) \hl{to consider what want from this - currently just loads of stuff that came across}:
+\begin{itemize}
+    \item Website
+    \begin{itemize}
+        \item Example: \url{https://emdelponte.github.io/research-compendium-website/index.html}
+    \end{itemize}
+    \item Package format\autocite{krafczyk_learning_2021}
+    \begin{itemize}
+        \item Don't recommend CRAN for compendium as very strict about structure, and has file size limit \autocite{marwick_packaging_2018}
+    \end{itemize}
+    \item Seperating data, methods and outputs e.g. data/, analysis/... data/, analysis/, R/ (functions), man/ (docs)\autocite{marwick_packaging_2018}
+    \begin{itemize}
+        \item Include output as seperate digital object, and be clear about what it is (e.g. log? executable paper? new data? new file? table? figure?) \autocite{arguillas_10_2022}
+    \end{itemize}
+    \item README
+    \begin{itemize}
+        \item Describe overall project, where to get started, graphical summary of interlocking pieces of project\autocite{marwick_packaging_2018}
+    \end{itemize}
+    \item Executive format (e.g. make, do, sh) \hl{look into how to do this}
+    \begin{itemize}
+        \item Makefile or R markdown file to control oredr of code execution. In complex projects, can save time with caching and Makefile to only run code that has changed since last run. Makefile defines outputs (targets) in terms of inputs (dependencies) and code (recipes) then program GNU Make creates the outputs from that specification.\autocite{marwick_packaging_2018}
+        \item Files in form ready for execution \autocite{arguillas_10_2022}
+    \end{itemize}
+    \item All paper materials
+    \item Containerised
+    \begin{itemize}
+        \item Dockerfile, Docker. That virtualises R, its packages, and entire operating systems. Other solutions focussed just on R environment are packrat, checkpoint mRAN, devtools and CRAN. \autocite{marwick_packaging_2018}
+        \item Under what conditions the container will open \autocite{arguillas_10_2022}
+    \end{itemize}
+    \item Additional documentation requirements\autocite{arguillas_10_2022}
+    \begin{itemize}
+        \item "If specific input data are necessary to reproduce a prespecified outcome, are the data included as a separate digital object? If not, has detailed information been provided on where and how to obtain the specific input data, or how to generate them? (See Thing 4: Transparency)" - but think of this in terms of parameters (i.e. provided parameters, but if not, explained how to create them) \autocite{arguillas_10_2022}
+    \end{itemize}
+    \item Computational environment (i.e. not just software)
+    \item Tests
+    \begin{itemize}
+        \item .travis.yml is configuration for Travis continuous integration service, unit tests in tests/ test specific functions in compendium to produce their expected outputs given known inputs. "With continuous integration, each Git commit you make to your repository on GitHub (or similar service) triggers a script that builds your R package, and reports to you if the build succeeded or not. This is convenient because it saves you from having to manually build your package after each update to your code. The complex research compendia examples cited above make use of Travis CI, Drone.io, and CircleCI services. These provide free remote continuous integration services for public GitHub projects. Another advantage of these services is that they provide badges for your repository webpage that signal the current state of your compendium, based on the last build attempt (e.g., “build passing” or “build failing”)." \autocite{marwick_packaging_2018}
+    \end{itemize}
+\end{itemize}
+
+Examples linked from \autocite{marwick_packaging_2018}
+\begin{itemize}
+    \item \url{https://github.com/benmarwick/researchcompendium}
+    \item \url{https://github.com/cboettig/nonparametric-bayes}
+    \item \url{https://github.com/jhollist/manuscriptPackage}
+    \item \url{https://github.com/cboettig/template}
+    \item \url{https://github.com/Pakillo/template}
+\end{itemize}
+
+\hl{Krafczyk et al. 2021 have another group member used the package to re-execute the code on a different platform and compare results against the initially obtained values and to check the package for clarity, and they time this too. Would we want to do something like that?}
+
+\subsection{Reproduction test reports}
+\logno
 
 \hlblue{\textbf{Grant:} Write RCR reports. \textbf{To discuss though!:} Got lots and lots of examples of write ups for this sort of thing, and identified opportunities for publishing individually (ReScience)}
 
@@ -45,11 +146,3 @@ Report should have things like Baykova \autocite{baykova_ensuring_2024} like:
     \item "I certify that to the best of my knowledge this report is true and accurate"
     \item Who did the report, email, address
 \end{itemize}
-
-\section{Testing the protocol}
-
-Test with Tom's paper.
-
-Also maybe IPACS?
-
-Think about what test and why. Is it run through of whole thing, or just particular bits.

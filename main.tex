@@ -55,7 +55,10 @@
 \newcommand{\timeno}[1][]{
     \vspace{-3mm} \hspace{11mm}
     \hlblue{Record in logbook without timing #1}}
-
+\newcommand{\logno}[1][]{
+    \vspace{-3mm} \hspace{11mm}
+    \hlblue{Do not record in logbook or time #1}}
+    
 % Create shaded abstract
 % ---------------------------------------------------
 % Credit to JamesT (https://tex.stackexchange.com/questions/675419/text-is-not-centered-with-colorbox)
@@ -111,11 +114,10 @@
 % \include{sections/glossary}
 
 % Main body of protocol
-\input{sections/protocol_intro}
-\newpage
-\input{sections/protocol_reproduction}
-\input{sections/protocol_guidelines}
-\input{sections/protocol_end}
+\include{sections/protocol_intro}
+\include{sections/protocol_reproduction}
+\include{sections/protocol_guidelines}
+\include{sections/protocol_end}
 
 % Print bibliography and include in table of contents
 \printbibliography[heading=bibintoc]
