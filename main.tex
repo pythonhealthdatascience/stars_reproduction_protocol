@@ -23,6 +23,8 @@
 \usepackage{titlesec} % To make alternative section titles
 \usepackage{clock} % Create clock symbol
 \usepackage[clock]{ifsym} % Create clock symbol
+\usepackage{amsmath} % Create tick symbol
+\usepackage{makecell} % To add forced line breaks within table cells
 
 % Checkboxes
 \newlist{todolist}{itemize}{2}
@@ -119,14 +121,14 @@
 \include{sections/protocol_guidelines}
 \include{sections/protocol_end}
 
-% Print bibliography and include in table of contents
-\printbibliography[heading=bibintoc]
-
 % Sections after this point are Appendices
 \appendix
 \include{sections/badges}
 
 % Not currently included - would necessitate CC-BY NC license likewise - but mainly just as it's more of a reference to elsewhere so not sure if relevant to include in full
 % \include{sections/acre_constructive_communication}
+
+% Print bibliography and include in table of contents
+\printbibliography[heading=bibintoc]
 
 \end{document}

@@ -2,7 +2,17 @@
 
 \subsection{Current reproducibility badges}
 
-A badge is an that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artifacts are. These are summarised in Table \ref{table:badges}, with definitions based on those from the "Reproducibility Badging and Definitions" report by the National Information Standards Organisation (NISO).\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+A badge is an that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artifacts are. We have identified journal badges provided by the following organisations/journals:
+\begin{itemize}
+    \item National Information Standards Organisation (NISO)
+    \item Association for Computing Machinery (ACM)
+    \item Institute of Electrical and Electronics Engineers (IEEE)
+    \item Center for Open Science (COS)
+    \item Springer Nature
+    \item Psychological Science
+\end{itemize}
+
+These badges are summarised in Table \ref{table:badges}, with definitions based on those from the "Reproducibility Badging and Definitions" report by NISO.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
 
 % "H" prevents repositioning, using float
 \begin{table}[H]
@@ -19,8 +29,8 @@ A badge is an that is displayed alongside a published research article. There ar
     % Create table with 3 left-aligned multi-line columns, dynamically sized
     \begin{tabulary}{\linewidth}{@{}LLL@{}}
           \toprule
-          Category & Definition & Badges \\
-          \midrule
+          Category & Definition & Badges
+          \\\midrule
           \textbf{Pre-registration} &
             - &
             \textbullet\ COS "Pregistered"
@@ -51,6 +61,64 @@ A badge is an that is displayed alongside a published research article. There ar
 \normalsize 
 \\
 
+\subsection{Badge criteria}
+
+\subsubsection{Pre-registration badges}
+
+The COS "Preregistered" badge \hl{finish writing}
+
+\subsubsection{Open objects}
+
+"Open objects" badges relate to permanently archiving digital objects (data, code) in a public repository with a persistent identifier and open license.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
+\begin{itemize}
+    \item NISO "Open Research Objects (ORO)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM "Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item COS "Open Data” and ”Open Materials". The COS "Open Data" badge can be awarded if derived/constructed data or a subset of data are shared (instead of raw data), but this should be noted. If the raw data is required however to reproduce the reported analyses, then it cannot be awarded.\autocite{blohowiak_badges_2023}
+    \item IEEE "Code Available” and ”Datasets Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item Springer Nature "Badge for Open Data"\autocite{springer_nature_springer_2018}
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{"Open objects" badge criteria}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:badges}
+% Minimum column width
+\tymin=2cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    \begin{tabulary}{\linewidth}{@{}LCCCCCC@{}}
+          \toprule
+          Criteria & NISO & ACM & \makecell[tl]{COS \\ (data)} & COS (materials) & IEEE (either) & Springer Nature
+          \\\midrule
+          Stored in permanent archive that is publicly and openly accessible  & \checkmark & \checkmark & \checkmark & \checkmark & X & \checkmark*
+          \\\addlinespace
+          Has a persistent identifier & \checkmark & \checkmark  & \checkmark & \checkmark & X & \checkmark
+          \\\addlinespace
+          Includes an open license describing terms of reuse & \checkmark & X & \checkmark & X & X & X
+          \\\addlinespace
+          Complete set of materials are shared (needed to fully reproduce article) & \checkmark & X & \checkmark & \checkmark & \checkmark & X
+          \\\addlinespace
+          Has metadata that sufficiently describes data/materials (e.g. to enable reproduction) & X & X & \checkmark & \checkmark & X & X
+          \\\addlinespace
+          Manuscript includes data availability statement & X & X & X & X & X & \checkmark
+          \\\bottomrule
+    \end{tabulary}
+}
+\end{table}
+
+% Table footnotes
+\vspace*{-1.5\baselineskip}
+\footnotesize 
+* Springer Nature Open Data badge only requires data to be in a public repository - does not require it to be permanent or openly accessible - although does require it to have a persistent identifier.
+
+Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Science; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation.
+\normalsize 
+\\
+
+\subsection{Further information}
 \subsubsection{National Information Standards Organisation (NISO)}
 
 NISO is a US organisation that publishes technical standards for information management. One of their less formal standards if a "recommended practice"  report which suggests best practice - in this case, for "Reproducibility Badging and Definitions". The working group for the report included members from several different institutions including institutions, journals, and archives - includes those who have produced the other badges mentioned in Table \ref{table:badges}. They propose that these standards are universally deployed across scholarly publishing output.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
