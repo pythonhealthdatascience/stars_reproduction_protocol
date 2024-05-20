@@ -1,6 +1,4 @@
-\section{Appendix: Badges}
-
-\subsection{Current reproducibility badges}
+\section{Appendix: Badges} \label{appendix:badges}
 
 A badge is an that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artifacts are. We have identified journal badges provided by the following organisations/journals:
 \begin{itemize}
@@ -12,71 +10,24 @@ A badge is an that is displayed alongside a published research article. There ar
     \item Psychological Science
 \end{itemize}
 
-These badges are summarised in Table \ref{table:badges}, with definitions based on those from the "Reproducibility Badging and Definitions" report by NISO.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+Badges related to reproducibility are typically across three categories - "open objects", "object review" and "reproduced". However, there are other badges available that are related to reproducibility. These include badges for pre-registration, like the COS "Preregistered" badge.\autocite{blohowiak_badges_2023} There are also badges for replication, which is when an independent study on the same question find consistent results (potentially with new artifacts and methods). Examples of this are the NISO "Results Replicated (RER)" badge\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and IEEE "Code Replicated" and "Dataset Replicated" badges.\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
 
-% "H" prevents repositioning, using float
-\begin{table}[H]
-\centering
-\caption{Summary of reproducibility badging systems, with category definitions adapted from the NISO report.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}}
-% Space between caption and table
-\vspace{0.2cm}
-% Identifier for the table
-\label{table:badges}
-% Minimum column width
-\tymin=2cm
-% Add space between table rows
-{\renewcommand{\arraystretch}{1.2}
-    % Create table with 3 left-aligned multi-line columns, dynamically sized
-    \begin{tabulary}{\linewidth}{@{}LLL@{}}
-          \toprule
-          Category & Definition & Badges
-          \\\midrule
-          \textbf{Pre-registration} &
-            - &
-            \textbullet\ COS "Pregistered"
-            \\\addlinespace
-          \textbf{Open objects} &
-            Digital objects (data, code) permanently archived in public repository with persistent identifier and open license  &
-            \textbullet\ NISO "Open Research Objects (ORO)"\newline \textbullet\ ACM "Artifacts Available"\newline \textbullet\ COS "Open Data" and "Open Materials"\newline \textbullet\ IEEE "Code Available" and "Datasets Available"\newline \textbullet\ Springer Nature "Badge for Open Data"
-            \\\addlinespace
-          \textbf{Object review} &
-            Digital objects (data, code) reviewed according to criteria of badge issuer &
-            \textbullet\ NISO "Research Objects Reviewed (ROR)"\newline \textbullet\ ACM "Artifacts Evaluated"\newline \textbullet\ IEEE "Code Reviewed" and "Datasets Reviewed"
-            \\\addlinespace
-          \textbf{Reproduced} &
-            Independent party regenerated results using author objects &
-            \textbullet\ NISO "Results Reproduced (ROR-R)" \newline \textbullet\ IEEE "Code Reproducible" and "Dataset Reproducible" \newline \textbullet\ Psychological Science "Computational Reproducibility"
-            \\\addlinespace
-          \textbf{Replicated} & 
-            Independent study on same question finds consistent results (potentially with new artifacts and methods) &
-            \textbullet\ NISO "Results Replicated (RER)" \newline \textbullet\ IEEE "Code Replicated" and "Dataset Replicated"
-          \\\bottomrule
-    \end{tabulary}
-}
-\end{table}
+In some journals, these criteria are set as requirements for publication with the journal, rather than as badges. An example of this is the Psychological Science journal, which recently transitioned from awarding COS badges to making them requirements.\autocite{hardwicke_transparency_2023}
 
-% Table footnotes
-\vspace*{-1.5\baselineskip}
-\footnotesize Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Science; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation.
-\normalsize 
-\\
+This focuses on badges awarded by journals, but there are examples of badges that can be added to a repository if authors have followed a particular framework, either by self-allocating the badge or going through a review process. An example of this is Van Lissa et al. 2021\autocite{van_lissa_worcs_2021} who provide a package to facilitate use of a reproducible workflow in R, and suggest that a badge can be added to the README.md file of that repository if the package is used.\autocite{van_lissa_worcs_2021}
 
-\subsection{Badge criteria}
-
-\subsubsection{Pre-registration badges}
-
-The COS "Preregistered" badge \hl{finish writing}
-
-\subsubsection{Open objects}
+\subsection{"Open objects" badges}
 
 "Open objects" badges relate to permanently archiving digital objects (data, code) in a public repository with a persistent identifier and open license.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
     \item NISO "Open Research Objects (ORO)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
     \item ACM "Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
-    \item COS "Open Data” and ”Open Materials". The COS "Open Data" badge can be awarded if derived/constructed data or a subset of data are shared (instead of raw data), but this should be noted. If the raw data is required however to reproduce the reported analyses, then it cannot be awarded.\autocite{blohowiak_badges_2023}
+    \item COS "Open Data”, ”Open Materials" and "Open Code"\autocite{blohowiak_badges_2023}
     \item IEEE "Code Available” and ”Datasets Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
     \item Springer Nature "Badge for Open Data"\autocite{springer_nature_springer_2018}
 \end{itemize}
+
+The table below compares the criteria for each of these badges (based on the sources cited above).
 
 \begin{table}[H]
 \centering
@@ -89,21 +40,25 @@ The COS "Preregistered" badge \hl{finish writing}
 \tymin=2cm
 % Add space between table rows
 {\renewcommand{\arraystretch}{1.2}
-    \begin{tabulary}{\linewidth}{@{}LCCCCCC@{}}
+    \begin{tabulary}{\linewidth}{@{}LCCCCC@{}}
           \toprule
-          Criteria & NISO & ACM & \makecell[tl]{COS \\ (data)} & COS (materials) & IEEE (either) & Springer Nature
+          Criteria & NISO & ACM & COS & IEEE & Springer Nature
           \\\midrule
-          Stored in permanent archive that is publicly and openly accessible  & \checkmark & \checkmark & \checkmark & \checkmark & X & \checkmark*
+          Criteria apply to code & \checkmark & \checkmark & \checkmark & \checkmark & X
           \\\addlinespace
-          Has a persistent identifier & \checkmark & \checkmark  & \checkmark & \checkmark & X & \checkmark
+          Criteria apply to data & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark
+          \\\midrule
+          Stored in permanent archive that is publicly and openly accessible  & \checkmark & \checkmark & \checkmark & X & \checkmark*
           \\\addlinespace
-          Includes an open license describing terms of reuse & \checkmark & X & \checkmark & X & X & X
+          Has a persistent identifier & \checkmark & \checkmark  & \checkmark & X & \checkmark
           \\\addlinespace
-          Complete set of materials are shared (needed to fully reproduce article) & \checkmark & X & \checkmark & \checkmark & \checkmark & X
+          Includes an open license describing terms of reuse & \checkmark & X & \checkmark & X & X
           \\\addlinespace
-          Has metadata that sufficiently describes data/materials (e.g. to enable reproduction) & X & X & \checkmark & \checkmark & X & X
+          Complete set of materials are shared (needed to fully reproduce article) & \checkmark & X & \checkmark & \checkmark & X
           \\\addlinespace
-          Manuscript includes data availability statement & X & X & X & X & X & \checkmark
+          Has metadata that sufficiently describes data/code to enable reproduction (e.g. package versions) & X & X & \checkmark & X & X
+          \\\addlinespace
+          Manuscript includes data availability statement & X & X & X & X & \checkmark
           \\\bottomrule
     \end{tabulary}
 }
@@ -118,92 +73,87 @@ Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Sc
 \normalsize 
 \\
 
-\subsection{Further information}
-\subsubsection{National Information Standards Organisation (NISO)}
+\subsection{"Object review" badges}
 
-NISO is a US organisation that publishes technical standards for information management. One of their less formal standards if a "recommended practice"  report which suggests best practice - in this case, for "Reproducibility Badging and Definitions". The working group for the report included members from several different institutions including institutions, journals, and archives - includes those who have produced the other badges mentioned in Table \ref{table:badges}. They propose that these standards are universally deployed across scholarly publishing output.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
-
-Rough notes:
+"Object review" badges relate to the digital objects (i.e. data, code) being reviewed according to the criteria of the badge issuer.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item These badges are not specific to a particular publisher.
-    \item Not sure how they are awarded - this example is a conference that established badges using the NISO definitions that they themselves awarded - \url{https://sc21.supercomputing.org/submit/reproducibility-initiative/ad-ae-appendix-process-badges/index.html}
-    \item They do not yet have images.
-    \item Last project update appears to be June 2022 - \url{https://www.niso.org/standards-committees/reproducibility-badging} - although it is described as an active committee
+    \item NISO "Research Objects Reviewed (ROR)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM "Artifacts Evaluated - Functional" and "Artifacts Evaluated - Reusable"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item IEEE "Code Reviewed" and "Datasets Reviewed"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
 \end{itemize}
 
-\textbf{TO DO:} Finish write up, and understand whether and how we use these badges, and if it would require us "making" a definition or if NISO is specific enough.
+Their criteria are summarised and compared below. The NISO badge is not included as it does not have criteria, but just states that badges in this category would evaluate against a specified set of criteria.
 
-\subsubsection{Association for Computing Machinery (ACM)}
+\begin{table}[H]
+\centering
+\caption{"Open review" badge criteria}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:badges}
+% Minimum column width
+\tymin=2cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    \begin{tabulary}{\linewidth}{@{}LCC@{}}
+          \toprule
+          Criteria & ACM & IEEE
+          \\\midrule
+          Complete code/data provided to reviewer (i.e. checking that it includes all components for producing the article outputs) & \checkmark & \checkmark
+          \\\addlinespace
+          Description of artefacts (minimal/sufficient, or carefully documented) & \checkmark & X
+          \\\addlinespace
+          Artefacts are well structured to facilitate reuse, adhering to norms and standards of research community & \checkmark & X
+          \\\bottomrule
+    \end{tabulary}
+}
+\end{table}
 
-\textbf{TO DO:} Write this section.
+% Table footnotes
+\vspace*{-1.5\baselineskip}
+\footnotesize
+Abbreviations: ACM, Association for Computing Machinery; IEEE, Institute of Electrical and Electronics Engineers;
+\normalsize 
+\\
 
-https://www.acm.org/publications/policies/artifact-review-and-badging-current
+\subsubsection{"Reproduced" badges}
 
-ACM RCR Version 1.1
-
-Replicated Computational Results (RCR)
-
-Not results replicated (as that is independently getting same results without using author-supplied artifacts)
-
-What journals?
-
-Image source: \url{https://www.acm.org/publications/policies/artifact-review-and-badging-current}
-
-\includegraphics[width=3cm]{images/artifacts_evaluated_functional_v1_1.png}
-\includegraphics[width=3cm]{images/artifacts_evaluated_reusable_v1_1.png}
-\includegraphics[width=3cm]{images/artifacts_available_v1_1.png}
-\includegraphics[width=3cm]{images/results_reproduced_v1_1.png}
-
-\subsubsection{Institute of Electrical and Electronics Engineers (IEEE)}
-
-\textbf{TO DO:} Write this section.
-
-IEEE Explore contains content published by IEEE and its partners. Code and datasets can be awarded four types of badge:
-
+"Reproduced" badges are awarded when an independent party regenerates the article results using author objects.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item Code/Dataset Available
-    \item Code/Dataset Reviewed
-    \item Code/Dataset Reproducible
-    \item Code/Dataset Replicated
+    \item NISO "Results Reproduced (ROR-R)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM "Results Reproduced"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item IEEE "Code Reproducible" and "Dataset Reproducible"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item Psychological Science "Computational Reproducibility"\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
 \end{itemize}
 
-What journals?
+The criteria are summarised in the table below. It should be noted that ACM specify that results are reproduced "in part" using artefacts from the author, and that exact reproduction is not required but that results should be within an acceptable range for experiments of that type.\autocite{association_for_computing_machinery_acm_artifact_2020} Whether deviation in results or any modification of the author code (such as minor troubleshooting) is permissible is not detailed within the viewed criteria for the other badges.
 
-Image source: \url{https://ieeexplore.ieee.org/Xplorehelp/overview-of-ieee-xplore/about-content#reproducibility-badges}
+\begin{table}[H]
+\centering
+\caption{"Reproduced" badge criteria}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:badges}
+% Minimum column width
+\tymin=2cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    \begin{tabulary}{\linewidth}{@{}LCCCC@{}}
+          \toprule
+          Criteria & NISO & ACM & IEEE & Psychological Science
+          \\\midrule
+          Independent party regenerated results using the authors' research artefacts & \checkmark & \checkmark & \checkmark & \checkmark
+          \\\addlinespace
+          Reproduced within approximately one hour (excluding compute time) & X & X & X & \checkmark
+          \\\addlinespace
+          Requires data and scripts to be well-organised, clearly documented and with a README file with step-by-step instructions on how to reproduce results in the manuscript & X & X & X & \checkmark
+          \\\bottomrule
+    \end{tabulary}
+}
+\end{table}
 
-\includegraphics[width=15cm]{images/IEEE_reproducibility_badges.png}
-
-\subsubsection{Center for Open Science (COS)}
-
-\textbf{TO DO:} Write this section.
-
-Image source: \url{https://editorresources.taylorandfrancis.com/the-editors-role/open-research/open-science-badges/}
-
-\includegraphics[width=3cm]{images/Open-Data-OSB.png}
-\includegraphics[width=3cm]{images/Open-Materials-OSB.png}
-\includegraphics[width=3cm]{images/Preregistered-OSB.png}
-
-\subsubsection{Springer Nature}
-
-\textbf{TO DO:} Write this section.
-
-Image source: \url{https://badgr.com/public/assertions/zfqlozFWT4m5D3TlcDTVNw}
-
-\includegraphics[width=3cm]{images/springer_open_data_badge.png}
-
-\subsubsection{Psychological Science}
-
-In 2013, the Psychological Science journal began using the COS badges for pre-registration, open data and open materials. However, studies that have demonstrated the gaps in these badges - that open data doesn't guarantee reproducibility (with three studies struggling to reproduce articles from the journal), and also that pre-registrations can lack detail and that deviations from the plan may not be disclosed. Following these findings, they have introduced several changes:
-
-\begin{itemize}
-    \item \textbf{Changing COS badges into requirements:} Data and materials must be publicly available in a trusted repository
-    \item \textbf{Clear documentation:} Required (e.g. README, data dictionary) along with ideally open licenses
-    \item \textbf{STAR checks:} Team of Statistics, Transparency, and Rigor (STAR) editors to:
-    \begin{enumerate}
-        \item Assist editors ad-hoc
-        \item Perform transparency checks on all manuscript (lightly before peer-review, in-depth after)
-        \item Adjudicate on provision of \textbf{Computational Reproducibility badge}
-        \item Conduct random computational reproducibility checks
-    \end{enumerate}
-    \item \textbf{Collaboration with Institute for Replication (I4R):} I4R \url{https://i4replication.org/} are allowing submission of articles from this journal to them. Verifiers from I4R will write a verification report which is publicly shared, and included in co-authorship on meta-paper that includes the verifications.
-\end{itemize}
+% Table footnotes
+\vspace*{-1.5\baselineskip}
+\footnotesize
+Abbreviations: ACM, Association for Computing Machinery; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation.
