@@ -36,6 +36,10 @@ Upload all available materials from the article to the repository. This could in
 
 Select a license for the repository. At this stage, this should be as permissive as possible, whilst being compatible with the license used by the study authors. For instructions on how to add a license to a repository, see \url{https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository}.
 
+Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen.
+
+\hl{add note about why not later changing it to fit with packages used - reference turing way and rpkgs}
+
 \subsection{Scope of reproduction}
 
 \subsubsection{Read the journal article}
@@ -141,23 +145,12 @@ R -
     \item Docker - requires license for non-academic (e.g. NHS) use - but Podman can drop in as replacement. To do development inside a container isn't natively supported by RStudio but can use RStudioServer via Rocker. By default, it runs in ephemeral mode - any code created or saved is lost when close - but you can use volume argument to mount local folders - \href{https://towardsdatascience.com/running-rstudio-inside-a-container-e9db5e809ff8}{source 1}
 \end{itemize}
 
-\subsubsection{Update license if necessary}
-\timeyes
-
-As above, we want to use a license that is as permissive as possible whilst being compatible with the license used by the author, as well as now the \textbf{licenses of any packages} used within the project. To identify the licenses used:
-\begin{itemize}
-    \item In Python, you could use the package "pip-licenses" (\url{https://pypi.org/project/pip-licenses/})
-    \item In R, you can run the command \texttt{installed.packages(fields = "License")}
-\end{itemize}
-
-If it is not possible to use a completely permissive license like MIT, explain why (either due to author license or package licenses).
-
 \subsection{Attempt to reproduce items in scope}
 
 \subsubsection{Use provided code to produce notebook creating items in scope}
 \timeyes[(excluding computation time at the researcher's discretion - for example, excluding time where a simulation is set to run for 5 minutes whilst the researcher makes a cup of tea)]
 
-Run the code and attempt to produce the items in the scope. Insert the code into a \textbf{notebook} (.ipynb or .Rmd) as this enables you to easily share the code and produced outputs from the scope. Label each output clearly, as it relates to the manuscript. Whilst running this code, the researcher should be troubleshooting issues and evaluating reproduction success, as below.
+Run the code and attempt to produce the items in the scope. Insert the code into a \textbf{notebook} (.ipynb or .Rmd) as this enables you to easily share the code and produced outputs from the scope, hence following a literate programming approach. Label each output clearly, as it relates to the manuscript. Whilst running this code, the researcher should be troubleshooting issues and evaluating reproduction success, as below.
 
 When using their code, this should be kept separate from the unchanged copies of code that were downloaded at the start of the study. For example, copying over their script into a new notebook in a different folder (with separate folders for artefacts from the article, and for results produced by the researcher reproducing the article).
 
@@ -188,7 +181,7 @@ The allowance of contacting authors is similar to the approaches of several stud
 \subsubsection{Assess reproduction success}
 \timeyes
 
-For each item in the scope, the researcher should decide whether it has been successfully reproduced. This decision can be supported by calculating the percentage difference in results between the manuscript and the researcher. As reported by Wood et al. 2017,\autocite{wood_push_2018, wood_replication_2018} a meaningful difference in a value will vary between studies, and so it is difficult to set a single rule on what is or is not a minor difference. As such, researchers should follow a similar approach to Schwander et al. 2021,\autocite{schwander_replication_2021} considering whether the figure is reproducible at varying levels of percentage error (5\%, 10\% and 20\%). However, they should then use their judgement to decide whether the item has been reproduced. This is similar to one of the definitions proposed by McManus et al. 2019\autocite{mcmanus_can_2019} - "\textit{Results... vary only by XX\% compared to the original, AND are consistent with the original conclusions}" - incorporating both numerical comparison and allowance for variability in whether this constitutes a meaningful difference from the original results.
+For each item in the scope, the researcher should decide whether it has been successfully reproduced. This decision can be supported by calculating the percentage difference in results between the manuscript and the researcher. As reported by Wood et al. 2018,\autocite{wood_push_2018, wood_replication_2018} a meaningful difference in a value will vary between studies, and so it is difficult to set a single rule on what is or is not a minor difference. As such, researchers should follow a similar approach to Schwander et al. 2021,\autocite{schwander_replication_2021} considering whether the figure is reproducible at varying levels of percentage error (5\%, 10\% and 20\%). However, they should then use their judgement to decide whether the item has been reproduced. This is similar to one of the definitions proposed by McManus et al. 2019\autocite{mcmanus_can_2019} - "\textit{Results... vary only by XX\% compared to the original, AND are consistent with the original conclusions}" - incorporating both numerical comparison and allowance for variability in whether this constitutes a meaningful difference from the original results.
 
 The researcher should not use a definition of "partial success". Instead, they should decide whether or not each item (e.g. table, figure, or section of text) was successfully reproduced or not as a whole (although can include a description to provide more nuance to that decision). As an example, if it is possible to produce a table with some numbers being a match or very similar, but some numbers being substantially different, then this would be classed as having \textbf{not} been successfully reproduced. If however all aspects of the item were reproduced with reasonable similarity, this can be classed as \textbf{successful} reproduction.
 
