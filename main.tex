@@ -49,17 +49,6 @@
 % Blue highlight
 \definecolor{highlightblue}{HTML}{e8f2f6}
 \DeclareRobustCommand{\hlblue}[1]{{\sethlcolor{highlightblue}\hl{#1}}}
-
-% Sections of text indicating whether need to record time taken or not
-\newcommand{\timeyes}[1][]{
-    \vspace{-3mm} \hspace{11mm}
-    \hlblue{Record in logbook with time taken #1} {\small \showclock{3}{00}}}
-\newcommand{\timeno}[1][]{
-    \vspace{-3mm} \hspace{11mm}
-    \hlblue{Record in logbook without timing #1}}
-\newcommand{\logno}[1][]{
-    \vspace{-3mm} \hspace{11mm}
-    \hlblue{Do not record in logbook or time #1}}
     
 % Create shaded abstract
 % ---------------------------------------------------
@@ -84,11 +73,14 @@
 % Logo is #1982AB. Chose paler colous for the heading shading.
 \definecolor{section}{HTML}{A3CDDD}
 \newcommand{\colorsection}[1]{\colorbox{section}{\parbox{\dimexpr\textwidth-11\fboxsep}{#1}}}
-\titleformat{name=\section}[block]
-    {\normalfont\Large\bfseries}
-    {\thesection}
-    {1em}
-    {\colorsection}
+\titleformat
+    {name=\section} % Command
+    [block] % Shape
+    {\normalfont\Large\bfseries} % Format
+    {\thesection} % Label
+    {1em} % Space between number and title
+    {\colorsection} % Before code
+    [] % After code
 
 \definecolor{subsection}{HTML}{A3CDDD}
 \newcommand{\colorsubsection}[1]{\colorbox{subsection}{\parbox{\dimexpr\textwidth-13\fboxsep}{#1}}}

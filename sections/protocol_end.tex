@@ -2,32 +2,46 @@
 
 \subsection{Research compendium} \label{sec:compendium}
 
-\subsubsection{What is a research compendium?}
+Need to \textbf{tidy the notebook} (e.g. labelling each output clearly as it relates to the scope).
 
-Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Markwick et al. 2018 define a research compendium as having three key components: (a) files organised according to convention, (b) of having seperate data, methods and outputs, and (c) of specifying the environment used for the analysis.\autocite{marwick_packaging_2018} A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
-
-\subsubsection{Proposed structure of research compendia on STARS}
-\logno
-
-\hl{do we record this or report writing in logbook or not? if logbook is just about reproduction steps then this is surely not to the point?}
-
-\hl{do we time it? do we time certain steps or overall? some of these are very minor steps - but some are more e.g. web app if done. problem though obviously that much of this is already done above so is not counting towards the time. so is the time then meaningful? i am wondering perhaps not.}
+\hl{do we do this stage for WP3?}
 
 \hl{what was tom envisioning? part of this is how much time to spend too.}
 
-\hl{explain licensing with docker} will include docker file, but license for that file can be permissive, image itself not but someone else distributes that (e.g. dockerhub) \url{https://www.linuxfoundation.org/resources/publications/docker-containers-what-are-the-open-source-licensing-considerations}
+Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Marwick et al. 2018 define a research compendium as having three key components: (a) files organised according to convention, (b) of having seperate data, methods and outputs, and (c) of specifying the environment used for the analysis.\autocite{marwick_packaging_2018} A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
 
-The repository will be modified as per the proposed structure below. Some of these modifications will already be in place from having gone through the reproduction steps above.
+The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
 
-Features to implement (as per the STARS framework):
+\hl{set up as package or not? marwick suggest it for providing a structure for dependency management and file organisation, and for the code testing. but can we do that without it being a package? does that make it simpler or not?}
+
+\textbf{File organisation}
 \begin{itemize}
-    \item Open license
-    \item Dependency management (libraries, versions and sources)
-    \item Documentation \hl{(minimum or enhanced? hosted?)}
+    \item Have seperate data, methods and outputs, as per Marwick et al. 2018\autocite{marwick_packaging_2018} (although as these are DES models, data may not be applicable)\hl{remove reference to data?}
+\end{itemize}
+
+\textbf{Dockerfile}
+\begin{itemize}
+    \item Dependency management (libraries, versions and sources) is in STARS framework
+\end{itemize}
+
+\textbf{README}
+\begin{itemize}
+    \item \hl{what needs to be here if covered in detailed documentation?} stars minimal recommendation for documentation is to include in readme about what model does, how it installs and run to get results, and how to vary parameters to run new experiments. but then you build on that in the enhanced documentation
+    \item ORCID (as per STARS framework)
+\end{itemize}
+
+\hl{if I have to use a particular license for the code, what about for all my other documentation and my report?} i'll want to include the license for the code in the reproduction/ folder so it is stand-alone. and the original study/ folder will have a license there (which will be specific to those authors, in the copyright line). but what do I have in my main folder? do i just copy the license?
+
+\textbf{Open license}
+\begin{itemize}
+    \item Open license is in STARS framework
+    \item explain licensing with docker, will include docker file, but license for that file can be permissive, image itself not but someone else distributes that (e.g. dockerhub) \url{https://www.linuxfoundation.org/resources/publications/docker-containers-what-are-the-open-source-licensing-considerations}
+\end{itemize}
+
+\textbf{Detailed documentation in Quarto book hosted online}
+\begin{itemize}
+    \item As per STARS framework, include in Quarto book about:
     \begin{itemize}
-        \item Minimum - what model does, how to install and run to get results, how to vary parameters to run new experiments. Can do simply via README.
-        \item Enhanced - suggests notebooks and Quarto/Jupyter book, and suggests it covers:
-        \begin{itemize}
             \item "A plain English summary of project context and model;
             \item Clarifying simulation model open licencing terms;
             \item Clear citation instructions for the model and documentation;
@@ -37,17 +51,22 @@ Features to implement (as per the STARS framework):
             \item Annotating simulation reporting guidelines  e.g. the STRESS-DES
             \item A clear description of model validation including its intended purpose"
         \end{itemize}
-        \item Hosted (GitHub pages)
-    \end{itemize}
-    \item Research artefact meta data - Open Researcher and Contributor IDs (ORCID) and citation information (CITATION.cff)
-    \item Remote code repository (GitHub)
-    \item Open science archive that is FORCE11 compliant and guarantees persistance by adhering to TRUST principles (Zenodo, mint Digital Object Identifier (DOI))\autocite{monks_towards_2024}
-    \item \hl{Model interface? Hosted web app? Online coding environment?}
-    \begin{itemize}
-        \item Online coding environment - e.g. BinderHub, Google Colab, Deepnote - or Sammi's example...
-        \item Model interface - web application to seetup and execute model (e.g. parameter fields, logic diagrams, basic animation, buttons) (e.g. streamlit, shiny, plotly dash) and hosted (e.g. Shiny free tier, streamlit community cloud)
-    \end{itemize}
 \end{itemize}
+
+\textbf{Citation file}
+\begin{itemize}
+    \item CITATION.cff as per STARS framework
+    \item Update it, use CFF INIT
+\end{itemize}
+
+\hl{Model interface? Hosted web app? Online coding environment?}
+
+Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo. \hl{release version number, description, and include in CHANGELOG. add this above too when archiving to Zenodo}
+\begin{itemize}
+    \item Online coding environment - e.g. BinderHub, Google Colab, Deepnote - or Sammi's example...
+    \item Model interface - web application to seetup and execute model (e.g. parameter fields, logic diagrams, basic animation, buttons) (e.g. streamlit, shiny, plotly dash) and hosted (e.g. Shiny free tier, streamlit community cloud)
+\end{itemize}
+
 
 Further features (as based on suggestions from the cited sources) \hl{to consider what want from this - currently just loads of stuff that came across}:
 \begin{itemize}
@@ -100,8 +119,24 @@ Examples linked from \autocite{marwick_packaging_2018}
 
 \hl{Krafczyk et al. 2021 have another group member used the package to re-execute the code on a different platform and compare results against the initially obtained values and to check the package for clarity, and they time this too. Would we want to do something like that?}
 
-\subsection{Reproduction test reports} \label{sec:report}
-\logno
+Python -
+\begin{itemize}
+    \item Conda, VirtualEnv, etc.
+    \item Docker - to do development inside container, VSCode Dev Containers extension allows you to open folder inside container - \href{https://code.visualstudio.com/docs/devcontainers/containers}{source 1}
+\end{itemize}
+
+R -
+\begin{itemize}
+    \item Renv
+    \item Posit Public Package Manager - can use Snapshot (earliest is Oct 2017, and 5 most recent versions of R), for Linux can install binary packages (which is much quicker, as usually R installs from source rather than binary unlike for Windows and Mac which makes it really slow) - \href{https://packagemanager.posit.co/client/#/repos/cran/setup}{source 1}, \href{https://docs.posit.co/faq/p3m-faq/#frequently-asked-questions}{source 2}
+    \item Groundhog - can go back to R 3.2 and April 2015 (and apparently can patch to go earlier) - \href{https://www.brodrigues.co/blog/2023-01-12-repro_r/}{source 1}
+    \item miniCRAN - \href{https://learn.microsoft.com/en-us/sql/machine-learning/package-management/create-a-local-package-repository-using-minicran?view=sql-server-ver16}{source 1}
+    \item Docker - requires license for non-academic (e.g. NHS) use - but Podman can drop in as replacement. To do development inside a container isn't natively supported by RStudio but can use RStudioServer via Rocker. By default, it runs in ephemeral mode - any code created or saved is lost when close - but you can use volume argument to mount local folders - \href{https://towardsdatascience.com/running-rstudio-inside-a-container-e9db5e809ff8}{source 1}
+\end{itemize}
+
+\subsection{Computational reproducibility report} \label{sec:report}
+
+The overall reproduction success of the paper can be described as the proportion of items from the scope that were determined to be reproduced (e.g. 4 out of 5, 80\%). This provides more context than just stating that a paper was or was not reproduced. When describing the reproduction success, it is important to include context on troubleshooting steps required (such as writing new code or contacting the author).
 
 \hlblue{\textbf{Grant:} Write RCR reports. \textbf{To discuss though!:} Got lots and lots of examples of write ups for this sort of thing, and identified opportunities for publishing individually (ReScience)}
 
@@ -117,24 +152,6 @@ Final report:
     \item Look at examples I've gathered
 \end{itemize}
 
-\section{Versioning and Archiving}
-
-This reproduction work will be made openly available throughout the project using GitHub. It will also be archived in Zenodo upon completion.
-
-\textbf{TO DO:} Is there any exception here with the NHS Somerset work, in terms of how will work?
-
-This protocol itself will also be archived as a pre-registration. Haroz 2022 identifies the Open Science Framework (OSF, \url{https://osf.io/}) and Zenodo (\url{https://zenodo.org/}) as suitable platforms for pre-registration.\autocite{haroz_comparison_2022} In this case, Zenodo will be used as this is where other materials already exist for the STARS project, and so it can be stored alongside them in a Zenodo "community".
-
-\textbf{TO DO:} Maybe remove this section, and just mention abut GitHub and Zenodo above in record keeping and reports, and don't need to mention Haroz?
-
-Rough notes from Tom:
-
-Will use GitHub + Zenodo (automated via GitHub actions)
-Will containerise with Docker or similar (again, automated via GitHub actions)
-Will share via GitHub pages
-MIT and CC-BY-4.0 licenses
-Online book will describe how to reuse, adapt and reshare our outputs
-
 Create standardised structure for report, and include stuff from the original article within it.
 
 Report should have things like Baykova \autocite{baykova_ensuring_2024} like:
@@ -147,4 +164,18 @@ Report should have things like Baykova \autocite{baykova_ensuring_2024} like:
     \item Date it was compiled, what it was based on (e.g. draft, pre-print), materials uploaded to (link) as of (date and time of upload)
     \item "I certify that to the best of my knowledge this report is true and accurate"
     \item Who did the report, email, address
+\end{itemize}
+
+\subsection{Archive on Zenodo}
+
+Once all of the above is completed, you should archive the repository on Zenodo through creation of a new \textbf{GitHub release}. The repository should already be set up to sync with Zenodo from the earlier stage when we archived the scope, so this release will create an updated version of the archived repository, which will sit alongside the prior version. The release should be recorded within the Changelog.
+
+\vspace{0.5cm}
+\subsection{Inform the authors}
+
+\textbf{Email the authors} again to:
+\begin{itemize}
+    \item Let them know we have finished the assessment
+    \item Include link to GitHub and Zenodo.
+    \item Let them know how we are going to use the results from this work (i.e. lessons from reproduction, and guide framework design, and that this was not about validity of results).
 \end{itemize}

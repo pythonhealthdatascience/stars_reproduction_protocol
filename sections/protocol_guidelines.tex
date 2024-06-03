@@ -1,7 +1,60 @@
 \section{Evaluation against guidelines}
 
+\textbf{Note:} This section can be completed in any order. However, it is important that it is not done before the reproducibility assessment, so as to not interefere with the timings for reading and understanding the article and artefacts.
+
+\textbf{Remember!} Record progress in your logbook - but no need to time each task.
+
+\vspace{0.5cm}
+\subsection{Best practice for sharing of research artefacts}
+
+\subsubsection{Monks and Harper 2023 "best practice audit"}
+
+Monks and Harper 2023\autocite{monks_computer_2023} conducted a best practice audit, as detailed at \url{https://tommonks.github.io/des_sharing_lit_review/content/02_methods/04_quality_audit.html}. The items used in this audit were based on guidance from the Turing Way,\autocite{the_turing_way_community_turing_2022} Taylor et al. 2017,\hl{cite} and the Open Modelling Foundation (OMF) minimumal and ideal reusability standards,\hl{cite} focussing on items that were relevant to the modelling and simulation community.
+
+This assessed whether articles had:
+\begin{itemize}
+    \item Digital Object Identifier (DOI)
+    \item Open Researcher and Contributor ID (ORCID)
+    \item License
+    \item README file
+    \item Link to published paper
+    \item Steps to run code
+    \item Formal dependency management
+    \item Informal dependency management
+    \item Code testing
+    \item Local execution
+    \item Remote execution
+\end{itemize}
+
+For the six DES models being reproduced as selected from the review by Monks and Harper 2023,\autocite{monks_computer_2023} copy information about that paper from the "best practice audit". For the two models that will being created alongside the STARS team, assess them against these criteria.
+
+\subsubsection{STARS Framework}
+
+Following this review, they developed the STARS framework, which recommends essential and optional components when sharing healthcare simulation studies.
+
+Essential components:
+\begin{itemize}
+    \item Open license
+    \item Dependency management
+    \item Model created using free and open-source software (FOSS)
+    \item Minimum documentation
+    \item ORCID and citation information
+    \item Remote code repository
+    \item Open science archive
+\end{itemize}
+
+Optional components:
+\begin{itemize}
+    \item Enhanced documentation
+    \item Documentation hosting
+    \item Online coding environment
+    \item Model interface
+    \item Web app hosting
+\end{itemize}
+
+Researchers should assess whether the study meets these recommendations.
+
 \subsection{Badges} \label{sec:badges}
-\timeno
 
 Various organisations and journals have developed badges which can be displayed alongside a published research article to indicate how open and potentially reproducible it is, as detailed in Appendix \ref{appendix:badges}.
 
@@ -13,21 +66,7 @@ For this study, the researcher should:
 
 Within our Quarto template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}), a skeleton page is provided for completion of this task.\hl{make that page}
 
-\subsection{Sharing research artefacts} \label{sec:artefacts}
-\timeno
-
-Note if changes are made by author after having being contacted by us (e.g. they added an open license after we asked them to) \hl{although what about WP3? when it's all us having told them?}
-
-STARS Essential + Enhanced
-
-Any other major or relevant to DES.
-
-\hl{there is considerable overlap between this and badges actually... not sure if we want this.}
-
-\hl{could do this first then badges as that order might make more sense?}
-
 \subsection{Reporting guidelines} \label{sec:reporting}
-\timeno
 
 The journal article will be evaluated against two reporting guidelines for discrete-event simulation studies:
 \begin{itemize}
@@ -35,6 +74,6 @@ The journal article will be evaluated against two reporting guidelines for discr
     \item The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports.\autocite{zhang_reporting_2020}
 \end{itemize}
 
-We will score items as fully, partially, or not meeting the requirements - or as unclear (if required information to assess guideline criteria is not included). Within our Quarto template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}), a skeleton page is provided for completion of this task.\hl{make that page}
+We will score items as fully, partially, or not meeting the requirements - or as unclear (if required information to assess guideline criteria is not included). For each item, we include evidence of how each item has been met (e.g. copying over quotes from the article and citing their location). Within our Quarto template (\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}), a skeleton page is provided for completion of this task.
 
 In the second part of our study, where we assess the computational reproducibility of two simulation models developed alongside the STARS team, we may potentially include a simulation that is not discrete-event. In that case, we will identify alternative appropriate reporting guidelines to evaluate against, for that model type. For example, the Overview, Design concepts and Details (ODD) provides guidelines for describing individual or agent-based models,\autocite{grimm_odd_2020} or the Consolidated Health Economic Evaluation Reporting Standards (CHEERS) checklist.\autocite{husereau_consolidated_2013, husereau_consolidated_2013-1}
