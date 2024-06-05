@@ -1,7 +1,5 @@
 \section{Appendix: Badges} \label{appendix:badges}
 
-\hl{is springer open data relevant if simulations often won't really be about data? need to understand what we are focussed on - i.e. are we actually looking at whether data meets those criteria, or is it not relevant and just focussing on code (and consiering parameters to be part of code)?}
-
 A badge is an that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artifacts are. We have identified journal badges provided by the following organisations/journals:
 \begin{itemize}
     \item National Information Standards Organisation (NISO)
@@ -18,18 +16,21 @@ In some journals, these criteria are set as requirements for publication with th
 
 This focuses on badges awarded by journals, but there are examples of badges that can be added to a repository if authors have followed a particular framework, either by self-allocating the badge or going through a review process. An example of this is Van Lissa et al. 2021\autocite{van_lissa_worcs_2021} who provide a package to facilitate use of a reproducible workflow in R, and suggest that a badge can be added to the README.md file of that repository if the package is used.\autocite{van_lissa_worcs_2021}
 
+\newpage
 \subsection{"Open objects" badges}
 
 "Open objects" badges relate to permanently archiving digital objects (data, code) in a public repository with a persistent identifier and open license.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item NISO "Open Research Objects (ORO)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item NISO "Open Research Objects (ORO)" and "ORO-A" (if all relevant objects available)\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
     \item ACM "Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
     \item COS "Open Data”, ”Open Materials" and "Open Code"\autocite{blohowiak_badges_2023}
     \item IEEE "Code Available” and ”Datasets Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
     \item Springer Nature "Badge for Open Data"\autocite{springer_nature_springer_2018}
 \end{itemize}
 
-The table below compares the criteria for each of these badges (based on the sources cited above).
+The table below compares the criteria for each of these badges (based on the sources cited above). As our focus is on DES models, I have excluded the badges that just relate to data, since simulation studies typically do not have "data", but instead have parameters (which often form part of the code itself). I have likewise excluded the COS "materials" badge since this is described as sharing the "components of the research methodology" - which in our case, would typically just be the article and the code.
+
+The remaining badges either specifically relate to code, or are more broad: the NISO badge is relevant to "author-created digital objects used in the research (including data and code)",\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and the ACM badge is relevant to "artifacts associated with the research".\autocite{association_for_computing_machinery_acm_artifact_2020}
 
 \begin{table}[H]
 \centering
@@ -42,25 +43,19 @@ The table below compares the criteria for each of these badges (based on the sou
 \tymin=2cm
 % Add space between table rows
 {\renewcommand{\arraystretch}{1.2}
-    \begin{tabulary}{\linewidth}{@{}LCCCCC@{}}
+    \begin{tabulary}{\linewidth}{@{}LCCCC@{}}
           \toprule
-          Criteria & NISO & ACM & COS & IEEE & Springer Nature
+          Criteria & NISO & ACM & COS (code) & IEEE (code)
           \\\midrule
-          Criteria apply to code & \checkmark & \checkmark & \checkmark & \checkmark & X
+          Stored in permanent archive that is publicly and openly accessible  & \checkmark & \checkmark & \checkmark & X
           \\\addlinespace
-          Criteria apply to data & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark
-          \\\midrule
-          Stored in permanent archive that is publicly and openly accessible  & \checkmark & \checkmark & \checkmark & X & \checkmark*
+          Has a persistent identifier & \checkmark & \checkmark  & \checkmark & X
           \\\addlinespace
-          Has a persistent identifier & \checkmark & \checkmark  & \checkmark & X & \checkmark
+          Includes an open license & \checkmark & X & \checkmark & X
           \\\addlinespace
-          Includes an open license describing terms of reuse & \checkmark & X & \checkmark & X & X
+          Complete set of materials are shared (as would be needed to fully reproduce article) & \checkmark* & X & \checkmark & \checkmark
           \\\addlinespace
-          Complete set of materials are shared (needed to fully reproduce article) & \checkmark & X & \checkmark & \checkmark & X
-          \\\addlinespace
-          Has metadata that sufficiently describes data/code to enable reproduction (e.g. package versions) & X & X & \checkmark & X & X
-          \\\addlinespace
-          Manuscript includes data availability statement & X & X & X & X & \checkmark
+          Artefacts are sufficiently documented, for researcher to understand how the code is used and relates to the reported methodology (e.g. package versions) & X & X & \checkmark & X
           \\\bottomrule
     \end{tabulary}
 }
@@ -68,21 +63,14 @@ The table below compares the criteria for each of these badges (based on the sou
 
 % Table footnotes
 \vspace*{-1.5\baselineskip}
-\footnotesize 
-* Springer Nature Open Data badge only requires data to be in a public repository - does not require it to be permanent or openly accessible - although does require it to have a persistent identifier.
+\footnotesize
+* The standard "ORO" badge does not require this - but if all relevant research objects are available, the badge is modified to "ORO-A".
 
-Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Science; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation.
+Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Science; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation; ORO, Open Research Objects.
 \normalsize 
 \\
 
-\hl{diference in "complete" between table 1 and 2 - is table 1 more light touch? how do we distinguish when evaluating. do we go more light touch? is it possible for us to given how deep we go with this?}
-
-\hl{likewise, distinguishing "metadata" and "description of artefacts"}
-
-\hl{also the final reproduce criteria and those as well}
-
-\hl{also, these tables don't specify what is being evaluated (except perhaps the first). often it is seperate data and code. given our simulation context, do we do seperate, or just focus on code (and consider provision of parameters to be part of code? and is it just code, or is it code and materials, so e.g. parameter in journal article but not code still counts).}
-
+\newpage
 \subsection{"Object review" badges}
 
 "Object review" badges relate to the digital objects (i.e. data, code) being reviewed according to the criteria of the badge issuer.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
@@ -92,7 +80,7 @@ Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Sc
     \item IEEE "Code Reviewed" and "Datasets Reviewed"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
 \end{itemize}
 
-Their criteria are summarised and compared below. The NISO badge is not included as it does not have criteria, but just states that badges in this category would evaluate against a specified set of criteria.
+Their criteria are summarised and compared below. The NISO badge is not included as it does not have criteria, but just states that badges in this category would evaluate against a specified set of criteria. The IEEE datasets badge is also excluded (as above for the "open objects" badges).
 
 \begin{table}[H]
 \centering
@@ -105,15 +93,21 @@ Their criteria are summarised and compared below. The NISO badge is not included
 \tymin=2cm
 % Add space between table rows
 {\renewcommand{\arraystretch}{1.2}
-    \begin{tabulary}{\linewidth}{@{}LCC@{}}
+    \begin{tabulary}{\linewidth}{@{}LCCC@{}}
           \toprule
-          Criteria & ACM & IEEE
+          Criteria & ACM (functional) & ACM (reusable) & IEEE (code)
           \\\midrule
-          Complete code/data provided to reviewer (i.e. checking that it includes all components for producing the article outputs) & \checkmark & \checkmark
+          Artefacts are sufficiently documented, to enable them to be run & \checkmark & \checkmark & X
           \\\addlinespace
-          Description of artefacts (minimal/sufficient, or carefully documented) & \checkmark & X
+          Artefacts are very carefully documented, to the extent that reuse is facilitated & X & \checkmark & X
           \\\addlinespace
-          Artefacts are well structured to facilitate reuse, adhering to norms and standards of research community & \checkmark & X
+          Artefacts are relevant to and contribute to the article's results & \checkmark & \checkmark & X
+          \\\addlinespace
+          Complete set of materials are shared (as would be needed to fully reproduce article) & \checkmark & \checkmark & \checkmark
+          \\\addlinespace
+          Scripts can be successfully executed & \checkmark & \checkmark & \checkmark
+          \\\addlinespace
+          Artefacts are well structured, to the extent that reuse is facilitated, adhering to norms and standards of research community & X & \checkmark & X
           \\\bottomrule
     \end{tabulary}
 }
@@ -126,6 +120,7 @@ Abbreviations: ACM, Association for Computing Machinery; IEEE, Institute of Elec
 \normalsize 
 \\
 
+\newpage
 \subsection{"Reproduced" badges}
 
 "Reproduced" badges are awarded when an independent party regenerates the article results using author objects.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
@@ -151,13 +146,15 @@ The criteria are summarised in the table below. It should be noted that ACM spec
 {\renewcommand{\arraystretch}{1.2}
     \begin{tabulary}{\linewidth}{@{}LCCCC@{}}
           \toprule
-          Criteria & NISO & ACM & IEEE & Psychological Science
+          Criteria & NISO & ACM & IEEE (code) & Psychological Science
           \\\midrule
           Independent party regenerated results using the authors' research artefacts & \checkmark & \checkmark & \checkmark & \checkmark
           \\\addlinespace
           Reproduced within approximately one hour (excluding compute time) & X & X & X & \checkmark
           \\\addlinespace
-          Requires data and scripts to be well-organised, clearly documented and with a README file with step-by-step instructions on how to reproduce results in the manuscript & X & X & X & \checkmark
+          Artefacts are well-organised & X & X & X & \checkmark
+          \\\addlinespace
+          Artefacts are clearly documented and accompanied by a README file with step-by-step instructions on how to reproduce results in the manuscript & X & X & X & \checkmark
           \\\bottomrule
     \end{tabulary}
 }

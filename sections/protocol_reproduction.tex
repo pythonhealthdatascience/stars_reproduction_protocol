@@ -7,7 +7,7 @@
 
 \subsubsection{Inform the authors}
 
-You may have already completed this step (as inform the authors about the study if emailing to request addition of an open license to the repository). If not, you should:
+You may have already completed this step (as we will have informed the authors about the study if we had to email them to request the addition of an open license to their repository). If not, you should:
 \begin{enumerate}
     \item \textbf{Email the corresponding author} to let them know about the study, including a \textbf{copy of/link to the study protocol}.
     \item If email rebounds, search online for a \textbf{recent email address} for any of the study authors.
@@ -57,7 +57,7 @@ The next step is to define the scope of the reproducibility study - in other wor
 
 \begin{enumerate}
     \item Look through each of the \textbf{tables and figures} in the article (excluding the supplementary material) and identify whether they are within scope or not (i.e. do they present results of the simulation).
-    \item Identify \textbf{'key results' in the text} of the article that are within scope. These are results that are highlighted within the \textbf{abstract or results} section. This may include items from the supplementary materials if referred to in the text.
+    \item Identify any \textbf{'key results' in the text} of the article that are within scope. These are results that are highlighted within the \textbf{abstract or results} section. This may include items from the supplementary materials if referred to in the text.
     \item Evaluate whether the identified 'key results' are \textbf{already covered by the tables and figures} from the article. If not, they should be included in the scope.
     \item Make \textbf{consensus decision on scope with other team members}. Whilst the rest of this protocol is conducted by a single member of the STARS team, the scope of the reproducibility study will be defined as a consensus decision, with at least two team members reading the article and agreeing together on what is appropriate.
 \end{enumerate}
@@ -82,7 +82,7 @@ You should amend the provided \textbf{template page} ('evaluation/scope.qmd') to
 \vspace{0.5cm}
 \subsubsection{Archive scope on Zenodo}
 
-With the organisation linked to Zenodo, \textbf{toggle Zenodo to preserve} that repository, and then create a \textbf{release on GitHub}, which Zenodo will then automatically download and register with a DOI. The release should be recorded within the Changelog.
+With the organisation linked to Zenodo, \textbf{toggle Zenodo to preserve} that repository, and then create a \textbf{release on GitHub}, which Zenodo will then automatically download and register with a DOI. The release should be recorded within the \textbf{Changelog}.
 
 This release should serve as a public registration of the intended scope of the reproducibility study, and archiving the repository at this point (prior to having started using or really looking at the the code). As stated in the "Guide for Accelerating Computational Reproducibility (ACRe) in the Social Sciences", it is important that the scope is defined at the start of the study, and publicly archived so as not to be amended during the course of the study.\cite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
 
@@ -106,9 +106,9 @@ Identify the \textbf{software packages and their versions}, as used by the origi
     \item Select versions by looking at the \textbf{version history} for that package on a package repository (e.g. PyPI, CRAN), and identifying a version whose release date that is \textbf{closest to but still prior to} the date of the code archive or paper publication (whichever is earliest).
 \end{itemize}
 
-Use or set up an environment file with the identified dependencies, and \textbf{create the environment}. Researchers should use simple methods for environment management such as Conda or VirtualEnv in Python, and renv in R. You do not need to match the operating system used.
+Use or set up an environment file with the identified dependencies, and \textbf{create the environment}. Researchers should use simple methods for environment management such as Conda or VirtualEnv in Python, and renv in R. For simplicity, we are not requiring that you match the operating system used.
 
-\textbf{Remember!} This should be set up within the 'reproduction/' folder, whilst the 'original\_study/' folder should remain untouched. This means, if an environment file is provided, you should copy it into the 'reproduction/' folder.
+\textbf{Important!} This should be set up within the '\textbf{reproduction/}' folder, whilst the 'original\_study/' folder should remain untouched. This means, if an environment file is provided, you should copy it into the 'reproduction/' folder.
 
 \vspace{0.5cm}
 \subsection{Attempt to reproduce items in scope}
@@ -121,7 +121,7 @@ This stage is an \textbf{iterative} process of running the code and attempting t
     \item \textbf{Troubleshoot issues}, contacting the study authors if necessary (as detailed below)
 \end{itemize}
 
-\textbf{Remember!} Continue taking detailed notes and timings in your logbook, including each success and issue, and making note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that you \textbf{copy over in-progress outputs} to the blog post folder (e.g. .png file for a figure), so that you can easily and visually share progress in reproduction
+\textbf{Remember!} Continue taking detailed notes and timings in your logbook, including each success and issue, and making note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that you \textbf{copy over in-progress outputs} to the blog post folder (e.g. .png file for a figure), so that you can easily and visually share progress in reproduction within the log.
 
 \vspace{0.5cm}
 \subsubsection{Successful reproduction}
@@ -138,20 +138,18 @@ Further recommendations:
     \item \textbf{Numbers} - researchers should calculate and report the \textbf{percentage difference} in results between the manuscript and the researcher. As reported by Wood et al. 2018,\autocite{wood_push_2018, wood_replication_2018} a meaningful difference in a value will vary between studies, and so it is difficult to set a single rule on what is or is not a minor difference. As such, researchers should follow a similar approach to Schwander et al. 2021,\autocite{schwander_replication_2021} considering whether the figure is reproducible at varying levels of percentage error (5\%, 10\% and 20\%). However, they \textbf{should then use their judgement to decide whether the item has been reproduced}. This is similar to one of the definitions proposed by McManus et al. 2019\autocite{mcmanus_can_2019} - "\textit{Results... vary only by XX\% compared to the original, AND are consistent with the original conclusions}" - incorporating both numerical comparison and allowance for variability in whether this constitutes a meaningful difference from the original results.
 \end{itemize}
 
-In assessing reproduction success, it is important to note (as in Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} and Wood et al. 2018\autocite{wood_push_2018}) that the focus is not on the quality or robustness of the original results, or whether the main claims of the study are consistent. Instead, the focus is on whether it was possible to reproduce the article's results within a reasonable margin of error (given that we do expect a little variation, since discrete-event simulations are stochastic models, and may not have been fully controlled using random seeds or with any environment differences).
-
-\hl{Should this be a consensus decision?}
+In assessing reproduction success, it is important to note (as in Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} and Wood et al. 2018\autocite{wood_push_2018}) that the focus is \textbf{not} on the quality or robustness of the original results, or whether the main claims of the study are consistent. Instead, the focus is on whether it was possible to reproduce the article's results \textbf{within a reasonable margin of error} (given that we do expect a little variation, since discrete-event simulations are stochastic models, and may not have been fully controlled using random seeds or with any environment differences).
 
 \vspace{0.5cm}
 \subsubsection{Troubleshooting}
 
-Researchers should \textbf{troubleshoot} any issues encountered (including making changes to the provided code). In allowing modification and writing of code, our intention is that researchers try \textbf{as much as possible} to attempt to reproduce from the scope. The allowance of writing new code is similar to the approach of Krafczyk et al. 2021\autocite{krafczyk_learning_2021} and the ACRe project\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}. Examples of changes you may need to make include:
+Researchers should \textbf{troubleshoot} any issues encountered (including \textbf{making changes to the provided code}). In allowing modification and writing of code, our intention is that researchers try \textbf{as much as possible} to attempt to reproduce from the scope. The allowance of writing new code is similar to the approach of Krafczyk et al. 2021\autocite{krafczyk_learning_2021} and the ACRe project\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}. Examples of changes you may need to make include:
 \begin{itemize}
     \item Correcting paths to files
     \item Correcting the versions of software, or adding missing packages or libraries
     \item Fixing errors in the code
     \item Adding code to produce an item in the scope, if not otherwise provided
-    \item Adding a method for controlling randomness in the simulation (if not otherwise set up), so you can get consistent results with yourself between re-runs of your notebook
+    \item Adding a method for \textbf{controlling randomness} in the simulation (if not otherwise set up), so you can get consistent results with yourself between re-runs of your notebook
 \end{itemize}
 
 Troubleshooting can include asking \textbf{advice from other members of the STARS team}. In these cases, the researcher should ensure that they include a record the time spent, everything discussed, and any recommendations made.
@@ -161,21 +159,21 @@ Troubleshooting can include asking \textbf{advice from other members of the STAR
 
 Despite troubleshooting, you may remain unable to run the code, or have large discrepancies with the original paper. In this case, you should \textbf{contact the original author}. This email should:
 \begin{itemize}
-    \item \textbf{Recap} of project (as will have emailed them before when started)
-    \item Link to \textbf{preliminary repor}t with documented attempt and list of issues that require resolution, Make sure description of problem is specific (e.g. identifying line in paper and place in code where think something is missing, or where an issue is occuring)
-    \item \textbf{Ask for suggestions} on alternative course of action for issues, or for the complete code/data if missing.
+    \item \textbf{Recap} the project (since our last email, when we informed them about the study).
+    \item Link to the \textbf{Quarto site} with the documented reproduction attempt and list of issues that require resolution. Make sure the description of problem is specific (e.g. identifying line in paper and place in code where think something is missing, or where an issue is occurring).
+    \item \textbf{Ask for suggestions} on an alternative course of action for issues, or for the complete code/data if missing.
 \end{itemize}
 
-If there is no response in two weeks, the researcher should contact them again. If there is still no response two weeks later, this can be marked as no response. When emailing authors, it is suggested to follow the guidance on language and adapt from the \textbf{email template}s provided by the ACRe in the chapter "Guidance for Constructive Communication Between Reproducers and Original Authors" of their guide.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} The allowance of contacting authors is similar to the approaches of several studies,\autocite{krafczyk_learning_2021,wood_push_2018,berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022,hardwicke_analytic_2021,konkol_computational_2019} with a maximum of four weeks for responses as in Konkol et al. 2018\autocite{konkol_computational_2019}. This approach does however differ from Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} who did not contact authors, since they considered reproducibility to be only about the available data and procedures and not anything shared privately.\autocite{laurinavichyute_share_2022}
+If there is no response in two weeks, the researcher should contact them again. If there is still no response two weeks later, this can be marked as non-response. When emailing authors, it is suggested to follow the guidance on language and adapt from the \textbf{email templates} provided by ACRe in the chapter "Guidance for Constructive Communication Between Reproducers and Original Authors" from their guide.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} The allowance of contacting authors is similar to the approaches of several studies,\autocite{krafczyk_learning_2021,wood_push_2018,berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022,hardwicke_analytic_2021,konkol_computational_2019} with a maximum of four weeks for responses as in Konkol et al. 2018\autocite{konkol_computational_2019}. This approach does however differ from Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} who did not contact authors, since they considered reproducibility to be only about the available data and procedures and not anything shared privately.\autocite{laurinavichyute_share_2022}
 
 \vspace{0.5cm}
 \subsection{Finishing up}
 
 \subsubsection{Tidy up notebook and create reproduction success page}
 
-Tidy the reproduction notebook, so it simply produces each of the items in the scope, and clearly states how each relates to the original article (e.g. captioning 'Reproduction attempt for Figure 2').
+\textbf{Tidy} the reproduction notebook, so it simply produces each of the items in the scope, and clearly state how each section relates to the original article (e.g. captioning 'Reproduction attempt for Figure 2').
 
-Using the template page ('evaluation/reproduction\_success.qmd'), show each item from the scope (as in the original article) alongside our best reproduction attempts. Include the decision on the reproduction success for each item (along with any justification for this decision).
+Using the \textbf{template page} ('evaluation/reproduction\_success.qmd'), show each item from the scope (as in the original article) alongside our best reproduction attempts. Include the decision on the reproduction success for each item (along with any justification for this decision).
 
 \vspace{0.5cm}
 \subsubsection{Archive on Zenodo}
