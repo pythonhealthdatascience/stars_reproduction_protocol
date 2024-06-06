@@ -2,135 +2,106 @@
 
 \subsection{Research compendium} \label{sec:compendium}
 
-Need to \textbf{tidy the notebook} (e.g. labelling each output clearly as it relates to the scope).
-
-\hl{what was tom envisioning? part of this is how much time to spend too.}
-
 Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Marwick et al. 2018 define a research compendium as having three key components: (a) files organised according to convention, (b) of having seperate data, methods and outputs, and (c) of specifying the environment used for the analysis.\autocite{marwick_packaging_2018} A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
 
 The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
 
-\hl{set up as package or not? marwick suggest it for providing a structure for dependency management and file organisation, and for the code testing. but can we do that without it being a package? does that make it simpler or not?}
+\vspace{0.5cm}
+\subsubsection{Modify repository}
 
-\textbf{File organisation}
+\textbf{Organisation of the repository}
 \begin{itemize}
-    \item Have seperate data, methods and outputs, as per Marwick et al. 2018\autocite{marwick_packaging_2018} (although as these are DES models, data may not be applicable)\hl{remove reference to data?}
+    \item Marwick et al. 2018\autocite{marwick_packaging_2018} recommended seperate data, methods and outputs
+    \item What is \textbf{the most appropriate ways} of keeping data for the simulation (often this might be parameters typically within the scripts themselves) "seperate"?
+    \item \textbf{Package} - Marwick et al. 2018\autocite{marwick_packaging_2018} suggest you can structure it as a package as this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing. However, \textbf{I'm not certain if we would want to do that}? R examples of package layout linked from \autocite{marwick_packaging_2018}
+    \begin{itemize}
+        \item \url{https://github.com/benmarwick/researchcompendium}
+        \item \url{https://github.com/cboettig/nonparametric-bayes}
+        \item \url{https://github.com/jhollist/manuscriptPackage}
+        \item \url{https://github.com/cboettig/template}
+        \item \url{https://github.com/Pakillo/template}
+    \end{itemize}
 \end{itemize}
 
-\textbf{Dockerfile}
+\textbf{Citation.CFF file}
 \begin{itemize}
-    \item Dependency management (libraries, versions and sources) is in STARS framework
+    \item Including citation information is part of the STARS framework, and Monks et al. 2024\autocite{monks_towards_2024} suggest this can be via a CITATION.cff file
+    \item Use \href{https://citation-file-format.github.io/cff-initializer-javascript/#}{cffinit} to help create this, with the \href{https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md}{schema guide} to help make changes.
+    \item You can set up actions with GitHub workflows to (a) monitor that the CFF file is configured correctly, and (b) convert the file into other formats (e.g. APA, bibtex)
+\end{itemize}
+
+\textbf{Improvements to code}
+\begin{itemize}
+    \item PEP-8 or equivalent
+    \item Comments
+    \item Docstrings
+    \item Removing unused packages
 \end{itemize}
 
 \textbf{README}
 \begin{itemize}
-    \item \hl{what needs to be here if covered in detailed documentation?} stars minimal recommendation for documentation is to include in readme about what model does, how it installs and run to get results, and how to vary parameters to run new experiments. but then you build on that in the enhanced documentation
-    \item ORCID (as per STARS framework)
+    \item Citation to the original study, including their ORCID IDs if available, and a link to the paper.
+    \item Describe overall project, where to get started, graphical summary of interlocking pieces of project.\autocite{marwick_packaging_2018}
+    \item ORCID IDs (for every person involved).\autocite{monks_towards_2024}
+    \item Overview model scope, how to execute it, how to vary parameters.\autocite{monks_towards_2024}
+    \item Overview of the repository
+    \item Link to citation information
+    \item Description of run time for a given hardware/system, and including description of the OS and hardware used in the reproduction (alongside what they originally used, if they provided that information)
 \end{itemize}
 
-\hl{if I have to use a particular license for the code, what about for all my other documentation and my report?} i'll want to include the license for the code in the reproduction/ folder so it is stand-alone. and the original study/ folder will have a license there (which will be specific to those authors, in the copyright line). but what do I have in my main folder? do i just copy the license?
-
-\textbf{Open license}
+\textbf{Article}
 \begin{itemize}
-    \item Open license is in STARS framework
-    \item explain licensing with docker, will include docker file, but license for that file can be permissive, image itself not but someone else distributes that (e.g. dockerhub) \url{https://www.linuxfoundation.org/resources/publications/docker-containers-what-are-the-open-source-licensing-considerations}
+    \item Including the article, or just a link?
 \end{itemize}
 
-\textbf{Detailed documentation in Quarto book hosted online}
+\textbf{Documentation (detailed and hosted)}
 \begin{itemize}
+    \item Create Quarto site \textbf{seperate to current site (?)} hosted online that accompanies the code
     \item As per STARS framework, include in Quarto book about:
     \begin{itemize}
-            \item "A plain English summary of project context and model;
-            \item Clarifying simulation model open licencing terms;
-            \item Clear citation instructions for the model and documentation;
-            \item Instructions for how others can contribute (e.g. code, bug fixes, modifications, improved documentation), and report issues to the project;
-            \item A structured code walk through of the model;
-            \item Documenting the modelling cycle using TRACE\autocite{ayllon_keeping_2021}
-            \item Annotating simulation reporting guidelines  e.g. the STRESS-DES
-            \item A clear description of model validation including its intended purpose"
-        \end{itemize}
+        \item "A plain English summary of project context and model;
+        \item Clarifying simulation model open licencing terms;
+        \item Clear citation instructions for the model and documentation;
+        \item Instructions for how others can contribute (e.g. code, bug fixes, modifications, improved documentation), and report issues to the project;
+        \item A structured code walk through of the model;
+        \item Documenting the modelling cycle using TRACE\autocite{ayllon_keeping_2021}
+        \item Annotating simulation reporting guidelines  e.g. the STRESS-DES
+        \item A clear description of model validation including its intended purpose"
+    \end{itemize}
+    \item Example: \url{https://emdelponte.github.io/research-compendium-website/index.html}
 \end{itemize}
 
-\textbf{Citation file}
+\textbf{Testing}
 \begin{itemize}
-    \item CITATION.cff as per STARS framework
-    \item Update it, use CFF INIT
+    \item Focussed on being able to reproduce specific results (since that has been our aim)
+    \item Examples from Tom in treat-sim
+    \item .travis.yml is configuration for Travis continuous integration service, unit tests in tests/ test specific functions in compendium to produce their expected outputs given known inputs. "With continuous integration, each Git commit you make to your repository on GitHub (or similar service) triggers a script that builds your R package, and reports to you if the build succeeded or not. This is convenient because it saves you from having to manually build your package after each update to your code. The complex research compendia examples cited above make use of Travis CI, Drone.io, and CircleCI services. These provide free remote continuous integration services for public GitHub projects. Another advantage of these services is that they provide badges for your repository webpage that signal the current state of your compendium, based on the last build attempt (e.g., “build passing” or “build failing”)." \autocite{marwick_packaging_2018}
 \end{itemize}
 
-\hl{Model interface? Hosted web app? Online coding environment?}
-
-Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo. \hl{release version number, description, and include in CHANGELOG. add this above too when archiving to Zenodo}
+\textbf{Create Docker environment}
 \begin{itemize}
-    \item Online coding environment - e.g. BinderHub, Google Colab, Deepnote - or Sammi's example...
-    \item Model interface - web application to seetup and execute model (e.g. parameter fields, logic diagrams, basic animation, buttons) (e.g. streamlit, shiny, plotly dash) and hosted (e.g. Shiny free tier, streamlit community cloud)
+    \item Create a Docker file
+    \item Note on licencing: Licence for this file can be permissive (and so can retain the open licence we have used), but hence we do not distribute the image itself (as that would require different licencing), and instead can use someone else to distribute (e.g. DockerHub, as below).\autocite{the_linux_foundation_docker_nodate}
+    \item Dockerfile, Docker. That virtualises R, its packages, and entire operating systems. Other solutions focussed just on R environment are packrat, checkpoint mRAN, devtools and CRAN. \autocite{marwick_packaging_2018}
 \end{itemize}
 
-
-Further features (as based on suggestions from the cited sources) \hl{to consider what want from this - currently just loads of stuff that came across}:
+\textbf{Create remote instance of the model}
 \begin{itemize}
-    \item Website
-    \begin{itemize}
-        \item Example: \url{https://emdelponte.github.io/research-compendium-website/index.html}
-    \end{itemize}
-    \item Package format\autocite{krafczyk_learning_2021}
-    \begin{itemize}
-        \item Don't recommend CRAN for compendium as very strict about structure, and has file size limit \autocite{marwick_packaging_2018}
-    \end{itemize}
-    \item Seperating data, methods and outputs e.g. data/, analysis/... data/, analysis/, R/ (functions), man/ (docs)\autocite{marwick_packaging_2018}
-    \begin{itemize}
-        \item Include output as seperate digital object, and be clear about what it is (e.g. log? executable paper? new data? new file? table? figure?) \autocite{arguillas_10_2022}
-    \end{itemize}
-    \item README
-    \begin{itemize}
-        \item Describe overall project, where to get started, graphical summary of interlocking pieces of project\autocite{marwick_packaging_2018}
-    \end{itemize}
-    \item Executive format (e.g. make, do, sh) \hl{look into how to do this}
-    \begin{itemize}
-        \item Makefile or R markdown file to control oredr of code execution. In complex projects, can save time with caching and Makefile to only run code that has changed since last run. Makefile defines outputs (targets) in terms of inputs (dependencies) and code (recipes) then program GNU Make creates the outputs from that specification.\autocite{marwick_packaging_2018}
-        \item Files in form ready for execution \autocite{arguillas_10_2022}
-    \end{itemize}
-    \item All paper materials
-    \item Containerised
-    \begin{itemize}
-        \item Dockerfile, Docker. That virtualises R, its packages, and entire operating systems. Other solutions focussed just on R environment are packrat, checkpoint mRAN, devtools and CRAN. \autocite{marwick_packaging_2018}
-        \item Under what conditions the container will open \autocite{arguillas_10_2022}
-    \end{itemize}
-    \item Additional documentation requirements\autocite{arguillas_10_2022}
-    \begin{itemize}
-        \item "If specific input data are necessary to reproduce a prespecified outcome, are the data included as a separate digital object? If not, has detailed information been provided on where and how to obtain the specific input data, or how to generate them? (See Thing 4: Transparency)" - but think of this in terms of parameters (i.e. provided parameters, but if not, explained how to create them) \autocite{arguillas_10_2022}
-    \end{itemize}
-    \item Computational environment (i.e. not just software)
-    \item Tests
-    \begin{itemize}
-        \item .travis.yml is configuration for Travis continuous integration service, unit tests in tests/ test specific functions in compendium to produce their expected outputs given known inputs. "With continuous integration, each Git commit you make to your repository on GitHub (or similar service) triggers a script that builds your R package, and reports to you if the build succeeded or not. This is convenient because it saves you from having to manually build your package after each update to your code. The complex research compendia examples cited above make use of Travis CI, Drone.io, and CircleCI services. These provide free remote continuous integration services for public GitHub projects. Another advantage of these services is that they provide badges for your repository webpage that signal the current state of your compendium, based on the last build attempt (e.g., “build passing” or “build failing”)." \autocite{marwick_packaging_2018}
-    \end{itemize}
+    \item This could be via DockerHub (as suggested by Monks et al. 2024\autocite{monks_towards_2024}), or via other options... Google Colab, Deepnote - or Sammi's example...
 \end{itemize}
 
-Examples linked from \autocite{marwick_packaging_2018}
+To consider:
+
+Executive format (e.g. make, do, sh)
 \begin{itemize}
-    \item \url{https://github.com/benmarwick/researchcompendium}
-    \item \url{https://github.com/cboettig/nonparametric-bayes}
-    \item \url{https://github.com/jhollist/manuscriptPackage}
-    \item \url{https://github.com/cboettig/template}
-    \item \url{https://github.com/Pakillo/template}
+    \item Makefile or R markdown file to control order of code execution. In complex projects, can save time with caching and Makefile to only run code that has changed since last run. Makefile defines outputs (targets) in terms of inputs (dependencies) and code (recipes) then program GNU Make creates the outputs from that specification.\autocite{marwick_packaging_2018}
+    \item Files in form ready for execution \autocite{arguillas_10_2022}
 \end{itemize}
 
-\hl{Krafczyk et al. 2021 have another group member used the package to re-execute the code on a different platform and compare results against the initially obtained values and to check the package for clarity, and they time this too. Would we want to do something like that?}
+\vspace{0.5cm}
+\subsubsection{Archive on Zenodo}
 
-Python -
-\begin{itemize}
-    \item Conda, VirtualEnv, etc.
-    \item Docker - to do development inside container, VSCode Dev Containers extension allows you to open folder inside container - \href{https://code.visualstudio.com/docs/devcontainers/containers}{source 1}
-\end{itemize}
-
-R -
-\begin{itemize}
-    \item Renv
-    \item Posit Public Package Manager - can use Snapshot (earliest is Oct 2017, and 5 most recent versions of R), for Linux can install binary packages (which is much quicker, as usually R installs from source rather than binary unlike for Windows and Mac which makes it really slow) - \href{https://packagemanager.posit.co/client/#/repos/cran/setup}{source 1}, \href{https://docs.posit.co/faq/p3m-faq/#frequently-asked-questions}{source 2}
-    \item Groundhog - can go back to R 3.2 and April 2015 (and apparently can patch to go earlier) - \href{https://www.brodrigues.co/blog/2023-01-12-repro_r/}{source 1}
-    \item miniCRAN - \href{https://learn.microsoft.com/en-us/sql/machine-learning/package-management/create-a-local-package-repository-using-minicran?view=sql-server-ver16}{source 1}
-    \item Docker - requires license for non-academic (e.g. NHS) use - but Podman can drop in as replacement. To do development inside a container isn't natively supported by RStudio but can use RStudioServer via Rocker. By default, it runs in ephemeral mode - any code created or saved is lost when close - but you can use volume argument to mount local folders - \href{https://towardsdatascience.com/running-rstudio-inside-a-container-e9db5e809ff8}{source 1}
-\end{itemize}
+Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo (with record in CHANGELOG).
 
 \subsection{Computational reproducibility report} \label{sec:report}
 
