@@ -18,7 +18,6 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          compiler: pdfLaTeX
 
       - name: Upload PDF file
         uses: 
