@@ -6,7 +6,7 @@ The protocol will be used to assess the computational reproducibility of \textbf
 
 Throughout the study, results will be openly available and shared via a \textbf{Quarto website}. This will compile information on the reproduction of the article. This includes the notebooks (.ipynb or .Rmd) producing the items in the scope, as well as a chronological log of work using Quarto blog posts, and then later, the reproduction report and detailed study results.
 
-The protocol will often refer to our \textbf{template repository} which can be viewed here -\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}. As you will see, one of the first steps for researchers will be to use this template to set-up their repository for the reproducibility assessment. \hl{CHANGE TO ZENODO CITATION ALONGSIDE URL BEFORE PUBLISHING}
+The protocol will often refer to our \textbf{template repository} which can be viewed here -\url{https://github.com/pythonhealthdatascience/stars_reproduction_template}. As you will see, one of the first steps for researchers will be to use this template to set-up their repository for the reproducibility assessment. \hl{Change to link to Zenodo before publishing}
 
 There are \textbf{three key stages} to this protocol which you should \textbf{work through in the following order}:
 \begin{enumerate}
@@ -24,7 +24,9 @@ However, we first introduce two important processes that will need to be \textbf
 \newpage
 \section{Logbook}
 
-Throughout \textbf{all of the stages} below, you should keep a \textbf{logbook}. This is a detailed record of work recorded using \textbf{Quarto blog posts}, using the template provided. As suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021} in their guidelines for keeping modelling notebooks, these posts will be \textbf{daily}, dated, chronological entries. \textbf{Tags} will be used to help indicate the activity on each day, and enable posts to be filtered by activity. Keeping a detailed log will support later understanding of what was done, and support preparing of final documents like the reproduction report.
+Throughout \textbf{all of the stages} below, you should keep a \textbf{logbook}.
+
+This is a detailed record of work recorded using \textbf{Quarto blog posts}, using the template provided. As suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021} in their guidelines for keeping modelling notebooks, these posts will be \textbf{daily}, dated, chronological entries. \textbf{Tags} will be used to help indicate the activity on each day, and enable posts to be filtered by activity. Keeping a detailed log will support later understanding of what was done, and support preparing of final documents like the reproduction report.
 
 Each entry in the logbook should contain the:
 \begin{itemize}
@@ -35,13 +37,19 @@ Each entry in the logbook should contain the:
     \item Clear statement if and when each item in the scope is considered to have been \textbf{successfully reproduced}.
 \end{itemize}
 
-\vspace{0.5cm}
+\newpage
 \section{Timing}
 
-During the first stage of your study (\textbf{assessment of computational reproducibility}) you should \textbf{time how long each task takes}. These times should be recorded within the logbook alongside each activity (e.g. 12:10 to 12:45). The times should be monitored with a \textbf{maximum of 40 hours} allowed for attempting to reproduce the study, as in Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} This cut-off is implemented as we anticipate there would be little more to learn from spending longer than that time on reproducing a single study. The timings are just implemented for the first stage, as our focus in timing this work is to understand (and ultimately also limit) how long we spend reproducing each study.
+During the first and second stages of your study (\textbf{assessment of computational reproducibility}, and \textbf{evaluation against guidelines}) you should \textbf{time how long each task takes}. Whilst timing, it is important you timestamp:
+\begin{itemize}
+    \item When you finish reproducing each item within the scope
+    \item When you have finished working on evaluation of artefacts (badges and recommendations on sharing), and when you have finished working on evaluation of the article (STRESS-DES and ISPOR-SDM)
+\end{itemize}
+
+These times should be recorded within the logbook alongside each activity (e.g. 12:10 to 12:45). The times should be monitored with a \textbf{maximum of 40 hours} allowed for attempting to reproduce the study, as in Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} This cut-off is implemented as we anticipate there would be little more to learn from spending longer than that time on reproducing a single study.
 
 The only exceptions to this timing are:
 \begin{itemize}
     \item \textbf{Computation time}. This is at the researcher's discretion. For example, you should include short run times where you are still continuously working on the study. You should exclude longer run times where you are no longer working towards the assessment of computational reproducibility - for example, if you set the simulation to run for five minutes whilst going to make a cup of tea.
-    \item \textbf{Consensus on the scope}. You should record the time spent by the primary researcher in reading the article and identifying what they think is in scope. However, you should not include the time spent discussing the scope with other researchers on the team, nor any of the time that they spent reading the article or thinking about scope.
+    \item \textbf{Time spent by other researchers}. You should record the time spent by the primary researcher on completing tasks, and time spent in discussion with other researchers. However, if other researchers spend time preparing for those discussions (e.g. reading the article, looking over the work), this does not need to be recorded.
 \end{itemize}

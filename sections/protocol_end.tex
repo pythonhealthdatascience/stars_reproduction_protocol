@@ -1,143 +1,72 @@
-\section{Research compendium and report}
+\section{Summary report and research compendium}
 
+\subsection{Computational reproducibility report} \label{sec:report}
+
+Use the \textbf{provided template} to produce a simple summary report for the reproducibility assessment. This template should guide you to include:
+
+\begin{itemize}
+    \item Short study description
+    \item Citation to original study
+    \item Number and percentage of items reproduced from scope and time elapsed
+    \item Required troubleshooting steps
+    \item Display of reproduced items alongside original study items
+    \item Percent stacked bar chart displaying the proportion of criteria met for each of the evaluations against guidelines
+\end{itemize}
+
+\vspace{1cm}
 \subsection{Research compendium} \label{sec:compendium}
 
-Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Marwick et al. 2018 define a research compendium as having three key components: (a) files organised according to convention, (b) of having seperate data, methods and outputs, and (c) of specifying the environment used for the analysis.\autocite{marwick_packaging_2018} A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
+Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Marwick et al. 2018 define a research compendium as having three key components:
+\begin{enumerate}
+    \item Files organised according to convention
+    \item Seperate data, methods and outputs
+    \item Specifying the environment used for the analysis.\autocite{marwick_packaging_2018}
+\end{enumerate}
 
-The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
+A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018} The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
+
+Our primary motivation in doing this step is to make it \textbf{easy and clear for someone to re-run} our reproduction, whilst making relatively \textbf{minimal changes} to the code itself. Hence, we are not necessarily amending to meet all of the recommendations for best practice of sharing DES models.
 
 \vspace{0.5cm}
 \subsubsection{Modify repository}
 
-\textbf{Organisation of the repository}
+Make the following changes to the \textbf{reproduction/} folder, if not already implemented:
 \begin{itemize}
-    \item Marwick et al. 2018\autocite{marwick_packaging_2018} recommended seperate data, methods and outputs
-    \item What is \textbf{the most appropriate ways} of keeping data for the simulation (often this might be parameters typically within the scripts themselves) "seperate"?
-    \item \textbf{Package} - Marwick et al. 2018\autocite{marwick_packaging_2018} suggest you can structure it as a package as this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing. However, \textbf{I'm not certain if we would want to do that}? R examples of package layout linked from \autocite{marwick_packaging_2018}
+    \item \textbf{Have seperate folders for data, methods and outputs} - as recommended by Marwick et al. 2018\autocite{marwick_packaging_2018}. The exception for this change is parameters coded into the scripts (since these would require a large amount of work and restructuring to seperate from the scripts, contrary to our motivation in this stage).
+    \item Create \textbf{tests} which check whether a user is able to the same reproduce results as we obtained during the reproduction, based on comparison of csv files.
+    \item Create \textbf{Dockerfile} and double-check it works (build image and run model notebook/s).
+    \item Set-up GitHub action to publish the Docker image on the \textbf{GitHub container registry}.
+    \item \textbf{Model notebook/s} should contain:
     \begin{itemize}
-        \item \url{https://github.com/benmarwick/researchcompendium}
-        \item \url{https://github.com/cboettig/nonparametric-bayes}
-        \item \url{https://github.com/jhollist/manuscriptPackage}
-        \item \url{https://github.com/cboettig/template}
-        \item \url{https://github.com/Pakillo/template}
+        \item Run time recorded within the model notebook.
+        \item Clearly states which parts of the notebook produce each item from the reproduction scope.
     \end{itemize}
-\end{itemize}
-
-\textbf{Citation.CFF file}
-\begin{itemize}
-    \item Including citation information is part of the STARS framework, and Monks et al. 2024\autocite{monks_towards_2024} suggest this can be via a CITATION.cff file
-    \item Use \href{https://citation-file-format.github.io/cff-initializer-javascript/#}{cffinit} to help create this, with the \href{https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md}{schema guide} to help make changes.
-    \item You can set up actions with GitHub workflows to (a) monitor that the CFF file is configured correctly, and (b) convert the file into other formats (e.g. APA, bibtex)
-\end{itemize}
-
-\textbf{Improvements to code}
-\begin{itemize}
-    \item PEP-8 or equivalent
-    \item Comments
-    \item Docstrings
-    \item Removing unused packages
-\end{itemize}
-
-\textbf{README}
-\begin{itemize}
-    \item Citation to the original study, including their ORCID IDs if available, and a link to the paper.
-    \item Describe overall project, where to get started, graphical summary of interlocking pieces of project.\autocite{marwick_packaging_2018}
-    \item ORCID IDs (for every person involved).\autocite{monks_towards_2024}
-    \item Overview model scope, how to execute it, how to vary parameters.\autocite{monks_towards_2024}
-    \item Overview of the repository
-    \item Link to citation information
-    \item Description of run time for a given hardware/system, and including description of the OS and hardware used in the reproduction (alongside what they originally used, if they provided that information)
-\end{itemize}
-
-\textbf{Article}
-\begin{itemize}
-    \item Including the article, or just a link?
-\end{itemize}
-
-\textbf{Documentation (detailed and hosted)}
-\begin{itemize}
-    \item Create Quarto site \textbf{seperate to current site (?)} hosted online that accompanies the code
-    \item As per STARS framework, include in Quarto book about:
+    \item \textbf{README} should contain:
     \begin{itemize}
-        \item "A plain English summary of project context and model;
-        \item Clarifying simulation model open licencing terms;
-        \item Clear citation instructions for the model and documentation;
-        \item Instructions for how others can contribute (e.g. code, bug fixes, modifications, improved documentation), and report issues to the project;
-        \item A structured code walk through of the model;
-        \item Documenting the modelling cycle using TRACE\autocite{ayllon_keeping_2021}
-        \item Annotating simulation reporting guidelines  e.g. the STRESS-DES
-        \item A clear description of model validation including its intended purpose"
+        \item Original study citation.
+        \item Simple summary of the model (potentially incorporating any diagrams of the model that were provided).
+        \item Scope of the reproduction (including images of the figures/tables from the original study).
+        \item Overview of the repository.
+        \item Instructions for setting up the environment.
+        \item Instructions for running the model (and reproducing items from the scope).
+        \item Instructions for running the test/s.
+        \item Hardware and software specs for the computer used for reproduction (machine, RAM, operating system and version).
+        \item Run time for the model.
+        \item Instructions for citation.
+        \item Short description of license.
     \end{itemize}
-    \item Example: \url{https://emdelponte.github.io/research-compendium-website/index.html}
-\end{itemize}
-
-\textbf{Testing}
-\begin{itemize}
-    \item Focussed on being able to reproduce specific results (since that has been our aim)
-    \item Examples from Tom in treat-sim
-    \item .travis.yml is configuration for Travis continuous integration service, unit tests in tests/ test specific functions in compendium to produce their expected outputs given known inputs. "With continuous integration, each Git commit you make to your repository on GitHub (or similar service) triggers a script that builds your R package, and reports to you if the build succeeded or not. This is convenient because it saves you from having to manually build your package after each update to your code. The complex research compendia examples cited above make use of Travis CI, Drone.io, and CircleCI services. These provide free remote continuous integration services for public GitHub projects. Another advantage of these services is that they provide badges for your repository webpage that signal the current state of your compendium, based on the last build attempt (e.g., “build passing” or “build failing”)." \autocite{marwick_packaging_2018}
-\end{itemize}
-
-\textbf{Create Docker environment}
-\begin{itemize}
-    \item Create a Docker file
-    \item Note on licencing: Licence for this file can be permissive (and so can retain the open licence we have used), but hence we do not distribute the image itself (as that would require different licencing), and instead can use someone else to distribute (e.g. DockerHub, as below).\autocite{the_linux_foundation_docker_nodate}
-    \item Dockerfile, Docker. That virtualises R, its packages, and entire operating systems. Other solutions focussed just on R environment are packrat, checkpoint mRAN, devtools and CRAN. \autocite{marwick_packaging_2018}
-\end{itemize}
-
-\textbf{Create remote instance of the model}
-\begin{itemize}
-    \item This could be via DockerHub (as suggested by Monks et al. 2024\autocite{monks_towards_2024}), or via other options... Google Colab, Deepnote - or Sammi's example...
-\end{itemize}
-
-To consider:
-
-Executive format (e.g. make, do, sh)
-\begin{itemize}
-    \item Makefile or R markdown file to control order of code execution. In complex projects, can save time with caching and Makefile to only run code that has changed since last run. Makefile defines outputs (targets) in terms of inputs (dependencies) and code (recipes) then program GNU Make creates the outputs from that specification.\autocite{marwick_packaging_2018}
-    \item Files in form ready for execution \autocite{arguillas_10_2022}
+    \item Ensure \textbf{Quarto site} displays the reproduction README and notebook/s.
 \end{itemize}
 
 \vspace{0.5cm}
-\subsubsection{Archive on Zenodo}
+\subsubsection{Test-run with second team member}
 
-Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo (with record in CHANGELOG).
+Once the research compendium is complete, a \textbf{second researcher} on the team should attempt to use it and confirm if they were able \textbf{reproduce} the results of the first researcher, and to check the compendium for \textbf{clarity}. This is similar to the approach of Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} It should be recorded within the \textbf{logbook}.
 
-\subsection{Computational reproducibility report} \label{sec:report}
-
-The overall reproduction success of the paper can be described as the proportion of items from the scope that were determined to be reproduced (e.g. 4 out of 5, 80\%). This provides more context than just stating that a paper was or was not reproduced. When describing the reproduction success, it is important to include context on troubleshooting steps required (such as writing new code or contacting the author).
-
-\hlblue{\textbf{Grant:} Write RCR reports. \textbf{To discuss though!:} Got lots and lots of examples of write ups for this sort of thing, and identified opportunities for publishing individually (ReScience)}
-
-\textbf{TO DO:} Write this section. Need to reflect on whether it can consistute an RCR review or not. And what we want to do with it, or if just archived, or if plan to write up in some way or another.
-
-Tom: Finally, we will map data from our best practice review, reporting guidelines adherence, and our tracked test data to success in badge allocation and the proportion of experiments reproduced.
-
-Produce a plot reporting the percentage of experiments reproduced versus time. - but need to consider this based on how define reproduction success
-
-Final report:
-\begin{itemize}
-    \item Figure, and describe reproduction team, similar to Krafcyzk(?):\autocite{krafczyk_learning_2021} Krafczyk present time taken to produce each table/figure. Consider approach to this given: * Won't do a yes/no for reproduction, but more nuanced info on it for each item * Not just tables and figures - "key results" - which could be a table/figure from appendices, but could also be specific figures from the text. * A study with more figures and tables will take longer (which is not presented in that figure as its percentage of them done)
-    \item Look at examples I've gathered
-\end{itemize}
-
-Create standardised structure for report, and include stuff from the original article within it.
-
-Report should have things like Baykova \autocite{baykova_ensuring_2024} like:
-\begin{itemize}
-    \item Title of manuscript
-    \item Corresponding author
-    \item Summary of paper
-    \item Available manuscript materials DOI/URL... pre-registratin... manuscript... data and analysis materials
-    \item Scope of reproducibiltiy report
-    \item Date it was compiled, what it was based on (e.g. draft, pre-print), materials uploaded to (link) as of (date and time of upload)
-    \item "I certify that to the best of my knowledge this report is true and accurate"
-    \item Who did the report, email, address
-\end{itemize}
-
+\vspace{1cm}
 \subsection{Archive on Zenodo}
 
-Once all of the above is completed, you should archive the repository on Zenodo through creation of a new \textbf{GitHub release}. The repository should already be set up to sync with Zenodo from the earlier stage when we archived the scope, so this release will create an updated version of the archived repository, which will sit alongside the prior version. The release should be recorded within the Changelog.
+Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo (with record in CHANGELOG).
 
 \vspace{0.5cm}
 \subsection{Inform the authors}
