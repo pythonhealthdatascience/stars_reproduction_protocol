@@ -2,7 +2,7 @@
 
 \subsection{Computational reproducibility report} \label{sec:report}
 
-Use the \textbf{provided template} to produce a simple summary report for the reproducibility assessment. This template should guide you to include:
+Use the \textbf{provided template} ('evaluation/reproduction\_report.qmd') to produce a simple summary report for the reproducibility assessment. This template should guide you to include:
 
 \begin{itemize}
     \item Short study description
@@ -25,7 +25,7 @@ Once the computational reproduction has been completed, the repository will be r
 
 A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018} The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
 
-Our primary motivation in doing this step is to make it \textbf{easy and clear for someone to re-run} our reproduction, whilst making relatively \textbf{minimal changes} to the code itself. Hence, we are not necessarily amending to meet all of the recommendations for best practice of sharing DES models.
+Our primary motivation in doing this step is to make it \textbf{easy and clear for someone to re-run} our reproduction, whilst making relatively \textbf{minimal changes} to the code itself. Hence, we are not necessarily amending the repository to meet all of the recommendations for best practice of sharing DES models.
 
 \vspace{0.5cm}
 \subsubsection{Modify repository}
@@ -33,15 +33,15 @@ Our primary motivation in doing this step is to make it \textbf{easy and clear f
 Make the following changes to the \textbf{reproduction/} folder, if not already implemented:
 \begin{itemize}
     \item \textbf{Have seperate folders for data, methods and outputs} - as recommended by Marwick et al. 2018\autocite{marwick_packaging_2018}. The exception for this change is parameters coded into the scripts (since these would require a large amount of work and restructuring to seperate from the scripts, contrary to our motivation in this stage).
-    \item Create \textbf{tests} which check whether a user is able to the same reproduce results as we obtained during the reproduction, based on comparison of csv files.
-    \item Create \textbf{Dockerfile} and double-check it works (build image and run model notebook/s).
-    \item Set-up GitHub action to publish the Docker image on the \textbf{GitHub container registry}.
-    \item \textbf{Model notebook/s} should contain:
+    \item Create \textbf{tests} which check whether a user is able to get the same reproduce results as we obtained during the reproduction, based on comparison of csv files.
+    \item Create a \textbf{Dockerfile} and double-check it works (build image and run model notebook/s).
+    \item Enable the GitHub action to publish the Docker image on the \textbf{GitHub container registry}.
+    \item Make sure that \textbf{model notebook/s} contain:
     \begin{itemize}
         \item Run time recorded within the model notebook.
         \item Clearly states which parts of the notebook produce each item from the reproduction scope.
     \end{itemize}
-    \item \textbf{README} should contain:
+    \item Ensure that the \textbf{README} contains:
     \begin{itemize}
         \item Original study citation.
         \item Simple summary of the model (potentially incorporating any diagrams of the model that were provided).
@@ -58,15 +58,15 @@ Make the following changes to the \textbf{reproduction/} folder, if not already 
     \item Ensure \textbf{Quarto site} displays the reproduction README and notebook/s.
 \end{itemize}
 
-\vspace{0.5cm}
+\newpage
 \subsubsection{Test-run with second team member}
 
 Once the research compendium is complete, a \textbf{second researcher} on the team should attempt to use it and confirm if they were able \textbf{reproduce} the results of the first researcher, and to check the compendium for \textbf{clarity}. This is similar to the approach of Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} It should be recorded within the \textbf{logbook}.
 
-\vspace{1cm}
+\vspace{0.5cm}
 \subsection{Archive on Zenodo}
 
-Once modification of the repository is completed, a new GitHub release should be created to archive this in Zenodo (with record in CHANGELOG).
+Once modification of the repository is completed, a new GitHub release should be created to archive the repository on Zenodo (with record of this in the changelog).
 
 \vspace{0.5cm}
 \subsection{Inform the authors}

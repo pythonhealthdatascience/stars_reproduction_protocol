@@ -1,6 +1,6 @@
 \section{Assessment of computational reproducibility} \label{sec:reproduce}
 
-\textbf{Remember!} Record progress in your logbook and the time spent on each task, as described above.
+\textbf{Remember!} Record progress in your \textbf{logbook} and the \textbf{time} spent on each task, as described above.
 
 \vspace{0.5cm}
 \subsection{Set-up}
@@ -25,7 +25,7 @@ To set up the repository:
     \item Set-up the repository in 'pythonhealthdatascience' with the name 'stars-reproduce-surname-year' and description 'Assessing the computational reproducibility of surname et al. year as part of STARS.' Here, 'surname' and 'year' refer to the article being reproduced.
 \end{enumerate}
 
-\textbf{Update template} so that it is specific to the study being evaluated (e.g. titles, links, CITATION.cff). You should set up the provided \textbf{conda environment} for creation of the Quarto site.
+\textbf{Update the template} so that it is specific to the study being evaluated (e.g. titles, links, CITATION.cff). You should set up the provided \textbf{conda environment} for creation of the Quarto site.
 
 \vspace{0.5cm}
 \subsubsection{Upload journal article and all artefacts to the repository}
@@ -37,11 +37,11 @@ To set up the repository:
     \item Any \textbf{code} and any related artefacts (for example, making a full copy of their GitHub repository)
 \end{itemize}
 
-In the logbook, include the \textbf{links} for where these uploaded materials were sourced from. You should also amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs for the journal article and supplementary material within the Quarto site, and provide a link to the code.
+You should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs for the journal article and supplementary material within the Quarto site, and provide a link to the code, as well as providing links for where these uploaded materials were sourced from.
 
 \subsubsection{Update license if required}
 
-Check the type of license used by the study authors. By default, the template includes an MIT license (which is as permissive as possible), but \textbf{you may need to change this if the authors used a less permissive license}, so it is compatible with their license.
+Check the type of license used by the study authors. By default, the template includes an MIT license (which is as permissive as possible), but \textbf{you may need to change this if the authors used a different license}, so it is compatible with their license.
 
 Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen.
 
@@ -57,13 +57,13 @@ Likewise, the license can be permissive when using Docker (as set up during the 
 \vspace{0.5cm}
 \subsubsection{Define scope of reproduction}
 
-The next step is to define the scope of the reproducibility study - in other words, what parts of the paper you intend to reproduce. This should be focused on the \textbf{results of the simulation} (rather than other results like description of the sample. To identify the scope you should:
+The next step is to define the scope of the reproducibility study - in other words, what parts of the paper you intend to reproduce. This should be focused on the \textbf{results of the simulation} (rather than other results like description of the sample). To identify the scope you should:
 
 \begin{enumerate}
     \item Look through each of the \textbf{tables and figures} in the article (excluding the supplementary material) and identify whether they are within scope or not (i.e. do they present results of the simulation).
     \item Identify any \textbf{'key results' in the text} of the article that are within scope. These are results that are highlighted within the \textbf{abstract or results} section. This may include items from the supplementary materials if referred to in the text.
     \item Evaluate whether the identified 'key results' are \textbf{already covered by the tables and figures} from the article. If not, they should be included in the scope.
-    \item Make \textbf{consensus decision on scope with other team members}. Whilst the rest of this protocol is conducted by a single member of the STARS team, the scope of the reproducibility study will be defined as a consensus decision, with at least two team members reading the article and agreeing together on what is appropriate.
+    \item Make \textbf{consensus decision on scope with at least one other team members}.
 \end{enumerate}
 
 You can include notes from thoughts and discussions around the potential scope within the \textbf{logbook}.
@@ -73,7 +73,7 @@ The criteria for what is considered part of the scope is adapted from Wood et al
 \vspace{0.5cm}
 \subsubsection{Compile items in scope}
 
-Once the scope has been decided, upload each item to the repository.
+Once the scope has been decided, upload each item to the 'original\_study/' folder.
 
 \begin{itemize}
     \item For \textbf{tables}, download a \textbf{CSV} version of each if available. Otherwise, convert the tables into CSV format.
@@ -81,12 +81,12 @@ Once the scope has been decided, upload each item to the repository.
     \item For results described in the \textbf{text} (but not captured in a table or figure), record in a format appropriate to then later compare against (for example, within a \textbf{CSV}).
 \end{itemize}
 
-You should amend the provided \textbf{template page} ('evaluation/scope.qmd') to display each of the items in the scope.
+You should amend the provided \textbf{template page} ('evaluation/scope.qmd') to display each of the items.
 
 \vspace{0.5cm}
 \subsubsection{Archive scope on Zenodo}
 
-With the organisation linked to Zenodo, \textbf{toggle Zenodo to preserve} that repository, and then create a \textbf{release on GitHub}, which Zenodo will then automatically download and register with a DOI. The release should be recorded within the \textbf{Changelog}.
+With the organisation linked to Zenodo, \textbf{toggle Zenodo to preserve} that repository, and then create a \textbf{release on GitHub}, which Zenodo will then automatically download and register with a DOI. The release should be recorded within the \textbf{changelog}.
 
 This release should serve as a public registration of the intended scope of the reproducibility study, and archiving the repository at this point (prior to having started using or really looking at the the code). As stated in the "Guide for Accelerating Computational Reproducibility (ACRe) in the Social Sciences", it is important that the scope is defined at the start of the study, and publicly archived so as not to be amended during the course of the study.\cite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
 
@@ -95,7 +95,7 @@ This release should serve as a public registration of the intended scope of the 
 
 \subsubsection{Look over the code/data}
 
-\textbf{Browse through any code and any data} that you uploaded to the repository. The aim of this step is to familiarise with the materials before setting up the environment or running the code. There are no required steps for how you should do this, but some suggestions include:
+\textbf{Browse through any code and data} that you uploaded to the repository. The aim of this step is to familiarise with the materials before setting up the environment or running the code. There are no requirements for how you should do this, but some suggestions include:
 \begin{itemize}
     \item In logbook, recording a one-sentence description of each file and tree of the uploaded files (as suggested by Ayllón et al. 2021\autocite{ayllon_keeping_2021})
     \item Looking for sections of code that produce items within the scope and recording this within the logbook (as in Krafczyk et al. 2021\cite{krafczyk_learning_2021}).
@@ -107,7 +107,7 @@ This release should serve as a public registration of the intended scope of the 
 Identify the \textbf{software packages and their versions}, as used by the original study authors. This may be provided in an \textbf{environment file or within the article}. If not, the researcher should:
 \begin{itemize}
     \item Identify packages from those named to \textbf{import} within each of the scripts
-    \item Select versions by looking at the \textbf{version history} for that package on a package repository (e.g. PyPI, CRAN), and identifying a version whose release date that is \textbf{closest to but still prior to} the date of the code archive or paper publication (whichever is earliest).
+    \item Select versions by looking at the \textbf{version history} for that package on a package repository (e.g. PyPI, CRAN), and identifying a version whose release date is \textbf{closest to but still prior to} the date of the code archive or paper publication (whichever is earliest).
 \end{itemize}
 
 Use or set up an environment file with the identified dependencies, and \textbf{create the environment}. Researchers should use simple methods for environment management such as Conda or VirtualEnv in Python, and renv in R. For simplicity, we are not requiring that you match the operating system used.
@@ -127,24 +127,26 @@ This stage is an \textbf{iterative} process of running the code and attempting t
 
 \textbf{Remember!} Continue taking detailed notes and timings in your logbook, including each success and issue, and making note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that you \textbf{copy over in-progress outputs} to the blog post folder (e.g. .png file for a figure), so that you can easily and visually share progress in reproduction within the log.
 
-\vspace{0.5cm}
+\newpage
 \subsubsection{Successful reproduction}
 
 For \textbf{each item in the scope}, the researcher should decide whether it has been \textbf{successfully reproduced}. A binary decision should be made for each item (and none should be labelled as 'partial success').
 
-This is a \textbf{subjective} decision. A successful reproduction does \textbf{not require that exactly the same results} are found. An item can be considered successfully reproduced if \textbf{minimal variation} is observed from the original results. For example, if the original study did not use seeds to completely control randomness, then this can be considered a level of variation that would be expected between different runs of the study.
+This is a \textbf{subjective} decision. A successful reproduction does \textbf{not require that exactly the same results} are found. An item can be considered successfully reproduced if \textbf{minimal variation} is observed from the original results.
 
 As an example, if it is possible to produce a table with some numbers being a match or very similar, but some numbers being substantially different, then this would be classed as having \textbf{not} been successfully reproduced. If however all aspects of the item were reproduced with reasonable similarity, this can be classed as \textbf{successful} reproduction.
 
 Further recommendations:
 \begin{itemize}
-    \item \textbf{Figures} - these are compared \textbf{by eye}. Researchers should be unconcerned by \textbf{minor differences in presentation} (such as font), with regards to evaluating reproduction success.
+    \item \textbf{Figures} - these are compared \textbf{by eye}. Researchers should be unconcerned by \textbf{minor differences in presentation}, with regards to evaluating reproduction success.
     \item \textbf{Numbers} - researchers should calculate and report the \textbf{percentage difference} in results between the manuscript and the researcher. As reported by Wood et al. 2018,\autocite{wood_push_2018, wood_replication_2018} a meaningful difference in a value will vary between studies, and so it is difficult to set a single rule on what is or is not a minor difference. As such, researchers should follow a similar approach to Schwander et al. 2021,\autocite{schwander_replication_2021} considering whether the figure is reproducible at varying levels of percentage error (5\%, 10\% and 20\%). However, they \textbf{should then use their judgement to decide whether the item has been reproduced}. This is similar to one of the definitions proposed by McManus et al. 2019\autocite{mcmanus_can_2019} - "\textit{Results... vary only by XX\% compared to the original, AND are consistent with the original conclusions}" - incorporating both numerical comparison and allowance for variability in whether this constitutes a meaningful difference from the original results.
 \end{itemize}
 
-This should be a \textbf{consensus decision} checklist with at least one other researcher on the project before concluding the reproduction. This conversation and the decision made should be including in the timing and recorded in the logbook.
+Before concluding the reproduction, this decision should be run by at least one other researcher on the project, to ensure there is a \textbf{consensus decision} on whether the items were successfully reproduced. This conversation and the decision made should be including in the timing and recorded in the logbook.
 
 In assessing reproduction success, it is important to note (as in Laurinavichyute et al. 2022\autocite{laurinavichyute_share_2022} and Wood et al. 2018\autocite{wood_push_2018}) that the focus is \textbf{not} on the quality or robustness of the original results, or whether the main claims of the study are consistent. Instead, the focus is on whether it was possible to reproduce the article's results \textbf{within a reasonable margin of error} (given that we do expect a little variation, since discrete-event simulations are stochastic models, and may not have been fully controlled using random seeds or with any environment differences).
+
+It is important to \textbf{clearly timestamp} once the decision of "successful reproduction" has been made for each of the items in the scope.
 
 \vspace{0.5cm}
 \subsubsection{Troubleshooting}
@@ -156,6 +158,7 @@ Researchers should \textbf{troubleshoot} any issues encountered (including \text
     \item Fixing errors in the code
     \item Adding code to produce an item in the scope, if not otherwise provided
     \item Adding a method for \textbf{controlling randomness} in the simulation (if not otherwise set up), so you can get consistent results with yourself between re-runs of your notebook
+    \item Adding a warm-up period (if suspected but not included in the code)
 \end{itemize}
 
 Troubleshooting can include asking \textbf{advice from other members of the STARS team}. In these cases, the researcher should ensure that they include a record the time spent, everything discussed, and any recommendations made.
@@ -163,7 +166,7 @@ Troubleshooting can include asking \textbf{advice from other members of the STAR
 \vspace{0.5cm}
 \subsubsection{Contacting the authors}
 
-Despite troubleshooting, you may remain unable to run the code, or have large discrepancies with the original paper. In this case, you should \textbf{contact the original author}. This email should:
+Despite troubleshooting, you may remain unable to run the code, or have large discrepancies with the original paper. In this case, once troubleshooting is exhausted, you should \textbf{contact the original author}. This email should:
 \begin{itemize}
     \item \textbf{Recap} the project (since our last email, when we informed them about the study).
     \item Link to the \textbf{Quarto site} with the documented reproduction attempt and list of issues that require resolution. Make sure the description of problem is specific (e.g. identifying line in paper and place in code where think something is missing, or where an issue is occurring).
@@ -175,9 +178,9 @@ If there is no response in two weeks, the researcher should contact them again. 
 \vspace{0.5cm}
 \subsubsection{Running out of time}
 
-If forty hours has passed, you should stop working on the reproduction. However, there are two exceptions:
+If fourty hours has passed, you should stop working on the reproduction. However, there are two exceptions:
 \begin{enumerate}
-    \item If the model was not set up - and you had not yet implemented - control for randomness (enabling you to reproduce your own results), then you should choose an alternative method of getting stable simulation results. This can be doing a very large number of replications, or assessing the required number of replications for a stable simulation.
+    \item If the model was not set up - and you had not yet implemented - control for randomness (enabling you to reproduce your own results), then you should choose an alternative method for getting stable simulation results. This can be by doing a very large number of replications, or by assessing the required number of replications for a stable simulation.
     \item Decide on the reproduction success of each item.
 \end{enumerate}
 
@@ -193,4 +196,4 @@ Using the \textbf{template page} ('evaluation/reproduction\_success.qmd'), show 
 \vspace{0.5cm}
 \subsubsection{Archive on Zenodo}
 
-Once all of the above is completed, you should archive the repository on Zenodo through creation of a new \textbf{GitHub release}. The repository should already be set up to sync with Zenodo from the earlier stage when we archived the scope, so this release will create an updated version of the archived repository, which will sit alongside the prior version. The release should be recorded within the Changelog.
+Once all of the above is completed, you should archive the repository on Zenodo through creation of a new \textbf{GitHub release}. The repository should already be set up to sync with Zenodo from the earlier stage when we archived the scope, so this release will create an updated version of the archived repository, which will sit alongside the prior version. The release should be recorded within the changelog.
