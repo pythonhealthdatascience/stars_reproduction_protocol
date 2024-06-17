@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net" modified="2024-06-17T10:32:46.248Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="TLf6of9KkrbvZinTCINb" version="24.5.4" type="device">
+  <diagram name="Page-1" id="kcGT8CUB0GJEn7gM3PKK">
+    <mxGraphModel dx="690" dy="918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HKPMc-exNPZEN2zycEb5-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HKPMc-exNPZEN2zycEb5-1" target="HKPMc-exNPZEN2zycEb5-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Set-up&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Inform authors, c&lt;span style=&quot;background-color: initial;&quot;&gt;reate repository using template, and g&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;et article and code&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="80" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-12" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HKPMc-exNPZEN2zycEb5-2" target="HKPMc-exNPZEN2zycEb5-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-2" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Scope&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Read article, define scope of reproduction, and archive on Zenodo&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="150" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-13" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HKPMc-exNPZEN2zycEb5-3" target="HKPMc-exNPZEN2zycEb5-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-3" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Run model&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Look at code, make environment, and attempt to reproduce results&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="220" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-14" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HKPMc-exNPZEN2zycEb5-4" target="HKPMc-exNPZEN2zycEb5-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-4" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Evaluation&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Evaluate article and code against criteria relating to how research is shared and reported&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="290" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-15" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HKPMc-exNPZEN2zycEb5-5" target="HKPMc-exNPZEN2zycEb5-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-5" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Report&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Create report summarising reproduction success and evaluation&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="360" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-6" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Research compendium&lt;/font&gt;&lt;/b&gt;&lt;div&gt;Modify repository (organise, hosted Docker image, tests, documentation) then archive&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="430" width="490" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-17" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="620" y="80" width="20" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-21" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="90" y="80" width="20" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-24" value="Keep logbook and share results using Quarto site" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="644" y="270" width="97" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HKPMc-exNPZEN2zycEb5-26" value="Record time spent" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="20" y="195" width="67" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

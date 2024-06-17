@@ -15,6 +15,23 @@ You may have already completed this step (as we will have informed the authors a
 
 If you do not hear back from the study authors, you do not need to follow-up on this email asking for a response, as the email simply serves to notify the study authors and does not require a reply.
 
+A template for this email is provided:
+
+\begin{adjustwidth}{1.2cm}{}
+    \itshape
+    \textbf{Subject:} Reproduction of [Title of paper]
+
+    Dear [Title (e.g. "Dr")] [Full name]
+    
+    I am contacting you regarding your paper "[Title]" (doi: [DOI]).
+
+    I am a [Postdoctoral research associate/research fellow/other position] based at [Institution], and I would like to  \hl{finish draft, or Tom to share}
+    
+    Best wishes,
+    
+    [Full Researcher Name including organisation]
+\end{adjustwidth}
+
 \vspace{0.5cm}
 \subsubsection{Create repository using template}
 
@@ -28,24 +45,31 @@ To set up the repository:
 \textbf{Update the template} so that it is specific to the study being evaluated (e.g. titles, links, CITATION.cff). You should set up the provided \textbf{conda environment} for creation of the Quarto site.
 
 \vspace{0.5cm}
-\subsubsection{Upload journal article and all artefacts to the repository}
+\subsubsection{Upload code to the repository}
 
- \textbf{Upload all available materials} from the article to the 'original\_study/' folder. This includes:
+We require that the model code has been shared under an open license, and so, we should be free to upload this to our repository. You should upload any \textbf{code} and related artefacts (i.e. make a full copy of their code repository).
+
+\vspace{0.5cm}
+\subsubsection{Upload journal article to the repository}
+
+Our next step will be to upload the article to the repository, but we first need to check which \textbf{license the article has been distributed under}. This is likely to be in a "copyright" section of the article. If it is distributed under a permissive license (e.g. CC-BY), then you should be free to upload the article and artefacts to the repository. However, if the article does not have a license enabling reuse in this manner (which is likely if it is restricted access/behind a paywall), then you will likely be unable to. Although you can request permission, this will often incur costs.
+
+In these cases, you should search for whether there is a \textbf{green open access version} of the article. For example, copies of the article available on a pre-print site or on an institutional. In which case, these can be uploaded to the repository. If using a pre-print, you should check
+
+If you cannot find a version of the article that can be shared, then you should not upload the article or images, but instead just provide a link to the article. However, otherwise, you should \textbf{upload all available materials} from the article to the 'original\_study/' folder. This includes:
 \begin{itemize}
     \item The \textbf{journal article} and any \textbf{supplementary materials}
     \item Each \textbf{table and figure} from the main journal article as individual digital objects (e.g. .jpeg, .png) (not including those from the appendices/supplementary materials)
-    \item Any \textbf{code} and any related artefacts (for example, making a full copy of their GitHub repository)
 \end{itemize}
 
-You should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs for the journal article and supplementary material within the Quarto site, and provide a link to the code, as well as providing links for where these uploaded materials were sourced from.
+You should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code, as well as providing links for where these uploaded materials were sourced from.
 
-\subsubsection{Update license if required}
+\vspace{0.5cm}
+\subsubsection{Update license for repository if required}
 
-Check the type of license used by the study authors. By default, the template includes an MIT license (which is as permissive as possible), but \textbf{you may need to change this if the authors used a different license}, so it is compatible with their license.
+Check the type of license used by the study authors. By default, the template includes an MIT license, but \textbf{you may need to change this if the authors used a different license}, so it is compatible.
 
-Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen.
-
-Likewise, the license can be permissive when using Docker (as set up during the research compendium stage), as we do not distribute the Docker image itself, but instead distribute the Dockerfile or refer to someone else to distribute (such as the GitHub container registry).\autocite{the_linux_foundation_docker_nodate}
+Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen. Likewise, the license can be permissive when using Docker (as set up during the research compendium stage), as we do not distribute the Docker image itself, but instead distribute the Dockerfile or refer to someone else to distribute (such as the GitHub container registry).\autocite{the_linux_foundation_docker_nodate}
 
 \vspace{0.5cm}
 \subsection{Scope of reproduction}
@@ -83,6 +107,8 @@ Once the scope has been decided, upload each item to the 'original\_study/' fold
 
 You should amend the provided \textbf{template page} ('evaluation/scope.qmd') to display each of the items.
 
+If the article does not have permissions to enable this, then you can upload these materials to a seperate \textbf{private repository} for your own reference, but cannot display these images or tables within the public repository/quarto site.
+
 \vspace{0.5cm}
 \subsubsection{Archive scope on Zenodo}
 
@@ -101,7 +127,7 @@ This release should serve as a public registration of the intended scope of the 
     \item Looking for sections of code that produce items within the scope and recording this within the logbook (as in Krafczyk et al. 2021\cite{krafczyk_learning_2021}).
 \end{itemize}
 
-\newpage
+\vspace{0.5cm}
 \subsection{Set up environment}
 
 Identify the \textbf{software packages and their versions}, as used by the original study authors. This may be provided in an \textbf{environment file or within the article}. If not, the researcher should:
@@ -127,7 +153,7 @@ This stage is an \textbf{iterative} process of running the code and attempting t
 
 \textbf{Remember!} Continue taking detailed notes and timings in your logbook, including each success and issue, and making note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that you \textbf{copy over in-progress outputs} to the blog post folder (e.g. .png file for a figure), so that you can easily and visually share progress in reproduction within the log.
 
-\newpage
+\vspace{0.5cm}
 \subsubsection{Successful reproduction}
 
 For \textbf{each item in the scope}, the researcher should decide whether it has been \textbf{successfully reproduced}. A binary decision should be made for each item (and none should be labelled as 'partial success').
@@ -192,8 +218,3 @@ If fourty hours has passed, you should stop working on the reproduction. However
 \textbf{Tidy} the reproduction notebook, so it simply produces each of the items in the scope, and clearly state how each section relates to the original article (e.g. captioning 'Reproduction attempt for Figure 2').
 
 Using the \textbf{template page} ('evaluation/reproduction\_success.qmd'), show each item from the scope (as in the original article) alongside our best reproduction attempts. Include the decision on the reproduction success for each item (along with any justification for this decision).
-
-\vspace{0.5cm}
-\subsubsection{Archive on Zenodo}
-
-Once all of the above is completed, you should archive the repository on Zenodo through creation of a new \textbf{GitHub release}. The repository should already be set up to sync with Zenodo from the earlier stage when we archived the scope, so this release will create an updated version of the archived repository, which will sit alongside the prior version. The release should be recorded within the changelog.
