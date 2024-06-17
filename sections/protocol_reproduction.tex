@@ -19,17 +19,31 @@ A template for this email is provided:
 
 \begin{adjustwidth}{1.2cm}{}
     \itshape
-    \textbf{Subject:} Reproduction of [Title of paper]
+    \textbf{Subject:} Reproducing results from [Title of paper]
 
-    Dear [Title (e.g. "Dr")] [Full name]
+    Dear [Title (e.g. "Dr")] [Last name of corresponding author],
     
-    I am contacting you regarding your paper "[Title]" (doi: [DOI]).
+    I am contacting you about your paper titled [Title] which was published in [Journal] in [Year] (vol [Volume], no. [Number]), [Link].  
 
-    I am a [Postdoctoral research associate/research fellow/other position] based at [Institution], and I would like to  \hl{finish draft, or Tom to share}
+    I am part of a research team working on a UKRI Medical Research Council funded project called Sharing Tools and Artefacts for Reproducible Simulations (STARS) in healthcare (\url{https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1}). We are writing to inform you that we were impressed with your paper and have selected it to be part of a STARS reproduction test.  
     
-    Best wishes,
+    STARS is a methods and training study investigating open science in healthcare simulation (specifically models written in Python or R). We aim to identify best practice and learn how we can support researchers make their models and code available, robust, reusable, reproducible, and preserved long term.
     
-    [Full Researcher Name including organisation]
+    As part of STARS, we identified your paper as one of the small number of simulation studies where the code and model has been made available with an open license.  The team would like to commend you for making your work open and for being a pioneer in this area.
+    
+    The paper is one of several we have selected from the literature.  Our initial study in STARS will attempt to run the published code and reproduce the results on our own computers. The work will record the challenges in installing, running and reproducing the results that are reported in the selected papers.  As we are working with multiple studies our aim is to learn general lessons about sharing simulation models and move the field forward. This work is not about critiquing individual studies.  
+    
+    We have a full protocol describing the work available online: [Link to protocol on Zenodo]
+    
+    We may contact you, if we are unable to run your model or obtain similar results.  We appreciate that your time is valuable and we will only do so if we have exhausted all options.  It is, of course, at your discretion if you reply to our query or not.  We will also send you a copy of the results of the reproduction at the end of the study. The paper will be correctly cited and we will abide to the license conditions attached to the code.
+    
+    There is nothing for you to do, and you do not need to reply to this email. However, do please feel free to contact us if you have any questions. Thank you again for making your work open so that others can learn from it.
+    
+    [Reproducer full name]
+
+    [Reproducer job title], University of Exeter.
+
+    On behalf of the STARS team.
 \end{adjustwidth}
 
 \vspace{0.5cm}
@@ -50,26 +64,26 @@ To set up the repository:
 We require that the model code has been shared under an open license, and so, we should be free to upload this to our repository. You should upload any \textbf{code} and related artefacts (i.e. make a full copy of their code repository).
 
 \vspace{0.5cm}
+\subsubsection{Update license for repository if required}
+
+Check which license the original study used for their code. By default, the template includes an MIT license, but \textbf{you may need to change this if the authors used a different license}, so it is compatible.
+
+Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen. Likewise, the license can be permissive when using Docker (as set up during the research compendium stage), as we do not distribute the Docker image itself, but instead distribute the Dockerfile or refer to someone else to distribute (such as the GitHub container registry).\autocite{the_linux_foundation_docker_nodate}
+
+\vspace{0.5cm}
 \subsubsection{Upload journal article to the repository}
 
 Our next step will be to upload the article to the repository, but we first need to check which \textbf{license the article has been distributed under}. This is likely to be in a "copyright" section of the article. If it is distributed under a permissive license (e.g. CC-BY), then you should be free to upload the article and artefacts to the repository. However, if the article does not have a license enabling reuse in this manner (which is likely if it is restricted access/behind a paywall), then you will likely be unable to. Although you can request permission, this will often incur costs.
 
-In these cases, you should search for whether there is a \textbf{green open access version} of the article. For example, copies of the article available on a pre-print site or on an institutional. In which case, these can be uploaded to the repository. If using a pre-print, you should check
+In these cases, you should search for whether there is a \textbf{green open access version} of the article. For example, copies of the article available on a pre-print site or in a institutional repository. In which case, these can be uploaded to the repository. You should double-check that there are no differences between the green open access version and the version offered by the journal.
 
-If you cannot find a version of the article that can be shared, then you should not upload the article or images, but instead just provide a link to the article. However, otherwise, you should \textbf{upload all available materials} from the article to the 'original\_study/' folder. This includes:
+If you cannot find a version of the article that can be shared, then you should \textbf{not} upload the article or images. Instead just provide a \textbf{link to the article}. If you do find an appropriate version, then \textbf{upload all available materials} from the article to the 'original\_study/' folder. This includes:
 \begin{itemize}
     \item The \textbf{journal article} and any \textbf{supplementary materials}
     \item Each \textbf{table and figure} from the main journal article as individual digital objects (e.g. .jpeg, .png) (not including those from the appendices/supplementary materials)
 \end{itemize}
 
-You should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code, as well as providing links for where these uploaded materials were sourced from.
-
-\vspace{0.5cm}
-\subsubsection{Update license for repository if required}
-
-Check the type of license used by the study authors. By default, the template includes an MIT license, but \textbf{you may need to change this if the authors used a different license}, so it is compatible.
-
-Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen. Likewise, the license can be permissive when using Docker (as set up during the research compendium stage), as we do not distribute the Docker image itself, but instead distribute the Dockerfile or refer to someone else to distribute (such as the GitHub container registry).\autocite{the_linux_foundation_docker_nodate}
+You should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code.
 
 \vspace{0.5cm}
 \subsection{Scope of reproduction}
