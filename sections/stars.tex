@@ -1,0 +1,69 @@
+\section{Appendix: STARS framework} \label{appendix:stars}
+
+The essential and optional components of the STARS framework are presented in Tables \ref{table:stars-essential} and \ref{table:stars-optional}, as from Monks et al. (2024).\autocite{monks_towards_2024}
+
+\hl{add citations and abbreviations}
+
+\begin{table}[H]
+\centering
+\caption{Essential components of STARS framework}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:stars-essential}
+% Minimum column width
+\tymin=3cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    \begin{tabulary}{\linewidth}{@{}LL@{}}
+        \toprule
+        Component & Description
+        \\\midrule
+        Open license & Free and open-source software (FOSS) license (e.g. MIT, GNU Public License (GPL))
+        \\\addlinespace
+        Dependency management & Specify software libraries, version numbers and sources (e.g. dependency management tools like pip virtual environment, conda environment, poetry)
+        \\\addlinespace
+        FOSS model & Coded in FOSS language (e.g. R, Julia, Python)
+        \\\addlinespace
+        Minimum documentation & Minimal instructions (e.g. in README) that overview (a) what model does, (b) how to install and run model to obtain results, and (c) how to vary parameters to run new experiments
+        \\\addlinespace
+        ORCID & ORCID for each study author
+        \\\addlinespace
+        Citation information & Instructions on how to cite the research artefact (e.g. CITATION.cff file)
+        \\\addlinespace
+        Remote code repository & Code available in a remote code repository (e.g. GitHub, GitLab, BitBucket)
+        \\\addlinespace
+        Open science archive & Code stored in an open science archive with FORCE11 compliant citation and guaranteed persistance of digital artefacts (e.g. Figshare, Zenodo, the Open Science Framework (OSF), and the Computational Modeling in the Social and Ecological Sciences Network (CoMSES Net))
+        \\\bottomrule
+    \end{tabulary}
+}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Optional components of STARS framework}
+% Space between caption and table
+\vspace{0.2cm}
+% Identifier for the table
+\label{table:stars-optional}
+% Minimum column width
+\tymin=3cm
+% Add space between table rows
+{\renewcommand{\arraystretch}{1.2}
+    \begin{tabulary}{\linewidth}{@{}LL@{}}
+        \toprule
+        Component & Description
+        \\\midrule
+        Enhanced documentation & Open and high quality documentation on how the model is implemented and works  (e.g. via notebooks and markdown files, brought together using software like Quarto and Jupyter Book). Suggested content includes:\newline• Plain english summary of project and model\newline• Clarifying license\newline• Citation instructions\newline• Contribution instructions\newline• Model installation instructions\newline• Structured code walk through of model\newline• Documentation of modelling cycle using TRACE\newline• Annotated simulation reporting guidelines\newline• Clear description of model validation including its intended purpose
+        \\\addlinespace
+        Documentation hosting & Host documentation (e.g. with GitHub pages, GitLab pages, BitBucket Cloud, Quarto Pub)
+        \\\addlinespace
+        Online coding environment & Provide an online environment where users can run and change code (e.g. BinderHub, Google Colaboratory, Deepnote)
+        \\\addlinespace
+        Model interface & Provide web application interface to the model so it is accessible to less technical simulation users
+        \\\addlinespace
+        Web app hosting & Host web app online (e.g. Streamlit Community Cloud, ShinyApps hosting)
+        \\\bottomrule
+    \end{tabulary}
+}
+\end{table}

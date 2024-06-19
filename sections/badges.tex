@@ -2,43 +2,43 @@
 
 A badge is a label or image that is displayed alongside a published research article. There are currently several different badges from various organisations that can be used to indicate how open and potentially reproducible an article and its artefacts are. We have identified journal badges provided by the following organisations/journals:
 \begin{itemize}
-    \item National Information Standards Organisation (NISO)
-    \item Association for Computing Machinery (ACM)
-    \item Institute of Electrical and Electronics Engineers (IEEE)
-    \item Center for Open Science (COS)
-    \item Springer Nature
-    \item Psychological Science
+    \item National Information Standards Organisation (NISO)\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item Association for Computing Machinery (ACM)\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item Institute of Electrical and Electronics Engineers (IEEE)\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item Center for Open Science (COS)\autocite{blohowiak_badges_2023}
+    \item Springer Nature\autocite{springer_nature_springer_2018}
+    \item Psychological Science\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
 \end{itemize}
 
-Badges related to reproducibility are typically across three categories - "open objects", "object review" and "reproduced". However, there are other badges available that are related to reproducibility. These include badges for pre-registration, like the COS "Preregistered" badge.\autocite{blohowiak_badges_2023} There are also badges for replication, which is when an independent study on the same question find consistent results (potentially with new artefacts and methods). Examples of this are the NISO "Results Replicated (RER)" badge\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and IEEE "Code Replicated" and "Dataset Replicated" badges.\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+Badges related to reproducibility are typically across three categories - ``open objects", ``object review" and ``reproduced". However, there are other badges available that are related to reproducibility. These include badges for pre-registration of research, like the COS ``Preregistered" badge.\autocite{blohowiak_badges_2023} There are also badges for replication, which is when an independent study on the same question find consistent results (potentially with new artefacts and methods). Examples of this are the NISO ``Results Replicated (RER)" badge\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and IEEE ``Code Replicated" and ``Dataset Replicated" badges.\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
 
 In some journals, these criteria are set as requirements for publication with the journal, rather than as badges. An example of this is the Psychological Science journal, which recently transitioned from awarding COS badges to making them requirements.\autocite{hardwicke_transparency_2023}
 
-We are focused on badges awarded by journals, but there are examples of badges that can be added to a repository if authors have followed a particular framework, either by self-allocating the badge or going through a review process. An example of this is Van Lissa et al. 2021\autocite{van_lissa_worcs_2021} who provide a package to facilitate use of a reproducible workflow in R, and suggest that a badge can be added to the README.md file of that repository if the package is used.\autocite{van_lissa_worcs_2021}
+We are focused on badges awarded by journals, but there are examples of badges that can be added to a repository if authors have followed a particular framework, either by self-allocating the badge or going through a review process. An example of this is Van Lissa et al. (2021)\autocite{van_lissa_worcs_2021} who provide a package to facilitate use of a reproducible workflow in R, and suggest that a badge can be added to the README.md file of that repository if the package is used.\autocite{van_lissa_worcs_2021}
 
 \newpage
-\subsection{"Open objects" badges}
+\subsection{``Open objects" badges}
 
-"Open objects" badges relate to permanently archiving digital objects in a public repository with a persistent identifier and open license.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
+``Open objects" badges relate to permanently archiving digital objects in a public repository with a persistent identifier and open license.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item NISO "Open Research Objects (ORO)" and "ORO-A" (if all relevant objects available)\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
-    \item ACM "Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
-    \item COS "Open Data”, ”Open Materials" and "Open Code"\autocite{blohowiak_badges_2023}
-    \item IEEE "Code Available” and ”Datasets Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
-    \item Springer Nature "Badge for Open Data"\autocite{springer_nature_springer_2018}
+    \item NISO ``Open Research Objects (ORO)" and ``ORO-A" (if all relevant objects available)\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM ``Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item COS ``Open Data", ``Open Materials" and ``Open Code"\autocite{blohowiak_badges_2023}
+    \item IEEE ``Code Available" and ``Datasets Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item Springer Nature ``Badge for Open Data"\autocite{springer_nature_springer_2018}
 \end{itemize}
 
-The table below compares the criteria for each of these badges (based on the sources cited above). As our focus is on DES models, we have excluded the badges that just relate to data, since simulation studies typically do not have "data", but instead have parameters (which often form part of the code itself). We have likewise excluded the COS "materials" badge since this is described as sharing the "components of the research methodology" - which in our case, would typically just be the article and the code.
+Table \ref{table:badges-objects} compares the criteria for each of these badges (based on the sources cited above). As our focus is on DES models, we have excluded the badges that just relate to data, since simulation studies typically do not have ``data", but instead have parameters (which often form part of the code itself). We have likewise excluded the COS ``materials" badge since this is described as sharing the ``components of the research methodology" - which in our case, would typically just be the article and the code.
 
-The remaining badges either specifically relate to code, or are more broad: the NISO badge is relevant to "author-created digital objects used in the research (including data and code)",\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and the ACM badge is relevant to "artifacts associated with the research".\autocite{association_for_computing_machinery_acm_artifact_2020}
+The remaining badges either specifically relate to code, or are more broad: the NISO badge is relevant to ``author-created digital objects used in the research (including data and code)",\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} and the ACM badge is relevant to ``artifacts associated with the research".\autocite{association_for_computing_machinery_acm_artifact_2020}
 
 \begin{table}[H]
 \centering
-\caption{"Open objects" badge criteria}
+\caption{``Open objects" badge criteria}
 % Space between caption and table
 \vspace{0.2cm}
 % Identifier for the table
-\label{table:badges}
+\label{table:badges-objects}
 % Minimum column width
 \tymin=2cm
 % Add space between table rows
@@ -64,31 +64,31 @@ The remaining badges either specifically relate to code, or are more broad: the 
 % Table footnotes
 \vspace*{-1.5\baselineskip}
 \footnotesize
-* The standard "ORO" badge does not require this - but if all relevant research objects are available, the badge is modified to "ORO-A".
+* The standard ``ORO" badge does not require this - but if all relevant research objects are available, the badge is modified to ``ORO-A".
 
 Abbreviations: ACM, Association for Computing Machinery; COS, Center for Open Science; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation; ORO, Open Research Objects.
 \normalsize 
 \\
 
 \newpage
-\subsection{"Object review" badges}
+\subsection{``Object review" badges}
 
-"Object review" badges relate to the digital objects (i.e. data, code) being reviewed according to the criteria of the badge issuer.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
+``Object review" badges relate to the digital objects (i.e. data, code) being reviewed according to the criteria of the badge issuer.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item NISO "Research Objects Reviewed (ROR)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
-    \item ACM "Artifacts Evaluated - Functional" and "Artifacts Evaluated - Reusable"\autocite{association_for_computing_machinery_acm_artifact_2020}
-    \item IEEE "Code Reviewed" and "Datasets Reviewed"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item NISO ``Research Objects Reviewed (ROR)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM ``Artifacts Evaluated - Functional" and ``Artifacts Evaluated - Reusable"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item IEEE ``Code Reviewed" and ``Datasets Reviewed"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
 \end{itemize}
 
-Their criteria are summarised and compared below. The NISO badge is not included as it does not have criteria, but just states that badges in this category would evaluate against a specified set of criteria. The IEEE datasets badge is also excluded (as above for the "open objects" badges).
+Their criteria are summarised and compared in Table \ref{table:badges-review}. The NISO badge is not included as it does not have criteria, but just states that badges in this category would evaluate against a specified set of criteria. The IEEE datasets badge is also excluded (as above for the ``open objects" badges).
 
 \begin{table}[H]
 \centering
-\caption{"Open review" badge criteria}
+\caption{``Open review" badge criteria}
 % Space between caption and table
 \vspace{0.2cm}
 % Identifier for the table
-\label{table:badges}
+\label{table:badges-review}
 % Minimum column width
 \tymin=2cm
 % Add space between table rows
@@ -121,25 +121,25 @@ Abbreviations: ACM, Association for Computing Machinery; IEEE, Institute of Elec
 \\
 
 \newpage
-\subsection{"Reproduced" badges}
+\subsection{``Reproduced" badges}
 
-"Reproduced" badges are awarded when an independent party regenerates the article results using author objects.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
+``Reproduced" badges are awarded when an independent party regenerates the article results using author objects.\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021} Examples include:
 \begin{itemize}
-    \item NISO "Results Reproduced (ROR-R)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
-    \item ACM "Results Reproduced"\autocite{association_for_computing_machinery_acm_artifact_2020}
-    \item IEEE "Code Reproducible" and "Dataset Reproducible"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
-    \item Psychological Science "Computational Reproducibility"\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
+    \item NISO ``Results Reproduced (ROR-R)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+    \item ACM ``Results Reproduced"\autocite{association_for_computing_machinery_acm_artifact_2020}
+    \item IEEE ``Code Reproducible" and ``Dataset Reproducible"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \item Psychological Science ``Computational Reproducibility"\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
 \end{itemize}
 
-The criteria are summarised in the table below. It should be noted that ACM specify that results are reproduced "in part" using artefacts from the author, and that exact reproduction is not required but that results should be within an acceptable range for experiments of that type.\autocite{association_for_computing_machinery_acm_artifact_2020} Whether deviation in results or any modification of the author code (such as minor troubleshooting) is permissible is not detailed within the viewed criteria for the other badges.
+The criteria are summarised in Table \ref{table:badges-reproduce}. It should be noted that ACM specify that results are reproduced ``in part" using artefacts from the author, and that exact reproduction is not required but that results should be within an acceptable range for experiments of that type.\autocite{association_for_computing_machinery_acm_artifact_2020} Whether deviation in results or any modification of the author code (such as minor troubleshooting) is permissible is not detailed within the viewed criteria for the other badges.
 
 \begin{table}[H]
 \centering
-\caption{"Reproduced" badge criteria}
+\caption{``Reproduced" badge criteria}
 % Space between caption and table
 \vspace{0.2cm}
 % Identifier for the table
-\label{table:badges}
+\label{table:badges-reproduce}
 % Minimum column width
 \tymin=2cm
 % Add space between table rows
@@ -164,3 +164,4 @@ The criteria are summarised in the table below. It should be noted that ACM spec
 \vspace*{-1.5\baselineskip}
 \footnotesize
 Abbreviations: ACM, Association for Computing Machinery; IEEE, Institute of Electrical and Electronics Engineers; NISO, National Information Standards Organisation.
+\normalsize 

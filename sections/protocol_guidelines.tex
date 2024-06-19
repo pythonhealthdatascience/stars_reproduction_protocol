@@ -1,45 +1,57 @@
-\section{Evaluation against guidelines}
+\section{Second stage: evaluation}
 
 This section is completed \textbf{after} the attempted reproduction (so as to not interfere with timings).
 
 \textbf{Remember!} Record progress in your \textbf{logbook} and \textbf{time spent} on each task.
 
-\textbf{Important:} This evaluation is based on the \textbf{original} journal article or repository from the author (as in original\_study/), and not on the repository you made whilst reproducing this study (reproduction/). If the original study had multiple repositories to choose from (e.g. development and archived code, both prior to publication date), remember to \textbf{refer to both of them} if there are any differences between them.
+\textbf{Important:} This evaluation is based on the \textbf{original} journal article or repository from the author (as in 'original\_study/'), and not on the repository that was created whilst reproducing this study ('reproduction/'). If the original study had multiple repositories to choose from (e.g. development and archived code, both prior to publication date), remember to \textbf{refer to both of them} if there are any differences between them.
 
-\textbf{Getting a second opinion:} If you are uncertain on any criteria, you should note these in the \textbf{logbook}. Any criteria that were \textbf{unmet or uncertain} should then be discussed with at least one other researcher on the project to get a second opinion. Record the discussion (and its timing) in the logbook, and explain and justify the choices for uncertain items.
+\textbf{Getting a second opinion:} If the researcher is uncertain about any criteria, they should note these in the \textbf{logbook}. Any criteria that were \textbf{unmet} or \textbf{uncertain} should then be discussed with at least one other researcher on the project to get a second opinion. Record the discussion (and its timing) in the logbook, and explain and justify the choices for uncertain items.
 
 \vspace{0.5cm}
-\subsection{Best practice for sharing of research artefacts}
-
-The artefacts (repository) associated with the original study will be evaluated against two sets of criteria/ recommendations on the sharing of research artefacts for simulation models:
-\begin{itemize}
-    \item Criteria from the \textbf{best practice audit} conducted by Monks and Harper 2023\autocite{monks_computer_2023} as part of their review. The audit is described in detail in the repository associated with their review.\autocite{monks_supplementary_2024} The items used in this audit were based on guidance from the Turing Way,\autocite{the_turing_way_community_turing_2022} Taylor et al. 2017,\autocite{taylor_open_2017} and the Open Modelling Foundation (OMF) minimal and ideal reusability standards,\autocite{the_open_modeling_foundation_omf_reusability_2024} focussing on items that were relevant to the modelling and simulation community.
-    \item The \textbf{STARS framework} (developed following the above review) recommends essential and optional components when sharing healthcare simulation studies.
-\end{itemize}
-
-You should use the \textbf{provided template} ('evaluation/artefacts.qmd') to assess whether the artefacts from the original study meet the criteria/recommendations from each of these sources. Each criteria are evaluated as being "fully", "partially" or "not met".
-
-For the best practice audit, all studies will have previously been evaluated by Monks and Harper 2023\autocite{monks_computer_2023} After you have done your assessment, you should add the results from their review of that study to the \textbf{logbook} and \textbf{compare} against your assessment, as this can provide a simple sense-check/second opinion.
-
-\newpage
 \subsection{Badges} \label{sec:badges}
 
-Several organisations and journals have developed badges which can be displayed alongside a research article to indicate how open and potentially reproducible it is, as detailed in Appendix \ref{appendix:badges}. We will evalute the original study artefacts (repository) against \textbf{badges that relate to code} (and not those specific to data), due to the nature of DES models (where "data" is often just parameters as part of the model script, with perhaps a few additional parameters in a separate data file within the repository). These badges are:
+Several organisations and journals have developed badges which can be displayed alongside a research article to indicate how open and potentially reproducible it is, as detailed in Appendix \ref{appendix:badges}. These include the National Information Standards Organisation (NISO),\autocite{association_for_computing_machinery_acm_artifact_2020} the Association for Computing Machinery (ACM),\autocite{association_for_computing_machinery_acm_artifact_2020} the Institute of Electrical and Electronics Engineers (IEEE),\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate} the Center for Open Science (COS)\autocite{blohowiak_badges_2023}, and the journal Psychological Science.\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
+
+We will evaluate the original study artefacts (repository) against badges that relate to code (and not those specific to data), due to the nature of DES models (where ``data" is often just parameters as part of the model script, with perhaps a few additional parameters in a separate data file within the repository). The \textbf{badges we will evaluate against} are:
 \begin{itemize}
-    \item "Open objects" badges: NISO "Open Research Objects (ORO)", ACM "Artifacts Available", COS "Open Materials" and "Open Code", and IEEE "Datasets Available"
-    \item "Object review" badges: ACM "Artifacts Evaluated" (rated as "Functional or "Reusable") and IEEE "Code Reviewed"
-    \item "Reproduced" badges: NISO "Results Reproduced (ROR-R)", ACM "Results Reproduced", IEEE "Code Reproducible" and Psychological Science "Computational Reproducibility"
+    \item ``Open objects" badges:
+    \begin{itemize}
+        \item NISO ``Open Research Objects (ORO)" and ``Open Research Objects - All (ORO-A)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+        \item ACM ``Artifacts Available"\autocite{association_for_computing_machinery_acm_artifact_2020}
+        \item COS ``Open Code"\autocite{blohowiak_badges_2023}
+        \item IEEE ``Code Available"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \end{itemize}
+    \item ``Object review" badges:
+    \begin{itemize}
+        \item ACM ``Artifacts Evaluated - Functional" and ``Artifacts Evaluated - Reusable"\autocite{association_for_computing_machinery_acm_artifact_2020}
+        \item IEEE ``Code Reviewed"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+    \end{itemize}
+    \item ``Reproduced" badges:
+    \begin{itemize}
+        \item NISO ``Results Reproduced (ROR-R)"\autocite{niso_reproducibility_badging_and_definitions_working_group_reproducibility_2021}
+        \item ACM ``Results Reproduced"\autocite{association_for_computing_machinery_acm_artifact_2020}
+        \item IEEE ``Code Reproducible"\autocite{institute_of_electrical_and_electronics_engineers_ieee_about_nodate}
+        \item Psychological Science ``Computational Reproducibility"\autocite{hardwicke_transparency_2023,association_for_psychological_science_aps_psychological_2023}
+    \end{itemize}
 \end{itemize}
 
-You should use the \textbf{provided template} (evaluation/badges.qmd) to assess whether the artefacts from the original study meet the criteria for each of these badges. A \textbf{binary} decision is made for each criteria (as being either met or not met).
+The researcher should use the \textbf{provided template} (evaluation/badges.qmd) to assess whether the artefacts from the original study meet the criteria for each of these badges. A \textbf{binary} decision is made for each criteria (as being either met or not met).
+
+\vspace{0.5cm}
+\subsection{STARS framework}
+
+The artefacts (repository) associated with the original study will be evaluated against the \textbf{STARS framework}, which has essential and optional recommendations for sharing research artefacts from healthcare simulation studies. This framework was designed by Monks et al. (2024)\autocite{monks_towards_2024} to complement and build on general open science recommendations from the Turing Way,\autocite{the_turing_way_community_turing_2022} Taylor et al. (2017),\autocite{taylor_open_2017} and the Open Modelling Foundation (OMF) minimal and ideal reusability standards.\autocite{the_open_modeling_foundation_omf_reusability_2024}
+
+The researcher should use the \textbf{provided template} ('evaluation/artefacts.qmd') to assess whether the artefacts from the original study meet the recommendations from this framework. Each criteria are evaluated as being ``fully", ``partially" or ``not met".
 
 \vspace{0.5cm}
 \subsection{Reporting guidelines} \label{sec:reporting}
 
 The \textbf{journal article} will be evaluated against two reporting guidelines for discrete-event simulation studies:
 \begin{itemize}
-    \item STRESS-DES: Strengthening The Reporting of Empirical Simulation Studies (Discrete-Event Simulation)\autocite{monks_strengthening_2019}
-    \item The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports.\autocite{zhang_reporting_2020}
+    \item STRESS-DES: Strengthening The Reporting of Empirical Simulation Studies (Discrete-Event Simulation) - Monks et al. (2019)\autocite{monks_strengthening_2019}
+    \item The generic reporting checklist for healthcare-related discrete event simulation studies derived from the the International Society for Pharmacoeconomics and Outcomes Research Society for Medical Decision Making (ISPOR-SDM) Modeling Good Research Practices Task Force reports - Zhang et al. (2020)\autocite{zhang_reporting_2020}
 \end{itemize}
 
-You should use the \textbf{provided template} ('evaluation/reporting.qmd') to assess whether the criteria from these guidelines are met by the journal article (including the supplementary material, although not including the code unless the article specifically refers to it for providing particular information). Each criteria are evaluated as being "fully", "partially" or "not met", with detailed evidence provided to support these claims (such as quotations from the article). If a criteria is not met by the original study, you are welcome to make a suggestion in the evidence column of what you think the likely answer for that criteria might be.
+The researcher should use the \textbf{provided template} ('evaluation/reporting.qmd') to assess whether the criteria from these guidelines are met by the journal article (including the supplementary material, although not including the code unless the article specifically refers to it for providing particular information). Each criteria are evaluated as being ``fully", ``partially" or ``not met", with detailed evidence provided to support these claims (such as quotations from the article). If a criteria is not met by the original study, the researcher is welcome to make a suggestion in the evidence column of what they think the likely answer for that criteria might be.

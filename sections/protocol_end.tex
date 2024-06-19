@@ -1,59 +1,60 @@
-\section{Summary report and research compendium}
+\section{Third stage: report and research compendium}
 
-\subsection{Computational reproducibility report} \label{sec:report}
+\subsection{Summary report} \label{sec:report}
 
-Use the \textbf{provided template} ('evaluation/reproduction\_report.qmd') to produce a simple summary report for the reproducibility assessment. This template should guide you to include:
+Use the \textbf{provided template} ('evaluation/reproduction\_report.qmd') to produce a simple summary report for the reproducibility assessment and evaluation. This template report includes:
 
 \begin{itemize}
-    \item Short study description
-    \item Citation to original study
-    \item Number and percentage of items reproduced from scope and time elapsed
-    \item Required troubleshooting steps
-    \item Display of reproduced items alongside original study items
-    \item Percent stacked bar chart displaying the proportion of criteria met for each of the evaluations against guidelines
+    \item A short study description
+    \item A citation to original study
+    \item The number and percentage of items from the scope that were reproduced
+    \item The time taken during reproduction and evaluated stages
+    \item A description of the required troubleshooting steps
+    \item Presentation of the reproduced items (e.g. figures, tables, statistics) alongside the items from the original study (or alongside description of and links to the original items, if they were not published under a license that allows reuse of the images).
+    \item A percent stacked bar chart displaying the proportion of criteria met for each of the evaluations against guidelines
 \end{itemize}
 
-\vspace{1cm}
+\vspace{0.5cm}
 \subsection{Research compendium} \label{sec:compendium}
 
-Once the computational reproduction has been completed, the repository will be restructured into a "\textbf{research compendium}". This a term first introduced by Gentleman and Lang 2007\autocite{gentleman_statistical_2007} which they define as "\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} Marwick et al. 2018 define a research compendium as having three key components:
+Once the computational reproduction has been completed, the repository will be restructured into a ``\textbf{research compendium}". This is a term first introduced by Gentleman and Lang (2007)\autocite{gentleman_statistical_2007} which they defined as ``\textit{both a container for the different elements that make up the document and its computations (i.e. text, code, data,. . . ), and as a means for distributing, managing and updating the collection.}"\autocite{gentleman_statistical_2007} In an article by Marwick et al. (2018),\autocite{marwick_packaging_2018} which focuses on how to structure data analytical work, they recommend a research compendium as having three key components:
 \begin{enumerate}
     \item Files organised according to convention
     \item Seperate data, methods and outputs
     \item Specifying the environment used for the analysis.\autocite{marwick_packaging_2018}
 \end{enumerate}
 
-A research compendium might also be referred to as a "\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a "\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018} The repository will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above.
+A research compendium might also be referred to as a ``\textbf{reproducibility file bundle}",\autocite{arguillas_10_2022} or as a ``\textbf{reproduction package}".\autocite{krafczyk_learning_2021} Although not required to be structured as a package, this can be helpful in providing a structure for dependency management and file organisation, and for continuous integration of automated code testing.\autocite{marwick_packaging_2018}
 
-Our primary motivation in doing this step is to make it \textbf{easy and clear for someone to re-run} our reproduction, whilst making relatively \textbf{minimal changes} to the code itself. Hence, we are not necessarily amending the repository to meet all of the recommendations for best practice of sharing DES models.
+For this study, the 'reproduction/' folder will be modified as per the proposed structure below. Some of these modifications may already be in place from having gone through the reproduction steps above. Our primary motivation in doing this step is to make it \textbf{easy and clear for someone to re-run} our reproduction, whilst making relatively \textbf{minimal changes} to the code itself. Hence, we are not necessarily amending the repository to meet all of the recommendations for best practice of sharing DES models.
 
 \vspace{0.5cm}
 \subsubsection{Modify repository}
 
 Make the following changes to the \textbf{reproduction/} folder, if not already implemented:
 \begin{itemize}
-    \item \textbf{Have seperate folders for data, methods and outputs} - as recommended by Marwick et al. 2018\autocite{marwick_packaging_2018}. The exception for this change is parameters coded into the scripts (since these would require a large amount of work and restructuring to seperate from the scripts, contrary to our motivation in this stage).
-    \item Create \textbf{tests} which check whether a user is able to get the same reproduce results as we obtained during the reproduction, based on comparison of csv files.
+    \item \textbf{Have separate folders for data, methods and outputs} - as recommended by Marwick et al. (2018)\autocite{marwick_packaging_2018}. The exception for this change is parameters coded into the scripts (since these would require a large amount of work and restructuring to separate from the scripts, contrary to our motivation in this stage).
+    \item Create \textbf{tests} which check whether a user is able to get the same results as we obtained during the reproduction, based on comparison of CSV files.
     \item Create a \textbf{Dockerfile} and double-check it works (build image and run model notebook/s).
     \item Enable the GitHub action to publish the Docker image on the \textbf{GitHub container registry}.
-    \item Make sure that \textbf{model notebook/s} contain:
+    \item Make sure that \textbf{model notebook/s} contains:
     \begin{itemize}
-        \item Run time recorded within the model notebook.
-        \item Clearly states which parts of the notebook produce each item from the reproduction scope.
+        \item Run time for the notebook.
+        \item A clear statement of which parts of the notebook produce each item from the scope.
     \end{itemize}
     \item Ensure that the \textbf{README} contains:
     \begin{itemize}
-        \item Original study citation.
-        \item Simple summary of the model (potentially incorporating any diagrams of the model that were provided).
-        \item Scope of the reproduction (including images of the figures/tables from the original study).
-        \item Overview of the repository.
+        \item A citation for the original study.
+        \item A simple summary of the model (potentially incorporating any diagrams of the model that were provided).
+        \item The scope of the reproduction (including images of the figures/tables from the original study).
+        \item An overview of the repository.
         \item Instructions for setting up the environment.
         \item Instructions for running the model (and reproducing items from the scope).
         \item Instructions for running the test/s.
-        \item Hardware and software specs for the computer used for reproduction (machine, RAM, operating system and version).
-        \item Run time for the model.
+        \item The hardware and software specs for the computer used for reproduction (machine, RAM, operating system and version).
+        \item The run time for the model.
         \item Instructions for citation.
-        \item Short description of license.
+        \item A short description of license.
     \end{itemize}
     \item Ensure \textbf{Quarto site} displays the reproduction README and notebook/s.
 \end{itemize}
@@ -61,7 +62,7 @@ Make the following changes to the \textbf{reproduction/} folder, if not already 
 \newpage
 \subsubsection{Test-run with second team member}
 
-Once the research compendium is complete, a \textbf{second researcher} on the team should attempt to use it and confirm if they were able \textbf{reproduce} the results of the first researcher, and to check the compendium for \textbf{clarity}. This is similar to the approach of Krafczyk et al. 2021.\autocite{krafczyk_learning_2021} It should be recorded within the \textbf{logbook}.
+Once the research compendium is complete, a \textbf{second researcher} on the team should attempt to use it and confirm if they were able \textbf{reproduce} the results of the first researcher, and to check the compendium for \textbf{clarity}. This is similar to the approach of Krafczyk et al. (2021).\autocite{krafczyk_learning_2021} It should be recorded within the \textbf{logbook}.
 
 \vspace{0.5cm}
 \subsection{Archive on Zenodo}
@@ -73,7 +74,7 @@ Once modification of the repository is completed, a new GitHub release should be
 
 \textbf{Email the authors} again to:
 \begin{itemize}
-    \item Let them know we have finished the assessment
-    \item Include link to GitHub and Zenodo.
+    \item Thank the authors and let them know we have finished the assessment.
+    \item Include a link to GitHub and Zenodo.
     \item Let them know how we are going to use the results from this work (i.e. lessons from reproduction, and guide framework design, and that this was not about validity of results).
 \end{itemize}
