@@ -21,7 +21,7 @@ If the study authors do not reply, there is no need to follow up on this email a
 To set up the repository:
 
 \begin{enumerate}
-    \item Go to \url{https://github.com/pythonhealthdatascience/stars_reproduction_template} and select the ``\textbf{Use this template}" button.
+    \item Go to \url{https://github.com/pythonhealthdatascience/stars_reproduction_template}\autocite{heather_template_2024} and select the ``\textbf{Use this template}" button.
     \item \textbf{Set up the repository} in 'pythonhealthdatascience' with the name 'stars-reproduce-surname-year' and description 'Assessing the computational reproducibility of surname et al. year as part of STARS.' Here, 'surname' and 'year' refer to the article being reproduced.
     \item \textbf{Update the template} so that it is specific to the study being evaluated (e.g. titles, links, CITATION.cff).
     \item Set up the provided \textbf{Python environment} ('requirements.txt') for creation of the Quarto site.
@@ -35,7 +35,7 @@ We require that the model code has been shared under an open license. Hence, the
 \vspace{0.5cm}
 \subsubsection{Update license for repository if required}
 
-Check which license the original study used for their code. By default, the template includes an MIT license, but \textbf{this may need to be changed if the authors used a different license}, so it is compatible.
+Check which license the original study used for their code. By default, the template\autocite{heather_template_2024} includes an MIT license, but \textbf{this may need to be changed if the authors used a different license}, so it is compatible.
 
 Following the guidance of the Turing Way\autocite{the_turing_way_community_turing_2022} and R packages book,\autocite{wickham_12_2023} the license does not need to be modified according to the packages used, unless code from that package is embedded within the work (for example, copy+and+paste a function) or if it is distributed as a binary with the work (i.e. bundled and stored with the work, rather than setting it to be exported from somewhere like PyPI or CRAN). If the code simply imports and uses functions from packages, this is not assumed to be derivative work, and hence a permissive license can be chosen. Likewise, the license can be permissive when using Docker\autocite{merkel_docker_2014} as we do not distribute the Docker image itself, but instead distribute the Dockerfile or refer to someone else to distribute (such as the GitHub container registry).\autocite{the_linux_foundation_docker_nodate}
 
@@ -52,7 +52,7 @@ If an openly licensed version of the article cannot be located then \textbf{link
     \item Each \textbf{table and figure} from the main journal article as individual digital objects (e.g. .jpeg, .png) (not including those from the appendices/supplementary materials). These are uploaded to the repository separately as we will later use the files when describing the scope of the study on the Quarto site, and we will compare our results against them if they are within scope.
 \end{itemize}
 
-The researcher should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code. If using a green open-access article, a link to the paywalled article should also be included.
+The researcher should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd')\autocite{heather_template_2024} to display the PDFs or links to the journal article, and provide a link to the code. If using a green open-access article, a link to the paywalled article should also be included.
 
 \vspace{0.5cm}
 \subsection{Scope of reproduction}
@@ -88,7 +88,7 @@ Once the scope has been decided, upload each item to the 'original\_study/' fold
     \item For results described in the \textbf{text} (but not captured in a table or figure), record in a format appropriate to then later compare against (for example, within a \textbf{CSV}).
 \end{itemize}
 
-The researcher should amend the provided \textbf{template page} ('evaluation/scope.qmd') to display each of the items.
+The researcher should amend the provided \textbf{template page} ('evaluation/scope.qmd')\autocite{heather_template_2024} to display each of the items.
 
 \vspace{0.5cm}
 \subsubsection{Archive scope on Zenodo}
@@ -198,4 +198,4 @@ Once forty hours has passed, the reproduction stage stops and the researcher sho
 
 \textbf{Tidy} the reproduction notebook, so it simply produces each of the items in the scope, and clearly state how each section relates to the original article (e.g. captioning 'Reproduction attempt for Figure 2').
 
-Using the \textbf{template page} ('evaluation/reproduction\_success.qmd'), show each item from the scope (as in the original article) alongside our best reproduction attempts (if possible under the article's license). Include the decision on the reproduction success for each item (along with any justification for this decision).
+Using the \textbf{template page} ('evaluation/reproduction\_success.qmd'),\autocite{heather_template_2024} show each item from the scope (as in the original article) alongside our best reproduction attempts (if possible under the article's license). Include the decision on the reproduction success for each item (along with any justification for this decision).

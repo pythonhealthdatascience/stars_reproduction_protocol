@@ -1,4 +1,4 @@
-# Protocol for assessing the computational reproducibility of simulation models
+# Protocol for assessing the computational reproducibility of discrete-event simulation models on STARS
 
 ⭐ Protocol: **STARS_WP1_Reproduction_Protocol.pdf** ⭐
 
