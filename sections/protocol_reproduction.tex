@@ -13,7 +13,7 @@ This step may have already been completed  (for example, if the author has alrea
     \item If the email rebounds, search online for a \textbf{recent email address} for any of the study authors.
 \end{enumerate}
 
-If the study authors do not reply, there is no need to follow-up on this email asking for a response, as the email simply serves to notify the study authors and does not require a response.
+If the study authors do not reply, there is no need to follow up on this email asking for a response, as the email simply serves to notify the study authors and does not require a response.
 
 \vspace{0.5cm}
 \subsubsection{Create repository using template}
@@ -22,9 +22,9 @@ To set up the repository:
 
 \begin{enumerate}
     \item Go to \url{https://github.com/pythonhealthdatascience/stars_reproduction_template} and select the ``\textbf{Use this template}" button.
-    \item \textbf{Set-up the repository} in 'pythonhealthdatascience' with the name 'stars-reproduce-surname-year' and description 'Assessing the computational reproducibility of surname et al. year as part of STARS.' Here, 'surname' and 'year' refer to the article being reproduced.
+    \item \textbf{Set up the repository} in 'pythonhealthdatascience' with the name 'stars-reproduce-surname-year' and description 'Assessing the computational reproducibility of surname et al. year as part of STARS.' Here, 'surname' and 'year' refer to the article being reproduced.
     \item \textbf{Update the template} so that it is specific to the study being evaluated (e.g. titles, links, CITATION.cff).
-    \item Set up the provided \textbf{python environment} ('requirements.txt') for creation of the Quarto site.
+    \item Set up the provided \textbf{Python environment} ('requirements.txt') for creation of the Quarto site.
 \end{enumerate}
 
 \vspace{0.5cm}
@@ -44,7 +44,7 @@ Following the guidance of the Turing Way\autocite{the_turing_way_community_turin
 
 Before uploading the article to the repository, check which \textbf{license the article has been distributed under}. This is likely to be in a ``copyright" section of the article. If it is distributed under a permissive license (e.g. CC-BY), then the researcher should be free to upload the article and artefacts to the repository. However, if the article does not have a license enabling reuse in this manner (which is likely if it is restricted access/behind a paywall), then they will likely be unable to. Although permission can be requested, this will often incur costs.
 
-In these cases, the researcher should search for a \textbf{green open access version} of the article. For example, copies of the article available on a pre-print site or in a institutional repository. If a green open access article is identified, it can be uploaded to the repository - although it should be compared against the paywalled article to check for any differences between them before upload.
+In these cases, the researcher should search for a \textbf{green open-access version} of the article. For example, copies of the article available on a pre-print site or in an institutional repository. If a green open-access article is identified, it can be uploaded to the repository - although it should be compared against the paywalled article to check for any differences between them before upload.
 
 If an openly licensed version of the article cannot be located then \textbf{links to the original work} should be provided instead of uploading the article itself. If located though, the researcher should \textbf{upload all available materials} from the article to the 'original\_study/' folder. This includes:
 \begin{itemize}
@@ -52,7 +52,7 @@ If an openly licensed version of the article cannot be located then \textbf{link
     \item Each \textbf{table and figure} from the main journal article as individual digital objects (e.g. .jpeg, .png) (not including those from the appendices/supplementary materials). These are uploaded to the repository separately as we will later use the files when describing the scope of the study on the Quarto site, and we will compare our results against them if they are within scope.
 \end{itemize}
 
-The researcher should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code. If using a green open access article, a link to the paywalled article should also be included.
+The researcher should amend the provided \textbf{template page} ('quarto\_site/study\_publication.qmd') to display the PDFs or links to the journal article, and provide a link to the code. If using a green open-access article, a link to the paywalled article should also be included.
 
 \vspace{0.5cm}
 \subsection{Scope of reproduction}
@@ -70,7 +70,7 @@ The next step is to define the scope of the reproducibility study - in other wor
     \item Look through each of the \textbf{tables and figures} in the article (excluding the supplementary material) and identify whether they are within scope or not (i.e. do they present results of the simulation).
     \item Identify any \textbf{'key results' in the text} of the article that are within scope. These are results that are highlighted within the \textbf{abstract or results} section. This may include items from the supplementary materials if referred to in the text.
     \item Evaluate whether the identified 'key results' are \textbf{already covered by the tables and figures} from the article. If not, they should be included in the scope.
-    \item Make \textbf{consensus decision on scope with at least one other team member}.
+    \item Make a \textbf{consensus decision on scope with at least one other team member}.
 \end{enumerate}
 
 Notes from thoughts and discussions around the potential scope can be recorded within the \textbf{logbook}.
@@ -95,7 +95,7 @@ The researcher should amend the provided \textbf{template page} ('evaluation/sco
 
 With the organisation linked to Zenodo, \textbf{toggle Zenodo to preserve} that repository, and then create a \textbf{release on GitHub}, which Zenodo will then automatically download and register with a DOI. The release should be recorded within the \textbf{changelog}.
 
-This release serves as a public registration of the intended scope of the reproduction, archiving the repository at this point (prior to having started using or really looking at the the code). As stated in the ACRe guide,\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} it is important that the scope is defined at the start of the study, and publicly archived so as not to be amended during the course of the study.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
+This release serves as a public registration of the intended scope of the reproduction, archiving the repository at this point (prior to having started using or really looking at the code). As stated in the ACRe guide,\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022} it is important that the scope is defined at the start of the study, and publicly archived so as not to be amended during the course of the study.\autocite{berkeley_initiative_for_transparency_in_the_social_sciences_guide_2022}
 
 \vspace{0.5cm}
 \subsection{Familiarise with artefacts}
@@ -132,7 +132,7 @@ This stage is an \textbf{iterative} process of running the code and attempting t
     \item \textbf{Troubleshoot issues}, contacting the study authors if necessary (as detailed in section \ref{sec:troubleshoot})
 \end{itemize}
 
-\textbf{Remember!} Continue taking detailed notes and timings in the logbook, including each success and issue, and making note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that \textbf{in-progress outputs are copied over} to the blog post folder (e.g. .png file for a figure), so that the researcher can easily and visually share progress within the log.
+\textbf{Remember!} Continue taking detailed notes and timings in the logbook, including each success and issue, and make note of any changes made to the model code. Whilst keeping notes in the logbook, it is recommended that \textbf{in-progress outputs are copied over} to the blog post folder (e.g. .png file for a figure), so that the researcher can easily and visually share progress within the log.
 
 \vspace{0.5cm}
 \subsubsection{Successful reproduction} \label{sec:success}
